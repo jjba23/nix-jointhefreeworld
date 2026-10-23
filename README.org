@@ -178,7 +178,7 @@ nix flake check                            # build all of it
 
 ~flake.lock~ is the release: whoever consumes the set pins a revision of it, and gets exactly the project revisions listed there. A new tag in one of the projects is picked up by updating that one input, which is a one-line change with a hash in the diff you can read.
 
-There are three locks, and they are separate on purpose: ~nix flake update~ at the root moves the whole set (it pins the inputs of both halves as well), while the same command inside ~deps~ or ~emacs~ moves only what a ~?dir=~ consumer of that half gets. Editing a half does not silently change the set: the root pins what it read, and ~nix flake update guile-deps emacs~ is how you take the change.
+There are three locks, and they overlap: the root pins the inputs of both halves as well as its own, so ~nix flake update~ there moves the whole set. Running it inside ~deps~ or ~emacs~ moves only the pins that a ~?dir=~ consumer of that half gets; the set keeps what its own lock says until you update it there too. Editing a half's ~flake.nix~ is picked up by the set as it is read, since a path input is pinned by its path rather than by its content.
 
 * What is built where
 

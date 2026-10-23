@@ -204,6 +204,9 @@
           (name: drv: lib.nameValuePair name {
             type = "app";
             program = "${drv}/bin/${drv.meta.mainProgram}";
+            # Nix shows this in `nix run --help' and warns during `nix flake
+            # check' when it is missing.
+            meta = { description = drv.meta.description or name; };
           })
           (lib.filterAttrs
             (_: drv: drv.meta ? mainProgram)

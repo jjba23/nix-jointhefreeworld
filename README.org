@@ -4,11 +4,7 @@
 #+options: toc:nil
 #+language: en
 
-*NIX-JOINTHEFREEWORLD* — everything I maintain for Jointhefreeworld, packaged for Nix: the programs, the Guile libraries, the Emacs packages, and the few packages nixpkgs is missing. Not one ecosystem and not one language — twenty-three packages, three flakes, one URL.
-
-Repository: [[https://codeberg.org/jjba23/nix-jointhefreeworld]]
-
-Every Guile package here is built with the expression that lives in its own project, so nothing is restated in this repository and the two cannot disagree about how a program is compiled. The Emacs packages are the exception, and the only one: their repositories have no expression, so theirs is written here.
+*NIX-JOINTHEFREEWORLD* — many things and projects I maintain, some for Jointhefreeworld, some others too, packaged for Nix: the programs, the Guile libraries, the Emacs packages, and the few packages nixpkgs is missing.
 
 * What is here
 
@@ -19,6 +15,7 @@ Four kinds of thing, and it is worth knowing which is which, because they are us
 | package         | what it is                                      | license   |
 |-----------------+-------------------------------------------------+-----------|
 | ~araneola~      | Web crawler and sitemap generator               | AGPL-3.0+ |
+| ~ggg~           | SVG badges and glyphs generator                 | AGPL-3.0+ |
 | ~iter-vitae~    | Resume / Curriculum Vitae generator             | AGPL-3.0+ |
 | ~lambdock~      | Wayland desktop dock, customizable in Scheme    | GPL-3.0+  |
 | ~lenkesamler~   | Bookmark manager, sync tool and digital archive | AGPL-3.0+ |
@@ -71,7 +68,7 @@ There are three, each with its own ~flake.lock~, and the root one follows the ot
 
 | flake        | what it is                      | what a consumer of it fetches               |
 |--------------+---------------------------------+---------------------------------------------|
-| root         | all of it                       | nixpkgs, thirteen projects, and both halves |
+| root         | all of it                       | nixpkgs, fourteen projects, and both halves |
 | ~guile-deps~ | the five packages nixpkgs lacks | nixpkgs and five nixpkgs branches           |
 | ~emacs~      | the five Emacs packages         | nixpkgs and five small repositories         |
 
@@ -92,7 +89,7 @@ nix profile install git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak
 maak --version
 #+end_src
 
-The same URL works for the rest of the set: ~#araneola~, ~#guile-bewaking~, ~#guile-hygguile~, ~#guile-kracht~, ~#guile-olive-css~, ~#guile-orgwebalchemy~, ~#guile-scriba~, ~#guile-veritas~, ~#iter-vitae~, ~#lambdock~, ~#lenkesamler~, ~#mutastructura~ and, from the other half, ~#emacs-maak~ and friends.
+The same URL works for the rest of the set: ~#araneola~, ~#ggg~, ~#guile-bewaking~, ~#guile-hygguile~, ~#guile-kracht~, ~#guile-olive-css~, ~#guile-orgwebalchemy~, ~#guile-scriba~, ~#guile-veritas~, ~#iter-vitae~, ~#lambdock~, ~#lenkesamler~, ~#mutastructura~ and, from the other half, ~#emacs-maak~ and friends.
 
 ** Try one without installing it
 
@@ -101,7 +98,7 @@ nix run git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak -- --help
 nix build git+https://codeberg.org/jjba23/nix-jointhefreeworld#guile-veritas
 #+end_src
 
-~nix run~ works for the six programs (~araneola~, ~iter-vitae~, ~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries are meant to be built and to land on Guile's load path, or in Emacs's, through a shell or a system configuration.
+~nix run~ works for the seven programs (~araneola~, ~ggg~, ~iter-vitae~, ~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries are meant to be built and to land on Guile's load path, or in Emacs's, through a shell or a system configuration.
 
 ** One part only
 
@@ -215,7 +212,7 @@ There are three locks, and they overlap: the root pins the inputs of both parts 
 - One table, ~sources~ in [[./flake.nix][flake.nix]], mapping a package name to the input and the expression inside it. The names are the ones nixpkgs would use (~guile-veritas~, not ~veritas~), so the overlay replaces rather than duplicates.
 - The overlays call ~final.callPackage~, not ~nixpkgs.callPackage~. That single choice is what lets one package here depend on another: ~araneola~ needs ~guile-scriba~, and in a set of its own that has to be the sibling, not whatever nixpkgs happens to have.
 - ~packages~ is a plain lazy attribute set: asking for one package evaluates that one, so a project that breaks its own expression takes down itself and nothing else. ~checks~ is where the whole set is forced — that is a check's job, and it is also where ~lib.meta.availableOn~ decides which packages exist on the platform.
-- ~apps~ is derived from ~meta.mainProgram~ for the six programs. The names are listed rather than discovered by filtering every derivation, so that ~nix run~ does not force the whole set either.
+- ~apps~ is derived from ~meta.mainProgram~ for the seven programs. The names are listed rather than discovered by filtering every derivation, so that ~nix run~ does not force the whole set either.
 - Each package also has an overlay of its own, and ~overlays.namespaced~ puts all of them under ~pkgs.jointhefreeworld~ without shadowing anything. Both build against a ~pkgs~ extended with the set's definitions, so a single name still resolves its siblings, while your ~pkgs~ only gains the name you asked for.
 
 The Emacs packages are the one part whose expressions are written here, in [[./emacs/emacs.nix][emacs/emacs.nix]], because those repositories have no expression to call: an elisp library is a single file, and the build is the same shape every time. They use ~melpaBuild~, the builder MELPA itself uses, so the installed package gets its ~-pkg.el~, its autoloads and its byte code. The version is read from the ~;; Version:~ header of the file itself, so a release is one edit there and this repository cannot fall behind. The ~emacs~ flake puts them into ~emacsPackages~ with ~overrideScope~, and the root follows it; the scope is derived from ~prev~ rather than ~final~ in the root's overlay, since defining it in terms of itself would not terminate.

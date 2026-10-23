@@ -35,6 +35,7 @@
     # two cannot drift apart.
     araneola = { url = "git+https://codeberg.org/jjba23/araneola"; flake = false; };
     bewaking = { url = "git+https://codeberg.org/jjba23/bewaking"; flake = false; };
+    ggg = { url = "git+https://codeberg.org/jjba23/ggg"; flake = false; };
     hygguile = { url = "git+https://codeberg.org/jjba23/hygguile"; flake = false; };
     iter-vitae = { url = "git+https://codeberg.org/jjba23/iter-vitae"; flake = false; };
     kracht = { url = "git+https://codeberg.org/jjba23/kracht"; flake = false; };
@@ -68,6 +69,7 @@
       # adding a second package under a different name.
       sources = {
         araneola = { repo = "araneola"; expr = "default.nix"; };
+        ggg = { repo = "ggg"; expr = "default.nix"; };
         guile-bewaking = { repo = "bewaking"; expr = "default.nix"; };
         guile-hygguile = { repo = "hygguile"; expr = "default.nix"; };
         guile-kracht = { repo = "kracht"; expr = "default.nix"; };
@@ -105,6 +107,7 @@
       # set to find out which ones have a `meta.mainProgram'.
       programNames = [
         "araneola"
+        "ggg"
         "iter-vitae"
         "lambdock"
         "lenkesamler"

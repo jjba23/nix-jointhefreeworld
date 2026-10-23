@@ -53,6 +53,22 @@
       },
       "parent": []
     },
+    "ggg": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792673406,
+        "narHash": "sha256-D8ngR9CcFSvT5p8DHSdMEqgSDRrVFLLSTPthk/Mw6p8=",
+        "ref": "refs/heads/trunk",
+        "rev": "a4156caae5040179746c32bb440db13411a21cde",
+        "revCount": 211,
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/ggg"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/ggg"
+      }
+    },
     "guile-dbd-mysql-src": {
       "flake": false,
       "locked": {
@@ -356,6 +372,7 @@
         "araneola": "araneola",
         "bewaking": "bewaking",
         "emacs": "emacs",
+        "ggg": "ggg",
         "guile-deps": "guile-deps",
         "hygguile": "hygguile",
         "iter-vitae": "iter-vitae",

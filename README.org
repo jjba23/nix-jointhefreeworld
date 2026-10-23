@@ -215,7 +215,7 @@ There are three locks, and they overlap: the root pins the inputs of both parts 
 - ~apps~ is derived from ~meta.mainProgram~ for the seven programs. The names are listed rather than discovered by filtering every derivation, so that ~nix run~ does not force the whole set either.
 - Each package also has an overlay of its own, and ~overlays.namespaced~ puts all of them under ~pkgs.jointhefreeworld~ without shadowing anything. Both build against a ~pkgs~ extended with the set's definitions, so a single name still resolves its siblings, while your ~pkgs~ only gains the name you asked for.
 
-The Emacs packages are the one part whose expressions are written here, in [[./emacs/emacs.nix][emacs/emacs.nix]], because those repositories have no expression to call: an elisp library is a single file, and the build is the same shape every time. They use ~melpaBuild~, the builder MELPA itself uses, so the installed package gets its ~-pkg.el~, its autoloads and its byte code. The version is read from the ~;; Version:~ header of the file itself, so a release is one edit there and this repository cannot fall behind. The ~emacs~ flake puts them into ~emacsPackages~ with ~overrideScope~, and the root follows it; the scope is derived from ~prev~ rather than ~final~ in the root's overlay, since defining it in terms of itself would not terminate.
+The Emacs packages are built the same way, by an expression in each package's own repository: a ~default.nix~ next to the ~.el~ file, called from the commit the ~emacs~ flake pins. Each one uses ~melpaBuild~, the builder MELPA itself uses, so an install gets the ~-pkg.el~, the autoloads and the byte code and ~(require 'maak)~ works. The version is read from the ~;; Version:~ header of the file itself, inside that repository's expression, so a release is one edit there and nothing here can fall behind. The ~emacs~ flake puts them into ~emacsPackages~ with ~overrideScope~ — ~melpaBuild~ comes from that scope and ~lib~ is passed in, since the scope does not carry it — and the root follows the flake; the scope is derived from ~prev~ rather than ~final~ in the root's overlay, since defining it in terms of itself would not terminate.
 
 The checks in ~emacs~ run each ERT suite, from a copy of the source tree — the store is read-only and Emacs writes its native-compilation cache under ~HOME~ — so a green ~nix flake check~ means the elisp was compiled and its tests passed. The root's checks merge them, so one command covers all three flakes' worth of packages.
 
@@ -249,7 +249,7 @@ It goes into [[./guile-deps/flake.nix][guile-deps/flake.nix]], as an input and a
 
 ** An Emacs package
 
-There is no expression to call, so it goes into [[./emacs/emacs.nix][emacs/emacs.nix]]: a ~pname~, the ~.el~ file the version is read from, the source, and the three pieces of ~meta~ a package needs. A new repository is an input in [[./emacs/flake.nix][emacs/flake.nix]]; an ERT suite goes into ~suites~ there too, and the checks will run it. Add its name to ~elispNames~ in the root flake so that ~packages~ lists it as ~emacs-<name>~.
+The expression goes into the package's own repository as ~default.nix~, next to the ~.el~ file: a ~pname~, the version read from the ~;; Version:~ header, ~src = lib.cleanSource ./.~, ~files = ''("*.el")''~, and the pieces of ~meta~ a package needs. ~cleanSource~ is not decoration — ~melpaBuild~'s unpack hook reads a path ending in ~.el~ as "one .el file", so a checkout directory by that name would not be found. Here it is an input in [[./emacs/flake.nix][emacs/flake.nix]] and a line in ~srcs~; an ERT suite goes into ~suites~ there too, and the checks will run it. Add its name to ~elispNames~ in the root flake so that ~packages~ lists it as ~emacs-<name>~.
 
 * Continuous integration
 
@@ -259,4 +259,4 @@ There is no binary cache yet, which means a fresh install compiles the Guile byt
 
 * License
 
-The files in this repository — the three ~flake.nix~ files, ~emacs/emacs.nix~, the lock files, this README and [[./.woodpecker/ci.yml][.woodpecker/ci.yml]] — are free software under the GNU General Public License, version 3 or later; see [[./COPYING][COPYING]]. Every package keeps the license of the project it builds from, listed in [[*What is here][What is here]].
+The files in this repository — the three ~flake.nix~ files, the lock files, this README and [[./.woodpecker/ci.yml][.woodpecker/ci.yml]] — are free software under the GNU General Public License, version 3 or later; see [[./COPYING][COPYING]]. Every package keeps the license of the project it builds from, listed in [[*What is here][What is here]].

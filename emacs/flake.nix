@@ -56,14 +56,16 @@
 
       # An overlay for the Emacs package scope, not for `pkgs': it is applied
       # with `overrideScope', so it adds five names to `emacsPackages' and
-      # leaves everything else alone.  The expressions themselves live in the
-      # file next door, shared with nothing else and owned by this flake.
+      # leaves everything else alone.  Each package is built by the expression
+      # in its own repository, called from that repository's `default.nix' --
+      # the same arrangement as the Guile half: this flake says which commit to
+      # take, the project says how to build itself.  `melpaBuild' comes from
+      # `final', the scope being extended; `lib' is not in that scope, so it is
+      # passed in.
       overlay = final: prev:
-        import ./emacs.nix {
-          inherit lib;
-          emacsPackages = final;
-          inherit srcs;
-        };
+        lib.mapAttrs
+          (name: src: final.callPackage "${src}/default.nix" { inherit lib; })
+          srcs;
 
       scopeFor = system:
         (nixpkgs.legacyPackages.${system}.emacsPackages).overrideScope overlay;

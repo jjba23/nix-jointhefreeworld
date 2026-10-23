@@ -4,7 +4,7 @@
 #+email: jjbigorra@gmail.com
 #+language: en
 #+description: A Nix flake carrying the Jointhefreeworld programs, Guile libraries, Emacs packages and the few packages nixpkgs is missing.
-#+options: toc:2 num:nil html-style:nil
+#+options: toc:1 num:nil html-style:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://jointhefreeworld.org/static/css/jointhefreeworld.css" />
 
 [[https://jointhefreeworld.org/ggg/dist/nix-flake.svg]] [[https://jointhefreeworld.org/ggg/dist/scheme-guile.svg]] [[https://jointhefreeworld.org/ggg/dist/gnu-emacs.svg]]

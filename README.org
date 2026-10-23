@@ -4,7 +4,7 @@
 #+options: toc:nil
 #+language: en
 
-*NIX-JOINTHEFREEWORLD* — the Guile libraries, applications and Emacs packages I maintain, in a flake of flakes: one URL to install any of them, one overlay to put them in a NixOS or home-manager configuration, and a way to take one half without the other.
+*NIX-JOINTHEFREEWORLD* — everything I maintain for Jointhefreeworld, packaged for Nix: the programs, the Guile libraries, the Emacs packages, and the few packages nixpkgs is missing. Not one ecosystem and not one language — twenty-three packages, three flakes, one URL.
 
 Repository: [[https://codeberg.org/jjba23/nix-jointhefreeworld]]
 
@@ -12,49 +12,68 @@ Every Guile package here is built with the expression that lives in its own proj
 
 * What is here
 
-| package               | what it is                                             | license   |
-|-----------------------+--------------------------------------------------------+-----------|
-| ~araneola~            | Web crawler and sitemap generator                      | AGPL-3.0+ |
-| ~guile-bewaking~      | Authentication and authorization library               | LGPL-3.0+ |
-| ~guile-hygguile~      | Web UI component library                               | LGPL-3.0+ |
-| ~guile-kracht~        | Utility library                                        | LGPL-3.0+ |
-| ~guile-olive-css~     | Utility-first CSS framework                            | LGPL-3.0+ |
-| ~guile-orgwebalchemy~ | Org-mode to HTML and Markdown converter                | LGPL-3.0+ |
-| ~guile-scriba~        | Structured logging framework                           | LGPL-3.0+ |
-| ~guile-veritas~       | Testing framework                                      | LGPL-3.0+ |
-| ~iter-vitae~          | Resume / Curriculum Vitae generator                    | AGPL-3.0+ |
-| ~lambdock~            | Wayland desktop dock, customizable in Scheme           | GPL-3.0+  |
-| ~lenkesamler~         | Bookmark manager, sync tool and digital archive        | AGPL-3.0+ |
-| ~maak~                | Command runner à la Make                               | GPL-3.0+  |
-| ~mutastructura~       | Relational database schema migrations                  | AGPL-3.0+  |
+Four kinds of thing, and it is worth knowing which is which, because they are used differently: programs go in a profile, Guile libraries go on a load path, Emacs packages go in ~emacsPackages~, and the last group is what makes the rest build at all.
 
-Five more are here because they are dependencies that nixpkgs has no package for yet, and they come from the branches of my [[https://github.com/jjba23/nixpkgs][nixpkgs fork]] that add them: ~guile-uuid~, ~guile-dbi~, ~guile-dbd-sqlite3~, ~guile-dbd-mysql~ and ~guile-dbd-postgresql~. When those branches are merged, the input and its entry disappear together, and nothing else changes.
+** Programs
 
-** The Emacs packages
+| package         | what it is                                      | license   |
+|-----------------+-------------------------------------------------+-----------|
+| ~araneola~      | Web crawler and sitemap generator               | AGPL-3.0+ |
+| ~iter-vitae~    | Resume / Curriculum Vitae generator             | AGPL-3.0+ |
+| ~lambdock~      | Wayland desktop dock, customizable in Scheme    | GPL-3.0+  |
+| ~lenkesamler~   | Bookmark manager, sync tool and digital archive | AGPL-3.0+ |
+| ~maak~          | Command runner à la Make                        | GPL-3.0+  |
+| ~mutastructura~ | Relational database schema migrations           | AGPL-3.0+ |
 
-Five Emacs packages come from the same shelves. They live in ~emacsPackages~ rather than beside the Guile packages, because that is the set an elisp library belongs to, and each ships its own ERT suite which the checks run.
+** Guile libraries
 
-| package        | what it is                                              | license   |
-|----------------+---------------------------------------------------------+-----------|
-| ~maak~         | Maak integration for Emacs                              | GPL-3.0+  |
-| ~veritas~      | Tight Emacs integration for the Veritas test framework   | LGPL-3.0+ |
-| ~modusregel~   | Mode line customizations                                | GPL-3.0+  |
-| ~tekengrootte~ | Proportionally scaled face sizes                        | GPL-3.0+  |
-| ~welkomscherm~ | Simple welcome screen / dashboard                       | GPL-3.0+  |
+| package               | what it is                               | license   |
+|-----------------------+------------------------------------------+-----------|
+| ~guile-bewaking~      | Authentication and authorization         | LGPL-3.0+ |
+| ~guile-hygguile~      | Web UI components                        | LGPL-3.0+ |
+| ~guile-kracht~        | Utility library                          | LGPL-3.0+ |
+| ~guile-olive-css~     | Utility-first CSS framework              | LGPL-3.0+ |
+| ~guile-orgwebalchemy~ | Org-mode to HTML and Markdown conversion | LGPL-3.0+ |
+| ~guile-scriba~        | Structured logging                       | LGPL-3.0+ |
+| ~guile-veritas~       | Testing framework                        | LGPL-3.0+ |
+
+** Emacs packages
+
+These live in ~emacsPackages~ rather than beside the Guile packages, because that is the set an elisp library belongs to, and each ships its own ERT suite which the checks run.
+
+| package        | what it is                                             | license   |
+|----------------+--------------------------------------------------------+-----------|
+| ~maak~         | Maak integration for Emacs                             | GPL-3.0+  |
+| ~veritas~      | Tight Emacs integration for the Veritas test framework | LGPL-3.0+ |
+| ~modusregel~   | Mode line customizations                               | GPL-3.0+  |
+| ~tekengrootte~ | Proportionally scaled face sizes                       | GPL-3.0+  |
+| ~welkomscherm~ | Simple welcome screen / dashboard                      | GPL-3.0+  |
 
 In ~packages~ they appear with an ~emacs-~ prefix (~emacs-maak~, ~emacs-veritas~, ...), which is what makes ~nix build .#emacs-maak~ and ~nix flake show~ reach them; the overlay is the interface an Emacs configuration actually wants.
 
-All of it is for the [[https://www.gnu.org/software/guile/][GNU Guile]] ecosystem: the [[https://guix.gnu.org/][GNU Guix]] side of the same projects is what ~guix.scm~ and ~manifest.scm~ in each repository are for, and this repository is the Nix side of all of them at once.
+** Packages nixpkgs does not have yet
+
+The Guile dependency chain has no entries in nixpkgs, so it is here, from the branches of my [[https://github.com/jjba23/nixpkgs][nixpkgs fork]] that add it. When those branches are merged, the input and its entry disappear together, and nothing else changes.
+
+| package                | what it is                                    | license  |
+|------------------------+-----------------------------------------------+----------|
+| ~guile-uuid~           | UUID generation and manipulation              | GPL-3.0+ |
+| ~guile-dbi~            | Generic database access                       | GPL-2.0+ |
+| ~guile-dbd-sqlite3~    | SQLite3 driver for Guile's database interface | GPL-2.0+ |
+| ~guile-dbd-mysql~      | MariaDB/MySQL driver for the same interface   | GPL-2.0+ |
+| ~guile-dbd-postgresql~ | PostgreSQL driver for the same interface      | GPL-2.0+ |
+
+Most of the collection is GNU Guile, because that is what most of the collection is: the Guix side of the same projects is what ~guix.scm~ and ~manifest.scm~ in each repository are for, and this repository is the Nix side of all of it — the programs, the libraries, the Emacs packages and the gaps.
 
 ** Which flake holds what
 
-There are three, each with its own ~flake.lock~, and the root one follows the other two. That is what makes it possible to take one half and never fetch the other.
+There are three, each with its own ~flake.lock~, and the root one follows the other two. That is what makes it possible to take one part and never fetch the rest.
 
-| flake    | what it is                          | what a consumer of it fetches                    |
-|----------+-------------------------------------+--------------------------------------------------|
-| root     | everything                          | nixpkgs, thirteen projects, and both halves       |
-| ~deps~   | the five Guile dependencies         | nixpkgs and five nixpkgs branches                 |
-| ~emacs~  | the five Emacs packages             | nixpkgs and five small repositories               |
+| flake        | what it is                      | what a consumer of it fetches               |
+|--------------+---------------------------------+---------------------------------------------|
+| root         | all of it                       | nixpkgs, thirteen projects, and both halves |
+| ~guile-deps~ | the five packages nixpkgs lacks | nixpkgs and five nixpkgs branches           |
+| ~emacs~      | the five Emacs packages         | nixpkgs and five small repositories         |
 
 * Install
 
@@ -73,7 +92,7 @@ nix profile install git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak
 maak --version
 #+end_src
 
-The same URL works for the rest of the set: ~#araneola~, ~#guile-bewaking~, ~#guile-hygguile~, ~#guile-kracht~, ~#guile-olive-css~, ~#guile-orgwebalchemy~, ~#guile-scriba~, ~#guile-veritas~, ~#iter-vitae~, ~#lambdock~, ~#lenkesamler~ and ~#mutastructura~.
+The same URL works for the rest of the set: ~#araneola~, ~#guile-bewaking~, ~#guile-hygguile~, ~#guile-kracht~, ~#guile-olive-css~, ~#guile-orgwebalchemy~, ~#guile-scriba~, ~#guile-veritas~, ~#iter-vitae~, ~#lambdock~, ~#lenkesamler~, ~#mutastructura~ and, from the other half, ~#emacs-maak~ and friends.
 
 ** Try one without installing it
 
@@ -82,15 +101,15 @@ nix run git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak -- --help
 nix build git+https://codeberg.org/jjba23/nix-jointhefreeworld#guile-veritas
 #+end_src
 
-~nix run~ works for the six packages that install a program (~araneola~, ~iter-vitae~, ~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries are meant to be built and to land on Guile's load path through a shell or a system configuration.
+~nix run~ works for the six programs (~araneola~, ~iter-vitae~, ~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries are meant to be built and to land on Guile's load path, or in Emacs's, through a shell or a system configuration.
 
-** One half only
+** One part only
 
-~?dir=~ picks the flake inside the repository, and with it the inputs: an Emacs-only consumer fetches five small repositories and no Guile dependency at all.
+~?dir=~ picks the flake inside the repository, and with it the inputs: an Emacs-only consumer fetches five small repositories and no Guile dependency at all, and the reverse holds for the dependency chain.
 
 #+begin_src shell
 nix build 'git+https://codeberg.org/jjba23/nix-jointhefreeworld?dir=emacs#emacs-maak'
-nix build 'git+https://codeberg.org/jjba23/nix-jointhefreeworld?dir=deps#guile-dbi'
+nix build 'git+https://codeberg.org/jjba23/nix-jointhefreeworld?dir=guile-deps#guile-dbi'
 #+end_src
 
 ** Into Emacs
@@ -131,7 +150,6 @@ Add the overlay once and the packages are available from ~pkgs~ as if nixpkgs ha
 
           environment.systemPackages = with pkgs; [
             guile-veritas
-            guile-scriba
             maak
           ];
         })
@@ -145,10 +163,10 @@ Home-manager takes the same overlay, through ~nixpkgs.overlays~ in the NixOS mod
 
 ** Three ways to take it
 
-| what you write                                             | what you get                                     |
-|------------------------------------------------------------+--------------------------------------------------|
-| ~nixpkgs.overlays = [ nix-jointhefreeworld.overlays.default ];~    | every name, replacing nixpkgs' copies     |
-| ~nixpkgs.overlays = [ nix-jointhefreeworld.overlays.maak ];~       | one name, and nothing else added         |
+| what you write                                                     | what you get                                   |
+|--------------------------------------------------------------------+------------------------------------------------|
+| ~nixpkgs.overlays = [ nix-jointhefreeworld.overlays.default ];~    | every name, replacing nixpkgs' copies          |
+| ~nixpkgs.overlays = [ nix-jointhefreeworld.overlays.maak ];~       | one name, and nothing else added               |
 | ~nixpkgs.overlays = [ nix-jointhefreeworld.overlays.namespaced ];~ | ~pkgs.jointhefreeworld.maak~, nothing shadowed |
 
 There is a per-package overlay for every name in the repository — ~overlays.maak~, ~overlays.guile-veritas~, ~overlays.guile-dbd-sqlite3~ and so on. Each builds against the set's own definitions, so ~overlays.araneola~ finds its ~guile-scriba~ even though only ~araneola~ is added to your ~pkgs~, and ~overlays.guile-dbd-sqlite3~ finds its ~guile-dbi~.
@@ -170,23 +188,23 @@ Two things worth knowing about the overlays:
 * Keeping up to date
 
 #+begin_src shell
-nix flake update                          # move every input of the set
-nix flake update maak lambdock             # move two of them
-nix flake update guile-deps emacs          # re-pin a half, with its own inputs
-nix flake check                            # build all of it
+nix flake update                           # move every input of the set
+nix flake update maak lambdock              # move two of them
+nix flake update guile-deps emacs           # re-pin a part, with its own inputs
+nix flake check                             # build all of it
 #+end_src
 
 ~flake.lock~ is the release: whoever consumes the set pins a revision of it, and gets exactly the project revisions listed there. A new tag in one of the projects is picked up by updating that one input, which is a one-line change with a hash in the diff you can read.
 
-There are three locks, and they overlap: the root pins the inputs of both halves as well as its own, so ~nix flake update~ there moves the whole set. Running it inside ~deps~ or ~emacs~ moves only the pins that a ~?dir=~ consumer of that half gets; the set keeps what its own lock says until you update it there too. Editing a half's ~flake.nix~ is picked up by the set as it is read, since a path input is pinned by its path rather than by its content.
+There are three locks, and they overlap: the root pins the inputs of both parts as well as its own, so ~nix flake update~ there moves the whole set. Running it inside ~guile-deps~ or ~emacs~ moves only the pins that a ~?dir=~ consumer of that part gets; the set keeps what its own lock says until you update it there too. Editing a part's ~flake.nix~ is picked up by the set as it is read, since a path input is pinned by its path rather than by its content.
 
 * What is built where
 
-| system          | what happens                                                  |
-|-----------------+---------------------------------------------------------------|
-| ~x86_64-linux~  | everything                                                    |
-| ~aarch64-linux~ | everything                                                    |
-| ~aarch64-darwin~| everything that supports darwin (~lambdock~ is wayland-only)   |
+| system           | what happens                                                 |
+|------------------+--------------------------------------------------------------|
+| ~x86_64-linux~   | everything                                                   |
+| ~aarch64-linux~  | everything                                                   |
+| ~aarch64-darwin~ | everything that supports darwin (~lambdock~ is wayland-only) |
 
 ~x86_64-darwin~ is deliberately absent: nixpkgs 26.11 dropped it, so listing it would make evaluation fail for everyone rather than for that one platform.
 
@@ -197,7 +215,7 @@ There are three locks, and they overlap: the root pins the inputs of both halves
 - One table, ~sources~ in [[./flake.nix][flake.nix]], mapping a package name to the input and the expression inside it. The names are the ones nixpkgs would use (~guile-veritas~, not ~veritas~), so the overlay replaces rather than duplicates.
 - The overlays call ~final.callPackage~, not ~nixpkgs.callPackage~. That single choice is what lets one package here depend on another: ~araneola~ needs ~guile-scriba~, and in a set of its own that has to be the sibling, not whatever nixpkgs happens to have.
 - ~packages~ is a plain lazy attribute set: asking for one package evaluates that one, so a project that breaks its own expression takes down itself and nothing else. ~checks~ is where the whole set is forced — that is a check's job, and it is also where ~lib.meta.availableOn~ decides which packages exist on the platform.
-- ~apps~ is derived from ~meta.mainProgram~ for the six packages that install a program. The names are listed rather than discovered by filtering every derivation, so that ~nix run~ does not force the whole set either.
+- ~apps~ is derived from ~meta.mainProgram~ for the six programs. The names are listed rather than discovered by filtering every derivation, so that ~nix run~ does not force the whole set either.
 - Each package also has an overlay of its own, and ~overlays.namespaced~ puts all of them under ~pkgs.jointhefreeworld~ without shadowing anything. Both build against a ~pkgs~ extended with the set's definitions, so a single name still resolves its siblings, while your ~pkgs~ only gains the name you asked for.
 
 The Emacs packages are the one part whose expressions are written here, in [[./emacs/emacs.nix][emacs/emacs.nix]], because those repositories have no expression to call: an elisp library is a single file, and the build is the same shape every time. They use ~melpaBuild~, the builder MELPA itself uses, so the installed package gets its ~-pkg.el~, its autoloads and its byte code. The version is read from the ~;; Version:~ header of the file itself, so a release is one edit there and this repository cannot fall behind. The ~emacs~ flake puts them into ~emacsPackages~ with ~overrideScope~, and the root follows it; the scope is derived from ~prev~ rather than ~final~ in the root's overlay, since defining it in terms of itself would not terminate.
@@ -230,7 +248,7 @@ Three steps, all in [[./flake.nix][flake.nix]]:
 
 ** A dependency nixpkgs does not have
 
-It goes into [[./deps/flake.nix][deps/flake.nix]], as an input and a ~sources~ entry, and the root picks it up through the ~guile-deps~ input it already follows. It has to come from a branch that a pull request can merge, so that the entry can be deleted later. Add its name to ~depNames~ in the root flake as well, so that ~packages~ lists it.
+It goes into [[./guile-deps/flake.nix][guile-deps/flake.nix]], as an input and a ~sources~ entry, and the root picks it up through the ~guile-deps~ input it already follows. It has to come from a branch that a pull request can merge, so that the entry can be deleted later. Add its name to ~depNames~ in the root flake as well, so that ~packages~ lists it.
 
 ** An Emacs package
 
@@ -238,10 +256,10 @@ There is no expression to call, so it goes into [[./emacs/emacs.nix][emacs/emacs
 
 * Continuous integration
 
-[[./.forgejo/workflows/ci.yml][.forgejo/workflows/ci.yml]] runs ~nix flake check~ three times on every push and pull request — once per flake, in the ~nixos/nix~ image on Codeberg's runners. The root's run covers every package of all three, and the other two cover the locks a ~?dir=~ consumer would get. A project that breaks its own expression, or an input that moves under the set, is caught there instead of by whoever installs next.
+Woodpecker runs [[./.woodpecker/ci.yml][.woodpecker/ci.yml]] on every push and pull request: one ~nixos/nix~ container that runs ~nix flake check~ three times, once per flake. The set's run builds every package of all three and runs every Emacs test suite; the other two cover the locks that a ~?dir=~ consumer of that part would get. A project that breaks its own expression, or an input that moves under the set, is caught there instead of by whoever installs next.
 
-There is no binary cache yet, which means a fresh install compiles the Guile bytecode on the machine doing it. The packages are small and the compilation is a second or two each; if it becomes a nuisance, a Cachix cache plus a push step in that workflow is the usual answer, and ~nix flake check~ already builds everything it would need to push.
+There is no binary cache yet, which means a fresh install compiles the Guile bytecode on the machine doing it. The packages are small and the compilation is a second or two each; if it becomes a nuisance, a Cachix cache plus a push step in that pipeline is the usual answer, and ~nix flake check~ already builds everything it would need to push.
 
 * License
 
-The files in this repository — the three ~flake.nix~ files, ~emacs/emacs.nix~, the lock files, this README and the CI workflow — are free software under the GNU General Public License, version 3 or later; see [[./COPYING][COPYING]]. Every package keeps the license of the project it builds from, listed in [[*What is here][What is here]].
+The files in this repository — the three ~flake.nix~ files, ~emacs/emacs.nix~, the lock files, this README and [[./.woodpecker/ci.yml][.woodpecker/ci.yml]] — are free software under the GNU General Public License, version 3 or later; see [[./COPYING][COPYING]]. Every package keeps the license of the project it builds from, listed in [[*What is here][What is here]].

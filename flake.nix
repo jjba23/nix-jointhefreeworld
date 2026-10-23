@@ -16,17 +16,17 @@
 # along with nix-jointhefreeworld.  If not, see <https://www.gnu.org/licenses/>.
 
 {
-  description = "Jointhefreeworld's Nix package set: Guile libraries, applications and Emacs packages";
+  description = "Jointhefreeworld's Nix package set: programs, Guile libraries, Emacs packages, and the packages nixpkgs is missing";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # The two halves are flakes of their own, so either can be taken without the
     # other: `...?dir=emacs' brings five small repositories and no Guile
-    # dependency at all, `...?dir=deps' brings only the dependencies.  This
+    # dependency at all, `...?dir=guile-deps' brings only the dependencies.  This
     # flake follows both and puts them back together, and `follows' keeps the
     # three of them on one nixpkgs rather than one each.
-    guile-deps = { url = "path:./deps"; inputs.nixpkgs.follows = "nixpkgs"; };
+    guile-deps = { url = "path:./guile-deps"; inputs.nixpkgs.follows = "nixpkgs"; };
     emacs = { url = "path:./emacs"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     # One input per project, pinned by flake.lock.  `flake = false' because only
@@ -132,10 +132,10 @@
           drv;
 
       # Everything this flake adds to nixpkgs: the dependencies, through the
-      # deps flake's overlay so their expression has exactly one home, and the
-      # projects.  `final.callPackage' is what lets one of them need another —
-      # araneola needs guile-scriba, and here it gets this set's scriba.  The
-      # deps overlay only reads `final', hence the same value twice.
+      # guile-deps flake's overlay so their expression has exactly one home, and
+      # the projects.  `final.callPackage' is what lets one of them need another
+      # — araneola needs guile-scriba, and here it gets this set's scriba.  The
+      # dependencies overlay only reads `final', hence the same value twice.
       packageSet = final:
         (guile-deps.overlays.default final final)
         // (lib.mapAttrs (name: _: buildProject final name) sources);
@@ -162,8 +162,8 @@
 
       # One overlay per package, so that `nixpkgs.overlays = [ ...overlays.maak ]'
       # puts exactly one name into `pkgs' rather than all eighteen.  The
-      # dependencies are the deps flake's own per-package overlays, re-exported
-      # so that there is one way to ask for one of them.
+      # dependencies are the guile-deps flake's own per-package overlays,
+      # re-exported so that there is one way to ask for one of them.
       perPackageOverlays =
         lib.mapAttrs
           (name: _: (final: prev:

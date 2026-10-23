@@ -1,6 +1,28 @@
+# nix-jointhefreeworld
+
+# Copyright © Josep Bigorra <jjbigorra@gmail.com>
+
+# nix-jointhefreeworld is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# nix-jointhefreeworld is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with nix-jointhefreeworld.  If not, see <https://www.gnu.org/licenses/>.
+
 # Build every package in the set on every push and every pull request, so that
 # a project that breaks its own expression -- or an input that moves under the
 # set -- is noticed here rather than by whoever runs `nix profile install' next.
+#
+# Three checks in one step, and therefore in one container: a step is a fresh
+# container with an empty store, so splitting them would fetch nixpkgs three
+# times.  The set's run covers every package of all three flakes; the two halves
+# cover the locks that a `?dir=' consumer of them would get.
 
 clone:
   - name: "⬇️ Clone Git repository"
@@ -9,16 +31,15 @@ clone:
       depth: 1
 
 steps:
-  get-byggsteg-token:
-    name: "Build Nix package"
+  flake-checks:
+    name: "🧱 nix flake check"
     image: nixos/nix:latest
     when:
-      - event: [push]
-        branch: [trunk]
-    env:
+      - event: [push, pull_request]
+    environment:
+      # Flakes are still behind a flag in Nix 2.35.
       NIX_CONFIG: "experimental-features = nix-command flakes"
-    steps:
-      - name: Check out
-        uses: actions/checkout@v4
-      - name: nix flake check
-        run: nix flake check --print-build-logs
+    commands:
+      - nix flake check --print-build-logs ./guile-deps
+      - nix flake check --print-build-logs ./emacs
+      - nix flake check --print-build-logs

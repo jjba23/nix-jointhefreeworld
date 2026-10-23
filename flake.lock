@@ -133,11 +133,11 @@
         ]
       },
       "locked": {
-        "path": "./deps",
+        "path": "./guile-deps",
         "type": "path"
       },
       "original": {
-        "path": "./deps",
+        "path": "./guile-deps",
         "type": "path"
       },
       "parent": []

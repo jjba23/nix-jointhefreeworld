@@ -32,6 +32,27 @@
         "url": "https://codeberg.org/jjba23/bewaking"
       }
     },
+    "emacs": {
+      "inputs": {
+        "maak-el": "maak-el",
+        "modusregel": "modusregel",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "tekengrootte-el": "tekengrootte-el",
+        "veritas-el": "veritas-el",
+        "welkomscherm-el": "welkomscherm-el"
+      },
+      "locked": {
+        "path": "./emacs",
+        "type": "path"
+      },
+      "original": {
+        "path": "./emacs",
+        "type": "path"
+      },
+      "parent": []
+    },
     "guile-dbd-mysql-src": {
       "flake": false,
       "locked": {
@@ -99,6 +120,27 @@
         "repo": "nixpkgs",
         "type": "github"
       }
+    },
+    "guile-deps": {
+      "inputs": {
+        "guile-dbd-mysql-src": "guile-dbd-mysql-src",
+        "guile-dbd-postgresql-src": "guile-dbd-postgresql-src",
+        "guile-dbd-sqlite3-src": "guile-dbd-sqlite3-src",
+        "guile-dbi-src": "guile-dbi-src",
+        "guile-uuid-src": "guile-uuid-src",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./deps",
+        "type": "path"
+      },
+      "original": {
+        "path": "./deps",
+        "type": "path"
+      },
+      "parent": []
     },
     "guile-uuid-src": {
       "flake": false,
@@ -313,28 +355,20 @@
       "inputs": {
         "araneola": "araneola",
         "bewaking": "bewaking",
-        "guile-dbd-mysql-src": "guile-dbd-mysql-src",
-        "guile-dbd-postgresql-src": "guile-dbd-postgresql-src",
-        "guile-dbd-sqlite3-src": "guile-dbd-sqlite3-src",
-        "guile-dbi-src": "guile-dbi-src",
-        "guile-uuid-src": "guile-uuid-src",
+        "emacs": "emacs",
+        "guile-deps": "guile-deps",
         "hygguile": "hygguile",
         "iter-vitae": "iter-vitae",
         "kracht": "kracht",
         "lambdock": "lambdock",
         "lenkesamler": "lenkesamler",
         "maak": "maak",
-        "maak-el": "maak-el",
-        "modusregel": "modusregel",
         "mutastructura": "mutastructura",
         "nixpkgs": "nixpkgs",
         "olive-css": "olive-css",
         "orgwebalchemy": "orgwebalchemy",
         "scriba": "scriba",
-        "tekengrootte-el": "tekengrootte-el",
-        "veritas": "veritas",
-        "veritas-el": "veritas-el",
-        "welkomscherm-el": "welkomscherm-el"
+        "veritas": "veritas"
       }
     },
     "scriba": {

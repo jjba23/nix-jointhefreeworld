@@ -1,0 +1,24 @@
+# Build every package in the set on every push and every pull request, so that
+# a project that breaks its own expression -- or an input that moves under the
+# set -- is noticed here rather than by whoever runs `nix profile install' next.
+
+clone:
+  - name: "⬇️ Clone Git repository"
+    image: woodpeckerci/plugin-git
+    settings:
+      depth: 1
+
+steps:
+  get-byggsteg-token:
+    name: "Build Nix package"
+    image: nixos/nix:latest
+    when:
+      - event: [push]
+        branch: [trunk]
+    env:
+      NIX_CONFIG: "experimental-features = nix-command flakes"
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+      - name: nix flake check
+        run: nix flake check --print-build-logs

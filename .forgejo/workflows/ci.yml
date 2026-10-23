@@ -1,6 +1,9 @@
 # Build every package in the set on every push and every pull request, so that
 # a project that breaks its own expression -- or an input that moves under the
 # set -- is noticed here rather than by whoever runs `nix profile install' next.
+#
+# Once per flake: the root's run covers every package of all three, and the two
+# halves cover the locks that a `?dir=' consumer would get from them.
 
 on:
   push:
@@ -18,5 +21,11 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
-      - name: nix flake check
+      - name: nix flake check (dependencies)
+        run: nix flake check --print-build-logs ./deps
+
+      - name: nix flake check (Emacs)
+        run: nix flake check --print-build-logs ./emacs
+
+      - name: nix flake check (the set)
         run: nix flake check --print-build-logs

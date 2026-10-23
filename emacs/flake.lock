@@ -1,0 +1,112 @@
+{
+  "nodes": {
+    "maak-el": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792351199,
+        "narHash": "sha256-6KhNLR2FgY74j68p4cEmTT5wRmWRM9tGhtoNzqHs+oY=",
+        "ref": "refs/heads/trunk",
+        "rev": "9ad65e4ac7021729ba05f0e26e30054c3d75ad82",
+        "revCount": 10,
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/maak.el"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/maak.el"
+      }
+    },
+    "modusregel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792050029,
+        "narHash": "sha256-da71i9XsdGWvecZ2kKF0N2QaEKsKGwHGi/DmH35iwOo=",
+        "ref": "refs/heads/trunk",
+        "rev": "3ed1eb99aab0cd6a1d36a78fcbc8614a90d1c99e",
+        "revCount": 82,
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/modusregel"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/modusregel"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1792502884,
+        "narHash": "sha256-IoNisKcGbUjdd45qCqywGMCYmZ5EnkxezvLII0FWwNA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "maak-el": "maak-el",
+        "modusregel": "modusregel",
+        "nixpkgs": "nixpkgs",
+        "tekengrootte-el": "tekengrootte-el",
+        "veritas-el": "veritas-el",
+        "welkomscherm-el": "welkomscherm-el"
+      }
+    },
+    "tekengrootte-el": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792694938,
+        "narHash": "sha256-HvTKE0LODo50vxsg4+BKgKDRw+aG8QSmL2bmAC5EHgY=",
+        "ref": "refs/heads/trunk",
+        "rev": "52f17b1ad842dce9fdde86b09d05edc85dd2e95c",
+        "revCount": 21,
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/tekengrootte.el"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/tekengrootte.el"
+      }
+    },
+    "veritas-el": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792008118,
+        "narHash": "sha256-CH5o98lsFEmF0cgWgRz2BS1aU98ADjbK7FVHnFlItIg=",
+        "ref": "refs/heads/trunk",
+        "rev": "f655a3a53c003e00ca217d256155d22c967b6ef0",
+        "revCount": 6,
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/veritas.el"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/veritas.el"
+      }
+    },
+    "welkomscherm-el": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792057070,
+        "narHash": "sha256-Gf8eE4ju+sHrbmdig+Ku6A8TADcN8hx8GEhVniUxKQQ=",
+        "ref": "refs/heads/trunk",
+        "rev": "b025a75ef6b54bbcab19a48dcc97216f8d6f5e90",
+        "revCount": 51,
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/welkomscherm.el"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/welkomscherm.el"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

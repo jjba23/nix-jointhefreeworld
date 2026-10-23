@@ -1,12 +1,12 @@
-#+title: NIX-PACKAGES
+#+title: NIX-JOINTHEFREEWORLD
 #+author: Josep Bigorra
 #+email: jjbigorra@gmail.com
 #+options: toc:nil
 #+language: en
 
-*NIX-PACKAGES* — the Guile libraries and applications I maintain, in one flake: one command to install any of them, one overlay to put them all in a NixOS or home-manager configuration.
+*NIX-JOINTHEFREEWORLD* — the Guile libraries, applications and Emacs packages I maintain, in one flake: one command to install any of them, one overlay to put them all in a NixOS or home-manager configuration.
 
-Repository: [[https://codeberg.org/jjba23/nix-packages]]
+Repository: [[https://codeberg.org/jjba23/nix-jointhefreeworld]]
 
 Every Guile package here is built with the expression that lives in its own project, so nothing is restated in this repository and the two cannot disagree about how a program is compiled. The Emacs packages are the exception, and the only one: their repositories have no expression, so theirs is written here.
 
@@ -59,7 +59,7 @@ in ~/etc/nix/nix.conf~, or pass ~--extra-experimental-features 'nix-command flak
 ** One program
 
 #+begin_src shell
-nix profile install git+https://codeberg.org/jjba23/nix-packages#maak
+nix profile install git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak
 maak --version
 #+end_src
 
@@ -68,8 +68,8 @@ The same URL works for the rest of the set: ~#araneola~, ~#guile-bewaking~, ~#gu
 ** Try one without installing it
 
 #+begin_src shell
-nix run git+https://codeberg.org/jjba23/nix-packages#maak -- --help
-nix build git+https://codeberg.org/jjba23/nix-packages#guile-veritas
+nix run git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak -- --help
+nix build git+https://codeberg.org/jjba23/nix-jointhefreeworld#guile-veritas
 #+end_src
 
 ~nix run~ works for the six packages that install a program (~araneola~, ~iter-vitae~, ~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries are meant to be built and to land on Guile's load path through a shell or a system configuration.
@@ -101,14 +101,14 @@ The point of the set is the overlay: add it once and every package below is avai
 #+begin_src nix
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  inputs.nix-packages.url = "git+https://codeberg.org/jjba23/nix-packages";
+  inputs.nix-jointhefreeworld.url = "git+https://codeberg.org/jjba23/nix-jointhefreeworld";
 
-  outputs = { self, nixpkgs, nix-packages, ... }: {
+  outputs = { self, nixpkgs, nix-jointhefreeworld, ... }: {
     nixosConfigurations.example = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ({ pkgs, ... }: {
-          nixpkgs.overlays = [ nix-packages.overlays.default ];
+          nixpkgs.overlays = [ nix-jointhefreeworld.overlays.default ];
 
           environment.systemPackages = with pkgs; [
             guile-veritas

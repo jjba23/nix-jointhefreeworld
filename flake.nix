@@ -1,22 +1,22 @@
-# nix-packages
+# nix-jointhefreeworld
 
 # Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
-# nix-packages is free software: you can redistribute it and/or modify
+# nix-jointhefreeworld is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 
-# nix-packages is distributed in the hope that it will be useful,
+# nix-jointhefreeworld is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with nix-packages.  If not, see <https://www.gnu.org/licenses/>.
+# along with nix-jointhefreeworld.  If not, see <https://www.gnu.org/licenses/>.
 
 {
-  description = "jjba23's Nix package set: Guile libraries and applications";
+  description = "Jointhefreeworld's Nix package set: Guile libraries, applications and Emacs packages";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

@@ -8,7 +8,7 @@
 
 Repository: [[https://codeberg.org/jjba23/nix-packages]]
 
-Every package here is built with the expression that lives in its own project, so nothing is restated in this repository and the two cannot disagree about how a program is compiled.
+Every Guile package here is built with the expression that lives in its own project, so nothing is restated in this repository and the two cannot disagree about how a program is compiled. The Emacs packages are the exception, and the only one: their repositories have no expression, so theirs is written here.
 
 * What is here
 
@@ -29,6 +29,20 @@ Every package here is built with the expression that lives in its own project, s
 | ~mutastructura~       | Relational database schema migrations                  | AGPL-3.0+  |
 
 Five more are here because they are dependencies that nixpkgs has no package for yet, and they come from the branches of my [[https://github.com/jjba23/nixpkgs][nixpkgs fork]] that add them: ~guile-uuid~, ~guile-dbi~, ~guile-dbd-sqlite3~, ~guile-dbd-mysql~ and ~guile-dbd-postgresql~. When those branches are merged, the input and its entry disappear together, and nothing else changes.
+
+** The Emacs packages
+
+Five Emacs packages come from the same shelves. They live in ~emacsPackages~ rather than beside the Guile packages, because that is the set an elisp library belongs to, and each ships its own ERT suite which ~nix flake check~ runs.
+
+| package        | what it is                                              | license   |
+|----------------+---------------------------------------------------------+-----------|
+| ~maak~         | Maak integration for Emacs                              | GPL-3.0+  |
+| ~veritas~      | Tight Emacs integration for the Veritas test framework   | LGPL-3.0+ |
+| ~modusregel~   | Mode line customizations                                | GPL-3.0+  |
+| ~tekengrootte~ | Proportionally scaled face sizes                        | GPL-3.0+  |
+| ~welkomscherm~ | Simple welcome screen / dashboard                       | GPL-3.0+  |
+
+In ~packages~ they appear with an ~emacs-~ prefix (~emacs-maak~, ~emacs-veritas~, ...), which is what makes ~nix build .#emacs-maak~ and ~nix flake show~ reach them; the overlay is the interface an Emacs configuration actually wants.
 
 All of it is for the [[https://www.gnu.org/software/guile/][GNU Guile]] ecosystem: the [[https://guix.gnu.org/][GNU Guix]] side of the same projects is what ~guix.scm~ and ~manifest.scm~ in each repository are for, and this repository is the Nix side of all of them at once.
 
@@ -59,6 +73,26 @@ nix build git+https://codeberg.org/jjba23/nix-packages#guile-veritas
 #+end_src
 
 ~nix run~ works for the six packages that install a program (~araneola~, ~iter-vitae~, ~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries are meant to be built and to land on Guile's load path through a shell or a system configuration.
+
+** Into Emacs
+
+The Emacs packages are packages in the Emacs sense, so they are asked for through the scope the overlay extends — ~pkgs.emacsPackages~ — and ~withPackages~ builds an Emacs that has them on its load path, autoloads and all:
+
+#+begin_src nix
+{ pkgs, ... }: {
+  environment.systemPackages = [
+    (pkgs.emacsPackages.withPackages (epkgs: [
+      epkgs.maak
+      epkgs.veritas
+      epkgs.modusregel
+      epkgs.tekengrootte
+      epkgs.welkomscherm
+    ]))
+  ];
+}
+#+end_src
+
+Take one and it is one line; take none and nothing changes. ~emacsPackages.withPackages~ is what honours ~pkgs.emacsPackages~, so this is also the expression to use in a plain flake shell, where the same call is enough to get an Emacs with the package in it.
 
 * Use it from your own configuration
 
@@ -100,6 +134,7 @@ Two things worth knowing about the overlay:
 #+begin_src shell
 nix flake update                          # move every input
 nix flake update maak lambdock             # move two of them
+nix flake update maak-el welkomscherm-el   # an Emacs package's repository
 nix flake check                            # build all of them
 #+end_src
 
@@ -121,8 +156,14 @@ nix flake check                            # build all of them
 - One table, ~sources~ in [[./flake.nix][flake.nix]], mapping a package name to the input and the expression inside it. The names are the ones nixpkgs would use (~guile-veritas~, not ~veritas~), so the overlay replaces rather than duplicates.
 - The overlay calls ~final.callPackage~, not ~nixpkgs.callPackage~. That single choice is what lets one package here depend on another: ~araneola~ needs ~guile-scriba~, and in a set of its own that has to be the sibling, not whatever nixpkgs happens to have.
 - ~packages~ filters each result through ~lib.meta.availableOn~, so a package's own ~meta.platforms~ decides where it appears.
-- ~checks~ is ~packages~, so ~nix flake check~ builds the whole set.
+- ~checks~ is ~packages~ plus the Emacs test suites, so ~nix flake check~ builds the whole set and runs the elisp tests.
 - ~apps~ is derived from ~meta.mainProgram~: a package that installs a program gets an ~apps~ entry, a library does not.
+
+The Emacs packages are the one part whose expressions are written here, in [[./emacs.nix][emacs.nix]], because those repositories have no expression to call: an elisp library is a single file, and the build is the same shape every time. They use ~melpaBuild~, the builder MELPA itself uses, so the installed package gets its ~-pkg.el~, its autoloads and its byte code. The version is read from the ~;; Version:~ header of the file itself, so a release is one edit there and this repository cannot fall behind.
+
+The overlay puts them into ~emacsPackages~ with ~overrideScope~, and the scope is derived from ~prev~ rather than ~final~: it is being defined in terms of itself, which would not terminate. Each one is also listed in ~packages~ under an ~emacs-~ prefix so that it can be built on its own.
+
+~checks~ also runs each Emacs package's ERT suite, from a copy of the source tree — the store is read-only and Emacs writes its native-compilation cache under ~HOME~ — so a green ~nix flake check~ means the elisp was compiled and its tests passed.
 
 ~lambdock~ carries one small override. Its test suite treats GTK's "cannot resolve icon 'utilities-terminal'" warning as fatal, and a bare build sandbox has no icon theme to resolve it from; the overlay adds ~adwaita-icon-theme~ to its ~nativeCheckInputs~ so the tests still run. It goes away when the project's tests bring their own icons.
 
@@ -146,12 +187,18 @@ Three steps, all in [[./flake.nix][flake.nix]]:
 
 If the project needs something nixpkgs does not have, that dependency goes in as an input and a ~sources~ entry too, exactly like the five above — and it has to come from a branch that a pull request can merge, so that the entry can be deleted later.
 
+An Emacs package is the other shape, because there is no expression to call:
+
+1. Add the repository as an input, the same way.
+2. Add it to ~emacs.nix~, which takes a ~pname~, the ~.el~ file the version is read from, the source, and the three pieces of ~meta~ that a package needs. If it has an ERT suite, add it to ~suites~ in [[./flake.nix][flake.nix]] too, and ~nix flake check~ will run it alongside the rest.
+3. Lock and check.
+
 * Continuous integration
 
-[[./.forgejo/workflows/ci.yml][.forgejo/workflows/ci.yml]] runs ~nix flake check~ on every push and pull request, in the ~nixos/nix~ image on Codeberg's runners. It builds every package, so a project that breaks its own expression — or an input that moves under the set — is caught there instead of by whoever installs next.
+[[./.forgejo/workflows/ci.yml][.forgejo/workflows/ci.yml]] runs ~nix flake check~ on every push and pull request, in the ~nixos/nix~ image on Codeberg's runners. That builds every package and runs every Emacs test suite, so a project that breaks its own expression — or an input that moves under the set — is caught there instead of by whoever installs next.
 
 There is no binary cache yet, which means a fresh install compiles the Guile bytecode on the machine doing it. The packages are small and the compilation is a second or two each; if it becomes a nuisance, a Cachix cache plus a push step in that workflow is the usual answer, and ~nix flake check~ already builds everything it would need to push.
 
 * License
 
-The files in this repository — ~flake.nix~, ~flake.lock~, this README — are free software under the GNU General Public License, version 3 or later; see [[./COPYING][COPYING]]. Every package keeps the license of the project it builds from, listed in [[*What is here][What is here]].
+The files in this repository — ~flake.nix~, ~emacs.nix~, ~flake.lock~, this README and the CI workflow — are free software under the GNU General Public License, version 3 or later; see [[./COPYING][COPYING]]. Every package keeps the license of the project it builds from, listed in [[*What is here][What is here]].

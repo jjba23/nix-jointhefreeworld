@@ -48,6 +48,14 @@
     guile-dbd-sqlite3-src = { url = "github:jjba23/nixpkgs/guile-dbd-sqlite3-init"; flake = false; };
     guile-dbd-mysql-src = { url = "github:jjba23/nixpkgs/guile-dbd-mysql-init"; flake = false; };
     guile-dbd-postgresql-src = { url = "github:jjba23/nixpkgs/guile-dbd-postgresql-init"; flake = false; };
+
+    # The Emacs packages.  Their repositories have no expression of their own,
+    # so emacs.nix holds one for each; only the sources are wanted here.
+    maak-el = { url = "git+https://codeberg.org/jjba23/maak.el"; flake = false; };
+    veritas-el = { url = "git+https://codeberg.org/jjba23/veritas.el"; flake = false; };
+    modusregel = { url = "git+https://codeberg.org/jjba23/modusregel"; flake = false; };
+    tekengrootte-el = { url = "git+https://codeberg.org/jjba23/tekengrootte.el"; flake = false; };
+    welkomscherm-el = { url = "git+https://codeberg.org/jjba23/welkomscherm.el"; flake = false; };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -91,18 +99,42 @@
         mutastructura = { repo = "mutastructura"; expr = "default.nix"; };
       };
 
+      # The five Emacs packages, from the sources above.  They are built inside
+      # the consumer's `emacsPackages' rather than beside `packages', because
+      # that is the set an elisp library belongs to: it is what `withPackages'
+      # and `emacsPackagesFor' hand to Emacs.
+      elispNames = [ "maak" "veritas" "modusregel" "tekengrootte" "welkomscherm" ];
+
+      emacsOverlay = efinal: _eprev:
+        import ./emacs.nix {
+          inherit lib;
+          emacsPackages = efinal;
+          srcs = {
+            maak = inputs.maak-el;
+            veritas = inputs.veritas-el;
+            modusregel = inputs.modusregel;
+            tekengrootte = inputs.tekengrootte-el;
+            welkomscherm = inputs.welkomscherm-el;
+          };
+        };
+
       # `final.callPackage', not `nixpkgs.legacyPackages.callPackage': one
       # package here depends on another (araneola needs guile-scriba), and in a
       # package set of its own that dependency has to be the sibling, not
       # whatever nixpkgs happens to ship.  Everything else resolves against the
       # nixpkgs the consumer brought, which is what an overlay is for.
-      overlay = final: _prev:
+      overlay = final: prev:
         let
           built = lib.mapAttrs
             (_: source: final.callPackage "${inputs.${source.repo}}/${source.expr}" { })
             sources;
         in
         built // {
+          # The scope Emacs packages live in, extended in place, so that
+          # `pkgs.emacsPackages.maak' and `pkgs.emacsPackages.withPackages'
+          # both see the five below.  `prev' and not `final': the scope is being
+          # defined in terms of itself here, which would not terminate.
+          emacsPackages = prev.emacsPackages.overrideScope emacsOverlay;
           # lambdock's own check phase aborts in a build sandbox: the tests treat
           # GTK's "cannot resolve icon 'utilities-terminal'" warning as fatal,
           # and a bare sandbox has no icon theme to resolve it from.  Giving the
@@ -120,10 +152,56 @@
       packagesFor = system:
         let
           pkgs = nixpkgs.legacyPackages.${system}.extend overlay;
+          fromRepos = lib.mapAttrs (name: _: pkgs.${name}) sources;
+          # Also listed in `packages', under an `emacs-' prefix, so that
+          # `nix build .#emacs-maak' reaches one and `nix flake show' lists
+          # them; the overlay is still the interface an Emacs user wants.
+          fromEmacs = lib.mapAttrs'
+            (name: drv: lib.nameValuePair "emacs-${name}" drv)
+            (lib.genAttrs elispNames (name: pkgs.emacsPackages.${name}));
         in
         lib.filterAttrs
           (_: drv: lib.meta.availableOn pkgs.stdenv.hostPlatform drv)
-          (lib.mapAttrs (name: _: pkgs.${name}) sources);
+          (fromRepos // fromEmacs);
+
+      # Every Emacs package brings an ERT suite.  Run it, the way the project's
+      # own maak.scm does and from the source tree rather than from the
+      # installed copy, so that `nix flake check' tests the elisp and not only
+      # that it byte-compiles.
+      elispChecksFor = system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          suites = {
+            maak = { src = inputs.maak-el; file = "test/maak-test.el"; };
+            veritas = {
+              src = inputs.veritas-el;
+              file = "test/veritas-test.el";
+              # This suite asks whether `guile' exists on PATH and tests one way
+              # if it does, the other if it does not; without it three tests
+              # fail.  The two end-to-end cases stay skipped either way, since
+              # their fixture wants the veritas launcher, which this set does
+              # not install.
+              tools = [ pkgs.guile ];
+            };
+            modusregel = { src = inputs.modusregel; file = "test/modusregel-test.el"; };
+            tekengrootte = { src = inputs.tekengrootte-el; file = "test/tekengrootte-tests.el"; };
+            welkomscherm = { src = inputs.welkomscherm-el; file = "test/welkomscherm-test.el"; };
+          };
+        in
+        lib.mapAttrs'
+          (name: suite: lib.nameValuePair "emacs-${name}-tests"
+            (pkgs.runCommand "emacs-${name}-tests"
+              { nativeBuildInputs = [ pkgs.emacs ] ++ (suite.tools or [ ]); }
+              ''
+                # The store is read-only and Emacs writes its native-compilation
+                # cache under HOME, so test a copy of the tree.
+                cp -r ${suite.src} source
+                cd source
+                HOME=$PWD emacs -Q --batch -L . -L test \
+                  -l ${suite.file} -f ert-run-tests-batch-and-exit
+                touch $out
+              ''))
+          suites;
 
       # `nix run' for the packages that install a program; the rest are
       # libraries and have nothing to run.
@@ -140,8 +218,9 @@
 
       packages = forAllSystems packagesFor;
 
-      # `nix flake check' builds the whole set; that is what CI runs.
-      checks = forAllSystems (system: self.packages.${system});
+      # `nix flake check' builds the whole set and runs every Emacs test suite;
+      # that is what CI runs.
+      checks = forAllSystems (system: self.packages.${system} // elispChecksFor system);
 
       apps = forAllSystems appsFor;
     };

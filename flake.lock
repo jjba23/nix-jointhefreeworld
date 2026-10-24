@@ -3,11 +3,11 @@
     "araneola": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759377,
-        "narHash": "sha256-O9bbjcPFdh92WRT9iPG4C3wOCgkzgdbxOFAYGWbIL/U=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-g15/EULqehqJVGfZOUEW2pJFTOZ4B1wRsGN9ncwnYbg=",
         "ref": "refs/heads/trunk",
-        "rev": "b50289a139568b09d817f3b56598de76bc3832dc",
-        "revCount": 48,
+        "rev": "08d7f35f23c94ae884b5287faa7c981ef1ee941a",
+        "revCount": 50,
         "type": "git",
         "url": "https://codeberg.org/jjba23/araneola"
       },
@@ -19,11 +19,11 @@
     "bewaking": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759374,
-        "narHash": "sha256-HYyhkfFDwnewNkS4DvsNB+ibZPd02Y4ZvIRCKqjrUfg=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-lasaC0ejRufWOh9aaea+Ku1Qe7+MPhj/1u63yCxhypI=",
         "ref": "refs/heads/trunk",
-        "rev": "87be1b7466403ee1f626e401ba8942938e5ee847",
-        "revCount": 86,
+        "rev": "93c77af9a5720059905ec03cdcdc982e78170d3e",
+        "revCount": 88,
         "type": "git",
         "url": "https://codeberg.org/jjba23/bewaking"
       },
@@ -178,11 +178,11 @@
     "hygguile": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759377,
-        "narHash": "sha256-qlf58Bp+6MwcozvtdOzzJBi9V10VAENW2kP85b0GDzo=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-wsk6Rkjoh1ir/GC6wyYlhPlTWnsLPTbzzAm7L3AgKaw=",
         "ref": "refs/heads/trunk",
-        "rev": "2f5c6f22f2969d51b165cfe785c0db8d92415be4",
-        "revCount": 422,
+        "rev": "64b35ccfd85d27c416807918ff04d85456fbed06",
+        "revCount": 424,
         "type": "git",
         "url": "https://codeberg.org/jjba23/hygguile"
       },
@@ -194,11 +194,11 @@
     "iter-vitae": {
       "flake": false,
       "locked": {
-        "lastModified": 1792675566,
-        "narHash": "sha256-wQQXPmAC+naEhgljxJcXt9j6gojoMy/YMEzcK7HYBTQ=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-zMHjuXZRnd39ODnHxl2qLSqT0+w+FTQncOYq7oxELCs=",
         "ref": "refs/heads/trunk",
-        "rev": "20305c540a7321ebe28630a23ebf8d076366c800",
-        "revCount": 245,
+        "rev": "d2f888f0316804890ed0a7453805489bae5f673c",
+        "revCount": 247,
         "type": "git",
         "url": "https://codeberg.org/jjba23/iter-vitae"
       },
@@ -210,11 +210,11 @@
     "kracht": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759367,
-        "narHash": "sha256-nMFa0HsGD3YPnEXsT7rmpfhlbIJABdo4wGqALjBg9G4=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-p1+8KiEHedf54Um39meBISZN5lkZAoglm3fvzgxunY8=",
         "ref": "refs/heads/trunk",
-        "rev": "84fe9dd37740e85da93f6103650a93141e8bfb06",
-        "revCount": 123,
+        "rev": "f40b83c763306d4a1505099e54a7efeb10a74651",
+        "revCount": 125,
         "type": "git",
         "url": "https://codeberg.org/jjba23/kracht"
       },
@@ -242,11 +242,11 @@
     "lenkesamler": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759381,
-        "narHash": "sha256-NXjbQBlpbYq7ylJYiPxBBpgecL63Ma1Q68OhbxQ3kl0=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-EyDP/k3MsXHmx38/JTKXatcE2jpkUZA3U6t7TLrTIVY=",
         "ref": "refs/heads/trunk",
-        "rev": "9878bfce8b76b8e94a0c55fe76df8751a1f61326",
-        "revCount": 78,
+        "rev": "89f0df03ac82164a720c6c70204e3078a8394d72",
+        "revCount": 80,
         "type": "git",
         "url": "https://codeberg.org/jjba23/lenkesamler"
       },
@@ -306,11 +306,11 @@
     "mutastructura": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759381,
-        "narHash": "sha256-NeUJEU0HrEJtDq+dLS4QqqRK4H3+8nRsmw3SbMbFqio=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-lQKpt1Z4KkHIXpvFcHgTwmz5grWWElZ+97d5OFeOAnA=",
         "ref": "refs/heads/trunk",
-        "rev": "05f7e8b9f35f6f1aeccc21d4870bb84949ee42d9",
-        "revCount": 76,
+        "rev": "fbda7cf6e546459f39795df1a61dc85827706b58",
+        "revCount": 78,
         "type": "git",
         "url": "https://codeberg.org/jjba23/mutastructura"
       },
@@ -338,11 +338,11 @@
     "olive-css": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759370,
-        "narHash": "sha256-f3KKxeOKL+XNjSrDUtHTyqXpMli3VkJg6f8uC7ieQ08=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-el9md4SOEY4HT2+4XHdsVQLboK4IfvQAIVlsTtIs3kA=",
         "ref": "refs/heads/trunk",
-        "rev": "ef80963eddcdc31ddb5054cc89078fc609007dbe",
-        "revCount": 95,
+        "rev": "9dc015544f1568d693f6d204f49ab8d059d75e46",
+        "revCount": 97,
         "type": "git",
         "url": "https://codeberg.org/jjba23/olive-css"
       },
@@ -354,11 +354,11 @@
     "orgwebalchemy": {
       "flake": false,
       "locked": {
-        "lastModified": 1792763543,
-        "narHash": "sha256-8KbxR0DBQ5OEKwwC7ZB7u4wMKe/EmdrEAU1SNn/upek=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-cN3px4tyAzlhMXMchJ2YCwqDCDgYv1M7X1iRNsqE2U0=",
         "ref": "refs/heads/trunk",
-        "rev": "389381e316b32e34e8aa5b06a9afce4fe8087f78",
-        "revCount": 122,
+        "rev": "5e792a9e9b0e632364a0275ee8dd496a4c39ca84",
+        "revCount": 124,
         "type": "git",
         "url": "https://codeberg.org/jjba23/orgwebalchemy"
       },
@@ -391,11 +391,11 @@
     "scriba": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759367,
-        "narHash": "sha256-+HDLvcTJ/nmDItfPPurR9wWRHUfkWcl81GLhmdvAqLY=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-36q0CgcMCv4tA1Sv37Q4zTGGyPiuHI3pWr99Yj3mtBo=",
         "ref": "refs/heads/trunk",
-        "rev": "794b9b95c75c03a37628893945c0e3c5a0bb1b56",
-        "revCount": 94,
+        "rev": "d827fb836557aa02710feef7874d55563279b843",
+        "revCount": 96,
         "type": "git",
         "url": "https://codeberg.org/jjba23/scriba"
       },
@@ -423,11 +423,11 @@
     "veritas": {
       "flake": false,
       "locked": {
-        "lastModified": 1792759374,
-        "narHash": "sha256-tBvjsBCBfjTcpLeEmQbfctI886TkjWpOpetCKW3XV+g=",
+        "lastModified": 1792845000,
+        "narHash": "sha256-b4sunlHarqO+yIuEZK92O1Zsz9EF/t3XCwU156sLWjg=",
         "ref": "refs/heads/trunk",
-        "rev": "f73a4aad91ab5bb29ba1fb002c1a813a648d22b9",
-        "revCount": 246,
+        "rev": "0f98531a46328f510ce1014567c0b01401d6ebd0",
+        "revCount": 248,
         "type": "git",
         "url": "https://codeberg.org/jjba23/veritas"
       },

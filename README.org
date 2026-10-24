@@ -28,13 +28,16 @@ stack, this is the URL you want.  If you use Guix, nothing here is required: the
 same projects ship their own ~guix.scm~ and ~manifest.scm~, and this repository is
 the Nix side of exactly those expressions.*
 
-New here?  Jump to [[*Quick start][Quick start]] for the one command that answers
-"does it work?", browse [[*What is here][What is here]] for the full inventory, or
-read [[*Use it from your own configuration][Use it from your own configuration]] if
+New here?  Jump to [[#quick-start][Quick start]] for the one command that answers
+"does it work?", browse [[#what-is-here][What is here]] for the full inventory, or
+read [[#use-it-from-your-own-configuration][Use it from your own configuration]] if
 you already know you want it in your system.  Fixes, new packages and corrections
-to this README are all welcome -- see [[*Contributing][Contributing]].
+to this README are all welcome -- see [[#contributing][Contributing]].
 
 * What you get
+:PROPERTIES:
+:CUSTOM_ID: what-you-get
+:END:
 
 - *Twenty-four packages from one URL*, at one revision.  ~#maak~,
   ~#guile-veritas~, ~#emacs-maak~, ~#guile-dbd-sqlite3~ and the rest all come
@@ -56,6 +59,9 @@ to this README are all welcome -- see [[*Contributing][Contributing]].
 - *Three platforms*: ~x86_64-linux~, ~aarch64-linux~, ~aarch64-darwin~.
 
 * What is here
+:PROPERTIES:
+:CUSTOM_ID: what-is-here
+:END:
 
 Four kinds of thing, and it is worth knowing which is which, because they are used
 differently: programs go in a profile, Guile libraries go on a load path, Emacs
@@ -63,9 +69,12 @@ packages go in ~emacsPackages~, and the last group is what makes the rest build 
 all.
 
 ** Programs
+:PROPERTIES:
+:CUSTOM_ID: programs
+:END:
 
-| package                                            | what it is                                      | license   |
-|----------------------------------------------------+-------------------------------------------------+-----------|
+| package         | what it is                                      | license   |
+|-----------------+-------------------------------------------------+-----------|
 | [[https://codeberg.org/jjba23/araneola][~araneola~]]      | Web crawler and sitemap generator               | AGPL-3.0+ |
 | [[https://codeberg.org/jjba23/ggg][~ggg~]]           | SVG badges and glyphs generator                 | AGPL-3.0+ |
 | [[https://codeberg.org/jjba23/iter-vitae][~iter-vitae~]]    | Resume / Curriculum Vitae generator             | AGPL-3.0+ |
@@ -75,11 +84,14 @@ all.
 | [[https://codeberg.org/jjba23/mutastructura][~mutastructura~]] | Relational database schema migrations           | AGPL-3.0+ |
 
 ** Guile libraries
+:PROPERTIES:
+:CUSTOM_ID: guile-libraries
+:END:
 
-| package                                                       | what it is                               | license   |
-|---------------------------------------------------------------+------------------------------------------+-----------|
+| package               | what it is                               | license   |
+|-----------------------+------------------------------------------+-----------|
 | [[https://codeberg.org/jjba23/bewaking][~guile-bewaking~]]      | Authentication and authorization         | LGPL-3.0+ |
-| [[https://codeberg.org/jjba23/hygguile][~guile-hygguile~]]       | Web UI components                        | LGPL-3.0+ |
+| [[https://codeberg.org/jjba23/hygguile][~guile-hygguile~]]      | Web UI components                        | LGPL-3.0+ |
 | [[https://codeberg.org/jjba23/kracht][~guile-kracht~]]        | Utility library                          | LGPL-3.0+ |
 | [[https://codeberg.org/jjba23/olive-css][~guile-olive-css~]]     | Utility-first CSS framework              | LGPL-3.0+ |
 | [[https://codeberg.org/jjba23/orgwebalchemy][~guile-orgwebalchemy~]] | Org-mode to HTML and Markdown conversion | LGPL-3.0+ |
@@ -87,13 +99,16 @@ all.
 | [[https://codeberg.org/jjba23/veritas][~guile-veritas~]]       | Testing framework                        | LGPL-3.0+ |
 
 ** Emacs packages
+:PROPERTIES:
+:CUSTOM_ID: emacs-packages
+:END:
 
 These live in ~emacsPackages~ rather than beside the Guile packages, because that
 is the set an elisp library belongs to, and each ships its own ERT suite which the
 checks run.
 
-| package                                                  | what it is                                             | license   |
-|----------------------------------------------------------+--------------------------------------------------------+-----------|
+| package        | what it is                                             | license   |
+|----------------+--------------------------------------------------------+-----------|
 | [[https://codeberg.org/jjba23/maak.el][~maak~]]         | Maak integration for Emacs                             | GPL-3.0+  |
 | [[https://codeberg.org/jjba23/veritas.el][~veritas~]]      | Tight Emacs integration for the Veritas test framework | LGPL-3.0+ |
 | [[https://codeberg.org/jjba23/modusregel][~modusregel~]]   | Mode line customizations                               | GPL-3.0+  |
@@ -105,6 +120,9 @@ In ~packages~ they appear with an ~emacs-~ prefix (~emacs-maak~, ~emacs-veritas~
 the overlay is the interface an Emacs configuration actually wants.
 
 ** Packages nixpkgs does not have yet
+:PROPERTIES:
+:CUSTOM_ID: packages-nixpkgs-does-not-have-yet
+:END:
 
 The Guile dependency chain has no entries in nixpkgs, so it is here, from the
 branches of my [[https://github.com/jjba23/nixpkgs][nixpkgs fork]] that add it.
@@ -125,6 +143,9 @@ each repository are for, and this repository is the Nix side of all of it -- the
 programs, the libraries, the Emacs packages and the gaps.
 
 ** Which flake holds what
+:PROPERTIES:
+:CUSTOM_ID: which-flake-holds-what
+:END:
 
 There are three, each with its own ~flake.lock~, and the root one follows the other
 two.  That is what makes it possible to take one part and never fetch the rest.
@@ -136,6 +157,9 @@ two.  That is what makes it possible to take one part and never fetch the rest.
 | ~emacs~      | the five Emacs packages         | nixpkgs and five small repositories         |
 
 * Quick start
+:PROPERTIES:
+:CUSTOM_ID: quick-start
+:END:
 
 One command, no installation to undo, nothing added to your profile:
 
@@ -155,6 +179,9 @@ nix build git+https://codeberg.org/jjba23/nix-jointhefreeworld#guile-veritas
 #+end_src
 
 *** Before you start
+:PROPERTIES:
+:CUSTOM_ID: before-you-start
+:END:
 
 Flakes are still behind a flag in Nix 2.35, so either put
 
@@ -169,8 +196,14 @@ which is what the examples use.  Nothing else is needed: no channel to add, no
 overlay to copy, no build cache to trust.
 
 * Install
+:PROPERTIES:
+:CUSTOM_ID: install
+:END:
 
 ** One program, permanently
+:PROPERTIES:
+:CUSTOM_ID: one-program-permanently
+:END:
 
 #+begin_src shell
 nix profile install git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak
@@ -187,10 +220,13 @@ The same URL works for the rest of the set: ~#araneola~, ~#ggg~,
 ~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries are meant to be
 built and to land on Guile's load path, or in Emacs's, through a shell or a system
 configuration.  An ~emacs-~ prefixed name installs the built package, which is
-handy for looking inside it; [[*Into Emacs][Into Emacs]] is how an Emacs actually gets
+handy for looking inside it; [[#into-emacs][Into Emacs]] is how an Emacs actually gets
 these on its load path.
 
 ** One part only
+:PROPERTIES:
+:CUSTOM_ID: one-part-only
+:END:
 
 ~?dir=~ picks the flake inside the repository, and with it the inputs: an
 Emacs-only consumer fetches five small repositories and no Guile dependency at all,
@@ -202,6 +238,9 @@ nix build 'git+https://codeberg.org/jjba23/nix-jointhefreeworld?dir=guile-deps#g
 #+end_src
 
 ** Into Emacs
+:PROPERTIES:
+:CUSTOM_ID: into-emacs
+:END:
 
 The Emacs packages are packages in the Emacs sense, so they are asked for through
 the scope the overlay extends -- ~pkgs.emacsPackages~ -- and ~withPackages~ builds
@@ -222,13 +261,16 @@ an Emacs that has them on its load path, autoloads and all:
 #+end_src
 
 The snippet assumes the set's overlay is already applied to ~pkgs~, which is what
-[[*Use it from your own configuration][the next section]] is about: without it,
+[[#use-it-from-your-own-configuration][the next section]] is about: without it,
 ~pkgs.emacsPackages~ knows none of these names.  Take one package and it is one
 line; take none and nothing changes.  ~emacsPackages.withPackages~ is what honours
 ~pkgs.emacsPackages~, so this is also the expression to use in a plain flake shell,
 where the same call is enough to get an Emacs with the package in it.
 
 * Use it from your own configuration
+:PROPERTIES:
+:CUSTOM_ID: use-it-from-your-own-configuration
+:END:
 
 Add the overlay once and the packages are available from ~pkgs~ as if nixpkgs had
 them, built against the revisions this flake pins.
@@ -259,9 +301,12 @@ them, built against the revisions this flake pins.
 Home-manager takes the same overlay, through ~nixpkgs.overlays~ in the NixOS module
 you already import, or ~pkgs~ inherited from it; nothing here is NixOS-specific
 except that the packages need the platform to be one of the three in
-[[*What is built where][What is built where]].
+[[#what-is-built-where][What is built where]].
 
 ** Three ways to take it
+:PROPERTIES:
+:CUSTOM_ID: three-ways-to-take-it
+:END:
 
 | what you write                                                     | what you get                                   |
 |--------------------------------------------------------------------+------------------------------------------------|
@@ -298,6 +343,9 @@ Two things worth knowing about the overlays:
   behaves too.  Asking for it there is an error, not a missing attribute.
 
 * Keeping up to date
+:PROPERTIES:
+:CUSTOM_ID: keeping-up-to-date
+:END:
 
 #+begin_src shell
 nix flake update                           # move every input of the set
@@ -319,6 +367,9 @@ Editing a part's ~flake.nix~ is picked up by the set as it is read, since a path
 input is pinned by its path rather than by its content.
 
 * What is built where
+:PROPERTIES:
+:CUSTOM_ID: what-is-built-where
+:END:
 
 | system           | what happens                                                 |
 |------------------+--------------------------------------------------------------|
@@ -330,6 +381,9 @@ input is pinned by its path rather than by its content.
 would make evaluation fail for everyone rather than for that one platform.
 
 * How it is put together
+:PROPERTIES:
+:CUSTOM_ID: how-it-is-put-together
+:END:
 
 - Three flakes, two of them followed by the root through relative path inputs, and
   ~inputs.nixpkgs.follows~ on both so that the three share one nixpkgs instead of
@@ -381,10 +435,16 @@ theme to resolve it from; the overlay adds ~adwaita-icon-theme~ to its
 bring their own icons.
 
 * Adding a project
+:PROPERTIES:
+:CUSTOM_ID: adding-a-project
+:END:
 
 Which of the three shapes it is decides where the expression goes.
 
 ** A Guile project with an expression of its own
+:PROPERTIES:
+:CUSTOM_ID: a-guile-project-with-an-expression-of-its-own
+:END:
 
 Three steps, all in [[./flake.nix][flake.nix]]:
 
@@ -403,6 +463,9 @@ Three steps, all in [[./flake.nix][flake.nix]]:
    #+end_src
 
 ** A dependency nixpkgs does not have
+:PROPERTIES:
+:CUSTOM_ID: a-dependency-nixpkgs-does-not-have
+:END:
 
 It goes into [[./guile-deps/flake.nix][guile-deps/flake.nix]], as an input and a
 ~sources~ entry, and the root picks it up through the ~guile-deps~ input it already
@@ -411,6 +474,9 @@ entry can be deleted later.  Add its name to ~depNames~ in the root flake as wel
 so that ~packages~ lists it.
 
 ** An Emacs package
+:PROPERTIES:
+:CUSTOM_ID: an-emacs-package
+:END:
 
 The expression goes into the package's own repository as ~default.nix~, next to the
 ~.el~ file: a ~pname~, the version read from the ~;; Version:~ header,
@@ -423,6 +489,9 @@ run it.  Add its name to ~elispNames~ in the root flake so that ~packages~ lists
 as ~emacs-<name>~.
 
 * Contributing
+:PROPERTIES:
+:CUSTOM_ID: contributing
+:END:
 
 Contributions are welcome, and they do not have to be code.  A package that does
 not build on your machine, a platform that is missing from a ~meta.platforms~, a
@@ -435,10 +504,10 @@ issue.
   [[https://codeberg.org/jjba23/nix-jointhefreeworld][the Codeberg repository]].
 - *Bugs in a project* -- the crash is in ~maak~ or ~lambdock~ itself, not in how it
   is packaged: each project has its own repository, linked from the tables in
-  [[*What is here][What is here]], and that is where its expression lives too, so a
+  [[#what-is-here][What is here]], and that is where its expression lives too, so a
   fix can be tested with ~nix-build~ in the checkout before this repository is
   touched.
-- *New packages* -- [[*Adding a project][Adding a project]] is a checklist of what
+- *New packages* -- [[#adding-a-project][Adding a project]] is a checklist of what
   a new entry needs; an issue saying "this project should be in the set" is enough
   to start.
 - *Patches* -- please run ~nix flake check~ before opening the pull request.  It
@@ -452,6 +521,9 @@ Documentation fixes are merged as quickly as code, and a good bug report is more
 valuable than a hasty patch -- there are no silly questions.
 
 * Continuous integration
+:PROPERTIES:
+:CUSTOM_ID: continuous-integration
+:END:
 
 Woodpecker runs [[./.woodpecker/ci.yml][.woodpecker/ci.yml]] on every push and
 pull request: one ~nixos/nix~ container that runs ~nix flake check~ three times,
@@ -468,9 +540,12 @@ that pipeline is the usual answer, and ~nix flake check~ already builds everythi
 it would need to push.
 
 * License
+:PROPERTIES:
+:CUSTOM_ID: license
+:END:
 
 The files in this repository -- the three ~flake.nix~ files, the lock files, this
 README and [[./.woodpecker/ci.yml][.woodpecker/ci.yml]] -- are free software under the
 GNU General Public License, version 3 or later; see [[./COPYING][COPYING]].  Every
 package keeps the license of the project it builds from, listed in
-[[*What is here][What is here]].
+[[#what-is-here][What is here]].

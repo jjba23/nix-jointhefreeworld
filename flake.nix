@@ -16,7 +16,7 @@
 # along with nix-jointhefreeworld.  If not, see <https://www.gnu.org/licenses/>.
 
 {
-  description = "Jointhefreeworld's Nix package set: programs, Guile libraries, Emacs packages, and the packages nixpkgs is missing";
+  description = "Jointhefreeworld's Nix package set: programs, Guile libraries, Emacs packages, an icon theme, and the packages nixpkgs is missing";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -47,6 +47,7 @@
     olive-css = { url = "git+https://codeberg.org/jjba23/olive-css?ref=refs/tags/v0.6.6"; flake = false; };
     orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.3"; flake = false; };
     scriba = { url = "git+https://codeberg.org/jjba23/scriba?ref=refs/tags/v0.4.3"; flake = false; };
+    skeu-icons = { url = "git+https://codeberg.org/jjba23/skeu-icons?ref=refs/tags/v1.5.1"; flake = false; };
     veritas = { url = "git+https://codeberg.org/jjba23/veritas?ref=refs/tags/v0.8.3"; flake = false; };
   };
 
@@ -84,6 +85,7 @@
         lenkesamler = { repo = "lenkesamler"; expr = "default.nix"; };
         maak = { repo = "maak"; expr = "default.nix"; };
         mutastructura = { repo = "mutastructura"; expr = "default.nix"; };
+        skeu-icons = { repo = "skeu-icons"; expr = "default.nix"; };
       };
 
       # The names the other two flakes own, so that this one can list their

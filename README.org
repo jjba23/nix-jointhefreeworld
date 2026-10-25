@@ -1,16 +1,16 @@
 #+title: nix-jointhefreeworld
-#+subtitle: everything Jointhefreeworld, packaged for Nix -- one URL, twenty-five packages
+#+subtitle: everything Jointhefreeworld, packaged for Nix -- one URL, twenty-six packages
 #+author: Josep Bigorra
 #+email: jjbigorra@gmail.com
 #+language: en
-#+description: A Nix flake carrying the Jointhefreeworld programs, Guile libraries, Emacs packages and the few packages nixpkgs is missing.
+#+description: A Nix flake carrying the Jointhefreeworld programs, Guile libraries, Emacs packages, icon theme and the few packages nixpkgs is missing.
 #+options: toc:1 num:nil html-style:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://jointhefreeworld.org/static/css/jointhefreeworld.css" />
 
 [[https://jointhefreeworld.org/ggg/dist/nix-flake.svg]] [[https://jointhefreeworld.org/ggg/dist/scheme-guile.svg]] [[https://jointhefreeworld.org/ggg/dist/gnu-emacs.svg]]
-[[https://jointhefreeworld.org/ggg/dist/license-gpl3+.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-25-informational.svg]] [[https://ci.codeberg.org/api/badges/jjba23/nix-jointhefreeworld/status.svg?branch=trunk]]
+[[https://jointhefreeworld.org/ggg/dist/license-gpl3+.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-26-informational.svg]] [[https://ci.codeberg.org/api/badges/jjba23/nix-jointhefreeworld/status.svg?branch=trunk]]
 
-/Everything I maintain, built by Nix: eight programs, seven Guile libraries, five Emacs packages, and the five packages nixpkgs does not have yet./
+/Everything I maintain, built by Nix: eight programs, seven Guile libraries, five Emacs packages, the icon theme they run under, and the five packages nixpkgs does not have yet./
 
 ~nix-jointhefreeworld~ is a *Nix flake* that carries the whole
 [[https://jointhefreeworld.org/][Jointhefreeworld]] collection in one place.  It is
@@ -20,7 +20,7 @@ handful of *Guile dependencies* that nixpkgs has no packages for yet, which this
 repository builds from the branches of a nixpkgs fork until upstream takes them.
 
 Everything is pinned in the set's ~flake.lock~, so a consumer gets *one revision
-that is known to build together*, instead of twenty-five separate URLs to keep in
+that is known to build together*, instead of twenty-six separate URLs to keep in
 step.
 
 *If you run NixOS, nix-darwin or Home Manager and one of these projects is in your
@@ -39,14 +39,14 @@ to this README are all welcome -- see [[#contributing][Contributing]].
 :CUSTOM_ID: what-you-get
 :END:
 
-- *Twenty-five packages from one URL*, at one revision.  ~#maak~,
+- *Twenty-six packages from one URL*, at one revision.  ~#maak~,
   ~#guile-veritas~, ~#emacs-maak~, ~#guile-dbd-sqlite3~ and the rest all come
   from the same flake reference.
 - *Every program is runnable without installing anything*: ~nix run~ works for
   all eight of them, with their ~meta.mainProgram~ and their descriptions set.
 - *Granular by default.*  One overlay per package, a namespaced overlay, and a
   lazy ~packages~ set: asking for one package evaluates that one, so a project
-  that breaks its own expression takes down itself and not the other twenty-four.
+  that breaks its own expression takes down itself and not the other twenty-five.
 - *Take a part, not the whole.*  Two of the three flakes in this repository are
   reachable with ~?dir=~, so an Emacs configuration can fetch five small elisp
   repositories and never see a Guile dependency, or the other way round.
@@ -63,10 +63,10 @@ to this README are all welcome -- see [[#contributing][Contributing]].
 :CUSTOM_ID: what-is-here
 :END:
 
-Four kinds of thing, and it is worth knowing which is which, because they are used
+Five kinds of thing, and it is worth knowing which is which, because they are used
 differently: programs go in a profile, Guile libraries go on a load path, Emacs
-packages go in ~emacsPackages~, and the last group is what makes the rest build at
-all.
+packages go in ~emacsPackages~, the icon theme goes into the desktop's icon
+settings, and the last group is what makes the rest build at all.
 
 ** Programs
 :PROPERTIES:
@@ -83,6 +83,19 @@ all.
 | [[https://codeberg.org/jjba23/lenkesamler][~lenkesamler~]]   | Bookmark manager, sync tool and digital archive | AGPL-3.0+ |
 | [[https://codeberg.org/jjba23/maak][~maak~]]          | Command runner à la Make                        | GPL-3.0+  |
 | [[https://codeberg.org/jjba23/mutastructura][~mutastructura~]] | Relational database schema migrations           | AGPL-3.0+ |
+
+** Artwork
+:PROPERTIES:
+:CUSTOM_ID: artwork
+:END:
+
+What the desktop wears.  It installs no program, only themes under
+~share/icons~, so an overlay puts the icons where GTK, the docks and the file
+managers already look instead of a command in ~bin~.
+
+| package | what it is                                                       | license     |
+|---------+------------------------------------------------------------------+-------------|
+| [[https://codeberg.org/jjba23/skeu-icons][~skeu-icons~]] | Skeuomorphic icon theme, symbolic layer and fourteen accent variants | CC-BY-SA-4.0 |
 
 ** Guile libraries
 :PROPERTIES:

@@ -414,6 +414,7 @@
         "olive-css": "olive-css",
         "orgwebalchemy": "orgwebalchemy",
         "scriba": "scriba",
+        "skeu-icons": "skeu-icons",
         "veritas": "veritas"
       }
     },
@@ -432,6 +433,23 @@
         "ref": "refs/tags/v0.4.3",
         "type": "git",
         "url": "https://codeberg.org/jjba23/scriba"
+      }
+    },
+    "skeu-icons": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792941628,
+        "narHash": "sha256-b5bZO3UgbhGWAQsSuvIBhLIMmehjm5RcOH2IzIfzKrM=",
+        "ref": "refs/tags/v1.5.1",
+        "rev": "7424b76024a386d75672cc7d42c964cb119a513e",
+        "revCount": 12,
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/skeu-icons"
+      },
+      "original": {
+        "ref": "refs/tags/v1.5.1",
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/skeu-icons"
       }
     },
     "tekengrootte-el": {

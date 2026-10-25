@@ -181,16 +181,16 @@
     "heks-toon": {
       "flake": false,
       "locked": {
-        "lastModified": 1792931456,
-        "narHash": "sha256-kwgOWrKRd+IguzicrRkvsoFb0S18yQST55OWdhwhRxg=",
-        "ref": "refs/tags/v0.0.2",
-        "rev": "df6a4494b85285750d4e2ba9c8c13cb643cff9c5",
-        "revCount": 2,
+        "lastModified": 1792932086,
+        "narHash": "sha256-0PBkqdixFTZmLftcpfBeigtB9ndVGEMfgssL3NT0v64=",
+        "ref": "refs/tags/v0.2.0",
+        "rev": "800b611a6d8016e601b335ce03f537ca07661db4",
+        "revCount": 3,
         "type": "git",
         "url": "https://codeberg.org/jjba23/heks-toon"
       },
       "original": {
-        "ref": "refs/tags/v0.0.2",
+        "ref": "refs/tags/v0.2.0",
         "type": "git",
         "url": "https://codeberg.org/jjba23/heks-toon"
       }

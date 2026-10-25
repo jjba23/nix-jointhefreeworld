@@ -33,22 +33,22 @@
     # the source tree is wanted: each package is built with that project's own
     # expression, so this file never restates how something is built and the
     # two cannot drift apart.
-    araneola = { url = "git+https://codeberg.org/jjba23/araneola?ref=refs/tags/v0.0.4"; flake = false; };
-    bewaking = { url = "git+https://codeberg.org/jjba23/bewaking?ref=refs/tags/v0.4.5"; flake = false; };
-    ggg = { url = "git+https://codeberg.org/jjba23/ggg?ref=refs/tags/v0.16.3"; flake = false; };
-    heks-toon = { url = "git+https://codeberg.org/jjba23/heks-toon?ref=refs/tags/v0.3.1"; flake = false; };
-    hygguile = { url = "git+https://codeberg.org/jjba23/hygguile?ref=refs/tags/v2.7.5"; flake = false; };
-    iter-vitae = { url = "git+https://codeberg.org/jjba23/iter-vitae?ref=refs/tags/v1.0.3"; flake = false; };
+    araneola = { url = "git+https://codeberg.org/jjba23/araneola?ref=refs/tags/v0.0.5"; flake = false; };
+    bewaking = { url = "git+https://codeberg.org/jjba23/bewaking?ref=refs/tags/v0.4.6"; flake = false; };
+    ggg = { url = "git+https://codeberg.org/jjba23/ggg?ref=refs/tags/v0.16.4"; flake = false; };
+    heks-toon = { url = "git+https://codeberg.org/jjba23/heks-toon?ref=refs/tags/v0.3.2"; flake = false; };
+    hygguile = { url = "git+https://codeberg.org/jjba23/hygguile?ref=refs/tags/v2.7.6"; flake = false; };
+    iter-vitae = { url = "git+https://codeberg.org/jjba23/iter-vitae?ref=refs/tags/v1.0.4"; flake = false; };
     kracht = { url = "git+https://codeberg.org/jjba23/kracht"; flake = false; };
-    lambdock = { url = "git+https://codeberg.org/jjba23/lambdock?ref=refs/tags/v0.10.6"; flake = false; };
-    lenkesamler = { url = "git+https://codeberg.org/jjba23/lenkesamler?ref=refs/tags/v0.0.4"; flake = false; };
-    maak = { url = "git+https://codeberg.org/jjba23/maak?ref=refs/tags/v0.12.3"; flake = false; };
-    mutastructura = { url = "git+https://codeberg.org/jjba23/mutastructura?ref=refs/tags/v0.9.3"; flake = false; };
-    olive-css = { url = "git+https://codeberg.org/jjba23/olive-css?ref=refs/tags/v0.6.6"; flake = false; };
-    orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.3"; flake = false; };
-    scriba = { url = "git+https://codeberg.org/jjba23/scriba?ref=refs/tags/v0.4.3"; flake = false; };
-    skeu-icons = { url = "git+https://codeberg.org/jjba23/skeu-icons?ref=refs/tags/v1.5.1"; flake = false; };
-    veritas = { url = "git+https://codeberg.org/jjba23/veritas?ref=refs/tags/v0.8.3"; flake = false; };
+    lambdock = { url = "git+https://codeberg.org/jjba23/lambdock?ref=refs/tags/v0.10.7"; flake = false; };
+    lenkesamler = { url = "git+https://codeberg.org/jjba23/lenkesamler?ref=refs/tags/v0.0.5"; flake = false; };
+    maak = { url = "git+https://codeberg.org/jjba23/maak?ref=refs/tags/v0.12.4"; flake = false; };
+    mutastructura = { url = "git+https://codeberg.org/jjba23/mutastructura?ref=refs/tags/v0.9.4"; flake = false; };
+    olive-css = { url = "git+https://codeberg.org/jjba23/olive-css?ref=refs/tags/v0.6.7"; flake = false; };
+    orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.4"; flake = false; };
+    scriba = { url = "git+https://codeberg.org/jjba23/scriba?ref=refs/tags/v0.4.4"; flake = false; };
+    skeu-icons = { url = "git+https://codeberg.org/jjba23/skeu-icons?ref=refs/tags/v1.6.1"; flake = false; };
+    veritas = { url = "git+https://codeberg.org/jjba23/veritas?ref=refs/tags/v0.8.4"; flake = false; };
   };
 
   outputs = { self, nixpkgs, guile-deps, emacs, ... }@inputs:

@@ -1,5 +1,5 @@
 #+title: nix-jointhefreeworld
-#+subtitle: everything Jointhefreeworld, packaged for Nix -- one URL, twenty-four packages
+#+subtitle: everything Jointhefreeworld, packaged for Nix -- one URL, twenty-five packages
 #+author: Josep Bigorra
 #+email: jjbigorra@gmail.com
 #+language: en
@@ -8,9 +8,9 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://jointhefreeworld.org/static/css/jointhefreeworld.css" />
 
 [[https://jointhefreeworld.org/ggg/dist/nix-flake.svg]] [[https://jointhefreeworld.org/ggg/dist/scheme-guile.svg]] [[https://jointhefreeworld.org/ggg/dist/gnu-emacs.svg]]
-[[https://jointhefreeworld.org/ggg/dist/license-gpl3+.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-24-informational.svg]] [[https://ci.codeberg.org/api/badges/jjba23/nix-jointhefreeworld/status.svg?branch=trunk]]
+[[https://jointhefreeworld.org/ggg/dist/license-gpl3+.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-25-informational.svg]] [[https://ci.codeberg.org/api/badges/jjba23/nix-jointhefreeworld/status.svg?branch=trunk]]
 
-/Everything I maintain, built by Nix: seven programs, seven Guile libraries, five Emacs packages, and the five packages nixpkgs does not have yet./
+/Everything I maintain, built by Nix: eight programs, seven Guile libraries, five Emacs packages, and the five packages nixpkgs does not have yet./
 
 ~nix-jointhefreeworld~ is a *Nix flake* that carries the whole
 [[https://jointhefreeworld.org/][Jointhefreeworld]] collection in one place.  It is
@@ -20,7 +20,7 @@ handful of *Guile dependencies* that nixpkgs has no packages for yet, which this
 repository builds from the branches of a nixpkgs fork until upstream takes them.
 
 Everything is pinned in the set's ~flake.lock~, so a consumer gets *one revision
-that is known to build together*, instead of twenty-four separate URLs to keep in
+that is known to build together*, instead of twenty-five separate URLs to keep in
 step.
 
 *If you run NixOS, nix-darwin or Home Manager and one of these projects is in your
@@ -39,14 +39,14 @@ to this README are all welcome -- see [[#contributing][Contributing]].
 :CUSTOM_ID: what-you-get
 :END:
 
-- *Twenty-four packages from one URL*, at one revision.  ~#maak~,
+- *Twenty-five packages from one URL*, at one revision.  ~#maak~,
   ~#guile-veritas~, ~#emacs-maak~, ~#guile-dbd-sqlite3~ and the rest all come
   from the same flake reference.
 - *Every program is runnable without installing anything*: ~nix run~ works for
-  all seven of them, with their ~meta.mainProgram~ and their descriptions set.
+  all eight of them, with their ~meta.mainProgram~ and their descriptions set.
 - *Granular by default.*  One overlay per package, a namespaced overlay, and a
   lazy ~packages~ set: asking for one package evaluates that one, so a project
-  that breaks its own expression takes down itself and not the other twenty-three.
+  that breaks its own expression takes down itself and not the other twenty-four.
 - *Take a part, not the whole.*  Two of the three flakes in this repository are
   reachable with ~?dir=~, so an Emacs configuration can fetch five small elisp
   repositories and never see a Guile dependency, or the other way round.
@@ -77,6 +77,7 @@ all.
 |-----------------+-------------------------------------------------+-----------|
 | [[https://codeberg.org/jjba23/araneola][~araneola~]]      | Web crawler and sitemap generator               | AGPL-3.0+ |
 | [[https://codeberg.org/jjba23/ggg][~ggg~]]           | SVG badges and glyphs generator                 | AGPL-3.0+ |
+| [[https://codeberg.org/jjba23/heks-toon][~heks-toon~]]      | Keyboard reference, wallpapers and palettes     | GPL-3.0+  |
 | [[https://codeberg.org/jjba23/iter-vitae][~iter-vitae~]]    | Resume / Curriculum Vitae generator             | AGPL-3.0+ |
 | [[https://codeberg.org/jjba23/lambdock][~lambdock~]]      | Wayland desktop dock, customizable in Scheme    | GPL-3.0+  |
 | [[https://codeberg.org/jjba23/lenkesamler][~lenkesamler~]]   | Bookmark manager, sync tool and digital archive | AGPL-3.0+ |
@@ -169,8 +170,8 @@ nix run git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak -- --help
 
 That is the whole of it: the flake is fetched, ~maak~ is built against the
 revision it pins, and you get its help text.  Swap ~maak~ for ~araneola~,
-~ggg~, ~iter-vitae~, ~lambdock~, ~lenkesamler~ or ~mutastructura~ and you are
-running the next program.
+~ggg~, ~heks-toon~, ~iter-vitae~, ~lambdock~, ~lenkesamler~ or
+~mutastructura~ and you are running the next program.
 
 A library instead of a program is one word different:
 
@@ -211,17 +212,17 @@ maak --version
 #+end_src
 
 The same URL works for the rest of the set: ~#araneola~, ~#ggg~,
-~#guile-bewaking~, ~#guile-hygguile~, ~#guile-kracht~, ~#guile-olive-css~,
-~#guile-orgwebalchemy~, ~#guile-scriba~, ~#guile-veritas~, ~#iter-vitae~,
-~#lambdock~, ~#lenkesamler~, ~#mutastructura~ and, from the other half,
-~#emacs-maak~ and friends.
+~#heks-toon~, ~#guile-bewaking~, ~#guile-hygguile~, ~#guile-kracht~,
+~#guile-olive-css~, ~#guile-orgwebalchemy~, ~#guile-scriba~,
+~#guile-veritas~, ~#iter-vitae~, ~#lambdock~, ~#lenkesamler~,
+~#mutastructura~ and, from the other half, ~#emacs-maak~ and friends.
 
-~nix run~ works for the seven programs (~araneola~, ~ggg~, ~iter-vitae~,
-~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries are meant to be
-built and to land on Guile's load path, or in Emacs's, through a shell or a system
-configuration.  An ~emacs-~ prefixed name installs the built package, which is
-handy for looking inside it; [[#into-emacs][Into Emacs]] is how an Emacs actually gets
-these on its load path.
+~nix run~ works for the eight programs (~araneola~, ~ggg~, ~heks-toon~,
+~iter-vitae~, ~lambdock~, ~lenkesamler~, ~maak~, ~mutastructura~); the libraries
+are meant to be built and to land on Guile's load path, or in Emacs's, through a
+shell or a system configuration.  An ~emacs-~ prefixed name installs the built
+package, which is handy for looking inside it; [[#into-emacs][Into Emacs]] is how an
+Emacs actually gets these on its load path.
 
 ** One part only
 :PROPERTIES:
@@ -401,7 +402,7 @@ would make evaluation fail for everyone rather than for that one platform.
   one, so a project that breaks its own expression takes down itself and nothing
   else.  ~checks~ is where the whole set is forced -- that is a check's job, and it
   is also where ~lib.meta.availableOn~ decides which packages exist on the platform.
-- ~apps~ is derived from ~meta.mainProgram~ for the seven programs.  The names are
+- ~apps~ is derived from ~meta.mainProgram~ for the eight programs.  The names are
   listed rather than discovered by filtering every derivation, so that ~nix run~
   does not force the whole set either.
 - Each package also has an overlay of its own, and ~overlays.namespaced~ puts all
@@ -461,6 +462,8 @@ Three steps, all in [[./flake.nix][flake.nix]]:
    nix flake lock
    nix flake check -L
    #+end_src
+4. If it installs a program with a ~meta.mainProgram~, add its name to
+   ~programNames~ so that ~nix run~ and ~apps~ reach it.
 
 ** A dependency nixpkgs does not have
 :PROPERTIES:

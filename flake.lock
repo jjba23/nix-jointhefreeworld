@@ -178,6 +178,23 @@
         "type": "github"
       }
     },
+    "heks-toon": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792928241,
+        "narHash": "sha256-0pa1SApvic9xWvOFlPJKbKQ5qdmYHlD8m57SEzDoiYc=",
+        "ref": "refs/tags/v0.0.1",
+        "rev": "5572a8e2c39da19cfeb43da1792ca976dbd9c4c8",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/heks-toon"
+      },
+      "original": {
+        "ref": "refs/tags/v0.0.1",
+        "type": "git",
+        "url": "https://codeberg.org/jjba23/heks-toon"
+      }
+    },
     "hygguile": {
       "flake": false,
       "locked": {
@@ -385,6 +402,7 @@
         "emacs": "emacs",
         "ggg": "ggg",
         "guile-deps": "guile-deps",
+        "heks-toon": "heks-toon",
         "hygguile": "hygguile",
         "iter-vitae": "iter-vitae",
         "kracht": "kracht",

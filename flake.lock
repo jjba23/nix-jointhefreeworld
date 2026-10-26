@@ -282,16 +282,16 @@
     "maak": {
       "flake": false,
       "locked": {
-        "lastModified": 1792852373,
-        "narHash": "sha256-jmIPnKDV2+/596l9mIxs+Eje/G0Idk9/OL7jqfSB9ME=",
-        "ref": "refs/tags/v0.12.4",
-        "rev": "2ce2bf5fc4390cf37833497055b56b3ab008c97f",
-        "revCount": 223,
+        "lastModified": 1792997209,
+        "narHash": "sha256-Y0iv3XHHfrn5XMpmF2w4uzl+FPjfxpBrNBQDoHX9jh0=",
+        "ref": "refs/tags/v0.12.7",
+        "rev": "e1c4b88d3b8289a14fc8759d67f066a9e8ac9b55",
+        "revCount": 230,
         "type": "git",
         "url": "https://codeberg.org/jjba23/maak"
       },
       "original": {
-        "ref": "refs/tags/v0.12.4",
+        "ref": "refs/tags/v0.12.7",
         "type": "git",
         "url": "https://codeberg.org/jjba23/maak"
       }

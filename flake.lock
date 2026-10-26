@@ -421,16 +421,16 @@
     "scriba": {
       "flake": false,
       "locked": {
-        "lastModified": 1792852697,
-        "narHash": "sha256-5E2Af0JniL2ROC4QoDD/a61SF/wx2KcdwVt88rth2vk=",
-        "ref": "refs/tags/v0.4.4",
-        "rev": "3e0a83e195ffaa4b52131ef59f3f0ebb98e8d236",
-        "revCount": 101,
+        "lastModified": 1793017110,
+        "narHash": "sha256-4zx6fQxJiEkFboxhPi4ySdyDVvtfYVkS6SBYhC5uZhk=",
+        "ref": "refs/tags/v0.4.5",
+        "rev": "293472582b5715f8cd54bd7c74ae7da8e9cc60c0",
+        "revCount": 106,
         "type": "git",
         "url": "https://codeberg.org/jjba23/scriba"
       },
       "original": {
-        "ref": "refs/tags/v0.4.4",
+        "ref": "refs/tags/v0.4.5",
         "type": "git",
         "url": "https://codeberg.org/jjba23/scriba"
       }

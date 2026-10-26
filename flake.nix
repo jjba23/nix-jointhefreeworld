@@ -40,7 +40,7 @@
     hygguile = { url = "git+https://codeberg.org/jjba23/hygguile?ref=refs/tags/v2.7.6"; flake = false; };
     iter-vitae = { url = "git+https://codeberg.org/jjba23/iter-vitae?ref=refs/tags/v1.0.4"; flake = false; };
     kracht = { url = "git+https://codeberg.org/jjba23/kracht"; flake = false; };
-    lambdock = { url = "git+https://codeberg.org/jjba23/lambdock?ref=refs/tags/v0.12.1"; flake = false; };
+    lambdock = { url = "git+https://codeberg.org/jjba23/lambdock?ref=refs/tags/v0.13.1"; flake = false; };
     lenkesamler = { url = "git+https://codeberg.org/jjba23/lenkesamler?ref=refs/tags/v0.0.5"; flake = false; };
     maak = { url = "git+https://codeberg.org/jjba23/maak?ref=refs/tags/v0.14.0"; flake = false; };
     mutastructura = { url = "git+https://codeberg.org/jjba23/mutastructura?ref=refs/tags/v0.9.4"; flake = false; };

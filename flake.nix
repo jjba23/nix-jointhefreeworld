@@ -135,6 +135,12 @@
           # would not.  Remove this once the project's tests bring their own.
           drv.overrideAttrs (old: {
             nativeCheckInputs = (old.nativeCheckInputs or [ ]) ++ [ final.adwaita-icon-theme ];
+            # The Nix build sandbox has no EGL, so GTK's GL renderer cannot
+            # realize the window the shelf and icon-zoom tests open.  The
+            # software renderer is enough for them.
+            preCheck = (old.preCheck or "") + ''
+              export GSK_RENDERER=cairo
+            '';
           })
         else
           drv;

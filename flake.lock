@@ -471,16 +471,16 @@
     "veritas": {
       "flake": false,
       "locked": {
-        "lastModified": 1792852754,
-        "narHash": "sha256-Lf+UyxCopZpoko0qgDxC9RbBp4ljib3Gy1EliZi7s54=",
-        "ref": "refs/tags/v0.8.4",
-        "rev": "96f4f145c25685e23eeef190b7f7db59fb91e695",
-        "revCount": 253,
+        "lastModified": 1793008406,
+        "narHash": "sha256-iXWpQqBUKtC8YQuSiCVJPx4br5IwIlupd+Lm2a30KN8=",
+        "ref": "refs/tags/v0.9.0",
+        "rev": "fd98e448e93430b5bce579ded10f848f10cbffa8",
+        "revCount": 256,
         "type": "git",
         "url": "https://codeberg.org/jjba23/veritas"
       },
       "original": {
-        "ref": "refs/tags/v0.8.4",
+        "ref": "refs/tags/v0.9.0",
         "type": "git",
         "url": "https://codeberg.org/jjba23/veritas"
       }

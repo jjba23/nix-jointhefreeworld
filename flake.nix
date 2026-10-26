@@ -40,7 +40,7 @@
     hygguile = { url = "git+https://codeberg.org/jjba23/hygguile?ref=refs/tags/v2.7.6"; flake = false; };
     iter-vitae = { url = "git+https://codeberg.org/jjba23/iter-vitae?ref=refs/tags/v1.0.4"; flake = false; };
     kracht = { url = "git+https://codeberg.org/jjba23/kracht"; flake = false; };
-    lambdock = { url = "git+https://codeberg.org/jjba23/lambdock?ref=refs/tags/v0.10.9"; flake = false; };
+    lambdock = { url = "git+https://codeberg.org/jjba23/lambdock?ref=refs/tags/v0.10.10"; flake = false; };
     lenkesamler = { url = "git+https://codeberg.org/jjba23/lenkesamler?ref=refs/tags/v0.0.5"; flake = false; };
     maak = { url = "git+https://codeberg.org/jjba23/maak?ref=refs/tags/v0.14.0"; flake = false; };
     mutastructura = { url = "git+https://codeberg.org/jjba23/mutastructura?ref=refs/tags/v0.9.4"; flake = false; };
@@ -124,26 +124,7 @@
       # for the package, which is what lets the overlay replace a nixpkgs copy
       # instead of sitting beside it.
       buildProject = final: name:
-        let
-          drv = final.callPackage "${inputs.${sources.${name}.repo}}/${sources.${name}.expr}" { };
-        in
-        if name == "lambdock" then
-          # lambdock's own check phase aborts in a build sandbox: the tests treat
-          # GTK's "cannot resolve icon 'utilities-terminal'" warning as fatal,
-          # and a bare sandbox has no icon theme to resolve it from.  Giving the
-          # check phase the icons keeps the tests running, which dropping them
-          # would not.  Remove this once the project's tests bring their own.
-          drv.overrideAttrs (old: {
-            nativeCheckInputs = (old.nativeCheckInputs or [ ]) ++ [ final.adwaita-icon-theme ];
-            # The Nix build sandbox has no EGL, so GTK's GL renderer cannot
-            # realize the window the shelf and icon-zoom tests open.  The
-            # software renderer is enough for them.
-            preCheck = (old.preCheck or "") + ''
-              export GSK_RENDERER=cairo
-            '';
-          })
-        else
-          drv;
+        final.callPackage "${inputs.${sources.${name}.repo}}/${sources.${name}.expr}" { };
 
       # Everything this flake adds to nixpkgs: the dependencies, through the
       # guile-deps flake's overlay so their expression has exactly one home, and

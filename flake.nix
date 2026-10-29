@@ -2,18 +2,15 @@
 
 # Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
-# nix-jointhefreeworld is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# nix-jointhefreeworld is free software, released under the MIT license: you
+# may use, copy, modify, merge, publish, distribute, sublicense and sell it,
+# provided that the copyright notice and this permission notice are included in
+# all copies or substantial portions of it; see LICENSE.
 
-# nix-jointhefreeworld is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with nix-jointhefreeworld.  If not, see <https://www.gnu.org/licenses/>.
+# nix-jointhefreeworld is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  In no event shall the authors or copyright
+# holders be liable for any claim, damages or other liability arising from it.
 
 {
   description = "Jointhefreeworld's Nix package set: programs, Guile libraries, Emacs packages, an icon theme, and the packages nixpkgs is missing";

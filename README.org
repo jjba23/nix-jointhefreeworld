@@ -8,7 +8,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://jointhefreeworld.org/static/css/jointhefreeworld.css" />
 
 [[https://jointhefreeworld.org/ggg/dist/nix-flake.svg]] [[https://jointhefreeworld.org/ggg/dist/scheme-guile.svg]] [[https://jointhefreeworld.org/ggg/dist/gnu-emacs.svg]]
-[[https://jointhefreeworld.org/ggg/dist/license-mit.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-26-informational.svg]] [[https://ci.codeberg.org/api/badges/jjba23/nix-jointhefreeworld/status.svg?branch=trunk]]
+[[https://jointhefreeworld.org/ggg/dist/license-mit.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-26-informational.svg]] [[https://github.com/jjba23/nix-jointhefreeworld/actions/workflows/ci.yml/badge.svg?branch=trunk]]
 
 /Everything I maintain, built by Nix: eight programs, seven Guile libraries, five Emacs packages, the icon theme they run under, and the five packages nixpkgs does not have yet./
 
@@ -199,10 +199,10 @@ flakes and runs every elisp suite, which is exactly what CI runs.
 :CUSTOM_ID: continuous-integration
 :END:
 
-[[./.woodpecker/ci.yml][.woodpecker/ci.yml]] runs ~nix flake check~ once per flake, in
-one ~nixos/nix~ container, on every push and pull request; the badge at the top is
-that pipeline.  There is no binary cache yet, so a fresh install compiles the Guile
-bytecode locally.
+[[./.github/workflows/ci.yml][.github/workflows/ci.yml]] runs ~nix flake check~ once per flake, in
+one ~ubuntu-latest~ GitHub Actions job, on every push to ~trunk~ and every pull
+request; the badge at the top is that workflow.  There is no binary cache yet,
+so a fresh install compiles the Guile bytecode locally.
 
 * License
 :PROPERTIES:

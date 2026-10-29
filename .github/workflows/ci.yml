@@ -1,0 +1,41 @@
+# nix-jointhefreeworld -- everything Jointhefreeworld, packaged for Nix
+#
+# SPDX-License-Identifier: MIT
+# Copyright © Josep Bigorra <jjbigorra@gmail.com>
+
+name: CI
+
+# Build every package in the set on every push and every pull request, so that
+# a project that breaks its own expression -- or an input that moves under the
+# set -- is noticed here rather than by whoever runs `nix profile install' next.
+on:
+  push:
+    branches: [trunk]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  flake-checks:
+    name: 🧱 nix flake check
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: "⬇️ Clone Git repository"
+        uses: actions/checkout@v7
+
+      # Nix with sandboxing on, and with `nix-command' and `flakes' already
+      # enabled, which the action does by default.
+      - name: "❄️ Install Nix"
+        uses: cachix/install-nix-action@v31
+
+      # Three checks in one step, and therefore in one job: the Nix store is
+      # shared across the steps of a job, so splitting them would fetch nixpkgs
+      # three times.  The set's run covers every package of all three flakes;
+      # the two halves cover the locks that a `?dir=' consumer of them would get.
+      - name: "🧱 nix flake check"
+        run: |
+          nix flake check --print-build-logs ./guile-deps
+          nix flake check --print-build-logs ./emacs
+          nix flake check --print-build-logs

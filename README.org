@@ -61,7 +61,7 @@ Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
 | [[https://github.com/jjba23/lambdock][~lambdock~]]              | program | Wayland desktop dock, customizable in Scheme             | MIT          |
 | [[https://codeberg.org/jjba23/lenkesamler][~lenkesamler~]]          | program | Bookmark manager, sync tool and digital archive          | AGPL-3.0+    |
 | [[https://codeberg.org/jjba23/maak][~maak~]]                 | program | Command runner à la Make                                 | GPL-3.0+     |
-| [[https://codeberg.org/jjba23/sift][~sift~]]                 | program | Formatter and linter for the Lisp dialects               | GPL-3.0+     |
+| [[https://github.com/jjba23/sift][~sift~]]                 | program | Formatter, linter and language server for the dialects   | MIT          |
 | [[https://codeberg.org/jjba23/mutastructura][~mutastructura~]]        | program | Relational database schema migrations                    | AGPL-3.0+    |
 | [[https://codeberg.org/jjba23/bewaking][~guile-bewaking~]]       | lib     | Authentication and authorization                         | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/hygguile][~guile-hygguile~]]       | lib     | Web UI components                                        | LGPL-3.0+    |

@@ -414,6 +414,7 @@
         "olive-css": "olive-css",
         "orgwebalchemy": "orgwebalchemy",
         "scriba": "scriba",
+        "sift": "sift",
         "skeu-icons": "skeu-icons",
         "veritas": "veritas"
       }
@@ -433,6 +434,22 @@
         "ref": "refs/tags/v0.4.5",
         "type": "git",
         "url": "https://codeberg.org/jjba23/scriba"
+      }
+    },
+    "sift": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793466750,
+        "narHash": "sha256-C3GUGqBd4Ik1rYblpQqzPj95gAN9faa8hIuruKb+GSE=",
+        "ref": "refs/heads/trunk",
+        "rev": "a2de190a3d5fafc927ef27970a39b7c4975a0a5a",
+        "revCount": 8,
+        "type": "git",
+        "url": "https://github.com/jjba23/sift"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/jjba23/sift"
       }
     },
     "skeu-icons": {

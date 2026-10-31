@@ -1,5 +1,5 @@
 #+title: nix-jointhefreeworld
-#+subtitle: everything Jointhefreeworld, packaged for Nix -- one URL, twenty-six packages
+#+subtitle: everything Jointhefreeworld, packaged for Nix -- one URL, twenty-seven packages
 #+author: Josep Bigorra
 #+email: jjbigorra@gmail.com
 #+language: en
@@ -8,16 +8,16 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://jointhefreeworld.org/static/css/jointhefreeworld.css" />
 
 [[https://jointhefreeworld.org/ggg/dist/nix-flake.svg]] [[https://jointhefreeworld.org/ggg/dist/scheme-guile.svg]] [[https://jointhefreeworld.org/ggg/dist/gnu-emacs.svg]]
-[[https://jointhefreeworld.org/ggg/dist/license-mit.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-26-informational.svg]] [[https://github.com/jjba23/nix-jointhefreeworld/actions/workflows/ci.yml/badge.svg?branch=trunk]]
+[[https://jointhefreeworld.org/ggg/dist/license-mit.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-27-informational.svg]] [[https://github.com/jjba23/nix-jointhefreeworld/actions/workflows/ci.yml/badge.svg?branch=trunk]]
 
-/Everything I maintain, built by Nix: eight programs, seven Guile libraries, five Emacs packages, the icon theme they run under, and the five packages nixpkgs does not have yet./
+/Everything I maintain, built by Nix: nine programs, seven Guile libraries, five Emacs packages, the icon theme they run under, and the five packages nixpkgs does not have yet./
 
 One flake carrying the whole [[https://jointhefreeworld.org/][Jointhefreeworld]]
 collection: Guile programs, Guile libraries, elisp packages, an icon theme, and the
 five Guile dependencies nixpkgs has no package for (built from branches of a
 [[https://github.com/jjba23/nixpkgs][nixpkgs fork]] until the branches are merged).
 One ~flake.lock~ pins every project, so a consumer gets one revision known to
-build together instead of twenty-six URLs to keep in step.
+build together instead of twenty-seven URLs to keep in step.
 
 Each package is built by the expression in its own repository -- the Guile ones'
 ~default.nix~, the elisp ones' ~default.nix~ next to the ~.el~ file -- so this
@@ -39,7 +39,7 @@ nix profile install git+https://codeberg.org/jjba23/nix-jointhefreeworld#maak
 #+end_src
 
 Swap ~maak~ for any name in [[#what-is-here][What is here]].  ~nix run~ works for the
-eight programs; the libraries are meant to be built, or to land on Guile's load
+nine programs; the libraries are meant to be built, or to land on Guile's load
 path through a shell or a system configuration.
 
 Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
@@ -61,6 +61,7 @@ Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
 | [[https://github.com/jjba23/lambdock][~lambdock~]]              | program | Wayland desktop dock, customizable in Scheme             | MIT          |
 | [[https://codeberg.org/jjba23/lenkesamler][~lenkesamler~]]          | program | Bookmark manager, sync tool and digital archive          | AGPL-3.0+    |
 | [[https://codeberg.org/jjba23/maak][~maak~]]                 | program | Command runner à la Make                                 | GPL-3.0+     |
+| [[https://codeberg.org/jjba23/sift][~sift~]]                 | program | Formatter and linter for the Lisp dialects               | GPL-3.0+     |
 | [[https://codeberg.org/jjba23/mutastructura][~mutastructura~]]        | program | Relational database schema migrations                    | AGPL-3.0+    |
 | [[https://codeberg.org/jjba23/bewaking][~guile-bewaking~]]       | lib     | Authentication and authorization                         | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/hygguile][~guile-hygguile~]]       | lib     | Web UI components                                        | LGPL-3.0+    |

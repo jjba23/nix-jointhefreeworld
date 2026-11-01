@@ -44,7 +44,7 @@
     olive-css = { url = "git+https://codeberg.org/jjba23/olive-css?ref=refs/tags/v0.6.7"; flake = false; };
     orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.4"; flake = false; };
     scriba = { url = "git+https://codeberg.org/jjba23/scriba?ref=refs/tags/v0.4.5"; flake = false; };
-    sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.10.0"; flake = false; };
+    sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.11.0"; flake = false; };
     skeu-icons = { url = "git+https://codeberg.org/jjba23/skeu-icons?ref=refs/tags/v1.6.1"; flake = false; };
     veritas = { url = "git+https://codeberg.org/jjba23/veritas?ref=refs/tags/v0.9.0"; flake = false; };
   };

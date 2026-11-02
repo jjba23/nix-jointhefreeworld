@@ -33,7 +33,7 @@
     araneola = { url = "git+https://codeberg.org/jjba23/araneola?ref=refs/tags/v0.0.5"; flake = false; };
     bewaking = { url = "git+https://codeberg.org/jjba23/bewaking?ref=refs/tags/v0.4.6"; flake = false; };
     ggg = { url = "git+https://codeberg.org/jjba23/ggg?ref=refs/tags/v0.16.4"; flake = false; };
-    heks-toon = { url = "git+https://codeberg.org/jjba23/heks-toon?ref=refs/tags/v0.3.2"; flake = false; };
+    heks-toon = { url = "git+https://codeberg.org/jjba23/heks-toon?ref=refs/tags/v0.3.3"; flake = false; };
     hygguile = { url = "git+https://codeberg.org/jjba23/hygguile?ref=refs/tags/v2.7.6"; flake = false; };
     iter-vitae = { url = "git+https://codeberg.org/jjba23/iter-vitae?ref=refs/tags/v1.0.4"; flake = false; };
     kracht = { url = "git+https://codeberg.org/jjba23/kracht"; flake = false; };

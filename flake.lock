@@ -439,16 +439,16 @@
     "sift": {
       "flake": false,
       "locked": {
-        "lastModified": 1793610880,
-        "narHash": "sha256-OMoChFZ5oU/QyTV6PwOmvNxbL4LJgUWelRU73MqRulQ=",
-        "ref": "refs/tags/v1.15.0",
-        "rev": "9f55646749751453fb62fe9fde572b15d4d7b7d9",
-        "revCount": 99,
+        "lastModified": 1793632426,
+        "narHash": "sha256-6HVunjY69ZbFDSzywuNa/qLDo7xl1W8tL7T40L6C4/E=",
+        "ref": "refs/tags/v1.16.0",
+        "rev": "7ff5b080ebe706a8b2f7bf314f8b71851e379714",
+        "revCount": 102,
         "type": "git",
         "url": "https://github.com/jjba23/sift"
       },
       "original": {
-        "ref": "refs/tags/v1.15.0",
+        "ref": "refs/tags/v1.16.0",
         "type": "git",
         "url": "https://github.com/jjba23/sift"
       }

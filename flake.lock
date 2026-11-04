@@ -20,16 +20,16 @@
     "bewaking": {
       "flake": false,
       "locked": {
-        "lastModified": 1792852429,
-        "narHash": "sha256-eKNVgcg1S3LDv7uwG6QChTWIx9K2d3mU3xZFnrjdhs4=",
-        "ref": "refs/tags/v0.4.6",
-        "rev": "c61153e4821211437b66a6bc72d484b28aba2944",
-        "revCount": 93,
+        "lastModified": 1793834464,
+        "narHash": "sha256-/m4V3uvjb1ouCCheLAK419riQ/RLfK78acmry/r77Aw=",
+        "ref": "refs/tags/v0.4.7",
+        "rev": "df363f92d04b1156ea7c076538555579694cb2ab",
+        "revCount": 100,
         "type": "git",
         "url": "https://codeberg.org/jjba23/bewaking"
       },
       "original": {
-        "ref": "refs/tags/v0.4.6",
+        "ref": "refs/tags/v0.4.7",
         "type": "git",
         "url": "https://codeberg.org/jjba23/bewaking"
       }

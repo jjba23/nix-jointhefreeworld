@@ -10,6 +10,9 @@
 [[https://jointhefreeworld.org/ggg/dist/nix-flake.svg]] [[https://jointhefreeworld.org/ggg/dist/scheme-guile.svg]] [[https://jointhefreeworld.org/ggg/dist/gnu-emacs.svg]]
 [[https://jointhefreeworld.org/ggg/dist/license-mit.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-27-informational.svg]] [[https://github.com/jjba23/nix-jointhefreeworld/actions/workflows/ci.yml/badge.svg?branch=trunk]]
 
+#+attr_html: :width 160 :alt nix-jointhefreeworld logo
+[[file:logo.svg]]
+
 /Everything I maintain, built by Nix: nine programs, seven Guile libraries, five Emacs packages, the icon theme they run under, and the five packages nixpkgs does not have yet./
 
 One flake carrying the whole [[https://jointhefreeworld.org/][Jointhefreeworld]]

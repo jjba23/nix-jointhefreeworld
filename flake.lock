@@ -489,16 +489,16 @@
     "veritas": {
       "flake": false,
       "locked": {
-        "lastModified": 1793875938,
-        "narHash": "sha256-FmXlkyZlMSxnSU9Ir2wIm2RCn7OIpe+QvK7ZQz/I/fU=",
-        "ref": "refs/tags/v1.3.1",
-        "rev": "231304fe76837f00b98c03f66dac6b2f4d9b04e7",
-        "revCount": 291,
+        "lastModified": 1793887632,
+        "narHash": "sha256-67IEvbp0uQW9mvOM28nuvwmYA01CjpHFfkwr+St85Ho=",
+        "ref": "refs/tags/v1.4.0",
+        "rev": "78cc0cc1865c95c181477a1564005e3dce9c8fd0",
+        "revCount": 295,
         "type": "git",
         "url": "https://github.com/jjba23/veritas"
       },
       "original": {
-        "ref": "refs/tags/v1.3.1",
+        "ref": "refs/tags/v1.4.0",
         "type": "git",
         "url": "https://github.com/jjba23/veritas"
       }

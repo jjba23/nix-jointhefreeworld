@@ -72,7 +72,7 @@ Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
 | [[https://codeberg.org/jjba23/olive-css][~guile-olive-css~]]      | lib     | Utility-first CSS framework                              | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/orgwebalchemy][~guile-orgwebalchemy~]]  | lib     | Org-mode to HTML and Markdown conversion                 | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/scriba][~guile-scriba~]]         | lib     | Structured logging                                       | LGPL-3.0+    |
-| [[https://codeberg.org/jjba23/veritas][~guile-veritas~]]        | lib     | Testing framework                                        | LGPL-3.0+    |
+| [[https://codeberg.org/jjba23/veritas][~guile-veritas~]]        | lib     | Testing framework                                        | MIT          |
 | [[https://codeberg.org/jjba23/maak.el][~emacs-maak~]]           | emacs   | Maak integration for Emacs                               | GPL-3.0+     |
 | [[https://codeberg.org/jjba23/veritas.el][~emacs-veritas~]]        | emacs   | Tight Emacs integration for the Veritas test framework   | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/modusregel][~emacs-modusregel~]]     | emacs   | Mode line customizations                                 | GPL-3.0+     |

@@ -46,7 +46,7 @@
     scriba = { url = "git+https://codeberg.org/jjba23/scriba?ref=refs/tags/v0.4.5"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.22.0"; flake = false; };
     skeu-icons = { url = "git+https://codeberg.org/jjba23/skeu-icons?ref=refs/tags/v1.6.1"; flake = false; };
-    veritas = { url = "git+https://codeberg.org/jjba23/veritas?ref=refs/tags/v1.1.1"; flake = false; };
+    veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.3.0"; flake = false; };
   };
 
   outputs = { self, nixpkgs, guile-deps, emacs, ... }@inputs:

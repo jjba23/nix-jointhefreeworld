@@ -28,7 +28,7 @@
     veritas-el = { url = "git+https://codeberg.org/jjba23/veritas.el"; flake = false; };
     modusregel = { url = "git+https://codeberg.org/jjba23/modusregel"; flake = false; };
     tekengrootte-el = { url = "git+https://codeberg.org/jjba23/tekengrootte.el"; flake = false; };
-    welkomscherm-el = { url = "git+https://codeberg.org/jjba23/welkomscherm.el"; flake = false; };
+    welkomscherm-el = { url = "git+https://github.com/jjba23/welkomscherm.el"; flake = false; };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:

@@ -77,7 +77,7 @@ Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
 | [[https://codeberg.org/jjba23/veritas.el][~emacs-veritas~]]        | emacs   | Tight Emacs integration for the Veritas test framework   | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/modusregel][~emacs-modusregel~]]     | emacs   | Mode line customizations                                 | GPL-3.0+     |
 | [[https://codeberg.org/jjba23/tekengrootte.el][~emacs-tekengrootte~]]   | emacs   | Proportionally scaled face sizes                         | GPL-3.0+     |
-| [[https://codeberg.org/jjba23/welkomscherm.el][~emacs-welkomscherm~]]   | emacs   | Simple welcome screen / dashboard                        | GPL-3.0+     |
+| [[https://github.com/jjba23/welkomscherm.el][~emacs-welkomscherm~]]    | emacs   | Simple welcome screen / dashboard                        | MIT          |
 | [[https://codeberg.org/jjba23/skeu-icons][~skeu-icons~]]           | icons   | Skeuomorphic icon theme, symbolic layer, accent variants | CC-BY-SA-4.0 |
 | ~guile-uuid~           | dep     | UUID generation and manipulation                         | GPL-3.0+     |
 | ~guile-dbi~            | dep     | Generic database access                                  | GPL-2.0+     |

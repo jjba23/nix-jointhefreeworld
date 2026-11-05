@@ -522,17 +522,17 @@
     "welkomscherm-el": {
       "flake": false,
       "locked": {
-        "lastModified": 1792852768,
-        "narHash": "sha256-1z5skNddcnUS7d4OmUeC8GkXT+xuA2OAzl9kjfTzZvY=",
+        "lastModified": 1793887329,
+        "narHash": "sha256-6Kskw2pS4SIhjCh8AyvoyMAMcWdZSxbTHWw4X+H6v54=",
         "ref": "refs/heads/trunk",
-        "rev": "3d045544738a24a980ed7c544077ff21f0403929",
-        "revCount": 64,
+        "rev": "987afaa297b3dcc0f6a31cfdbfbc931cd59de2a9",
+        "revCount": 80,
         "type": "git",
-        "url": "https://codeberg.org/jjba23/welkomscherm.el"
+        "url": "https://github.com/jjba23/welkomscherm.el"
       },
       "original": {
         "type": "git",
-        "url": "https://codeberg.org/jjba23/welkomscherm.el"
+        "url": "https://github.com/jjba23/welkomscherm.el"
       }
     }
   },

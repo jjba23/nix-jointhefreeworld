@@ -19,17 +19,18 @@
     "modusregel": {
       "flake": false,
       "locked": {
-        "lastModified": 1792852651,
-        "narHash": "sha256-wP4qwvxzyAdCthn2TtBfd+JUlhVOIWOQoI0+LJ0jm5I=",
-        "ref": "refs/heads/trunk",
-        "rev": "f90fc76ca711fffbe40ebc2db62f974f7baa8a01",
-        "revCount": 88,
+        "lastModified": 1794083600,
+        "narHash": "sha256-qXnQFn+pfp5zAMcSNxab/JCefVREx1/LlrgnqXLJdIQ=",
+        "ref": "refs/tags/v0.9.0",
+        "rev": "ffdb8cb6e79b3d1a062c2f4d49a152af32a83141",
+        "revCount": 99,
         "type": "git",
-        "url": "https://codeberg.org/jjba23/modusregel"
+        "url": "https://github.com/jjba23/modusregel"
       },
       "original": {
+        "ref": "refs/tags/v0.9.0",
         "type": "git",
-        "url": "https://codeberg.org/jjba23/modusregel"
+        "url": "https://github.com/jjba23/modusregel"
       }
     },
     "nixpkgs": {
@@ -61,17 +62,18 @@
     "tekengrootte-el": {
       "flake": false,
       "locked": {
-        "lastModified": 1792852737,
-        "narHash": "sha256-IvaLyJ4lVDnByYRa+l1mVvwjC87lOYVQ0BB4ehhDRqk=",
-        "ref": "refs/heads/trunk",
-        "rev": "fc64a4e3c4538122ad2cccbf3203766329c77e24",
-        "revCount": 27,
+        "lastModified": 1794045580,
+        "narHash": "sha256-kRaWNIM6ruQEUsDZdM31AJSZeBEKYWZUQTGiYBdWKOI=",
+        "ref": "refs/tags/v0.4.0",
+        "rev": "3781e0fbce5b8f62e5c6ca3ea7a57ee94e164d5b",
+        "revCount": 32,
         "type": "git",
-        "url": "https://codeberg.org/jjba23/tekengrootte.el"
+        "url": "https://github.com/jjba23/tekengrootte.el"
       },
       "original": {
+        "ref": "refs/tags/v0.4.0",
         "type": "git",
-        "url": "https://codeberg.org/jjba23/tekengrootte.el"
+        "url": "https://github.com/jjba23/tekengrootte.el"
       }
     },
     "veritas-el": {
@@ -79,15 +81,16 @@
       "locked": {
         "lastModified": 1792852761,
         "narHash": "sha256-3Ey9GLRVIDeqb9W90atx+ClC1TVJI8CjSF30sE7HyPQ=",
-        "ref": "refs/heads/trunk",
+        "ref": "refs/tags/v0.1.4",
         "rev": "52104903a3eb3b56cabc71a98a3f38ae418345fd",
         "revCount": 12,
         "type": "git",
-        "url": "https://codeberg.org/jjba23/veritas.el"
+        "url": "https://github.com/jjba23/veritas.el"
       },
       "original": {
+        "ref": "refs/tags/v0.1.4",
         "type": "git",
-        "url": "https://codeberg.org/jjba23/veritas.el"
+        "url": "https://github.com/jjba23/veritas.el"
       }
     },
     "welkomscherm-el": {

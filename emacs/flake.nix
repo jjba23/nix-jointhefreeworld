@@ -25,9 +25,14 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     maak-el = { url = "git+https://codeberg.org/jjba23/maak.el"; flake = false; };
-    veritas-el = { url = "git+https://codeberg.org/jjba23/veritas.el"; flake = false; };
-    modusregel = { url = "git+https://codeberg.org/jjba23/modusregel"; flake = false; };
-    tekengrootte-el = { url = "git+https://codeberg.org/jjba23/tekengrootte.el"; flake = false; };
+    # veritas.el's v0.2.0 and v0.2.1 tags wrote the `Version:' line with three
+    # semicolons while its default.nix still greps for `;; Version:', so both of
+    # those releases throw before they build.  v0.1.4 is the last tag that can
+    # be packaged, and it is the revision this flake already carried, so the pin
+    # waits here until the project reads either spelling.
+    veritas-el = { url = "git+https://github.com/jjba23/veritas.el?ref=refs/tags/v0.1.4"; flake = false; };
+    modusregel = { url = "git+https://github.com/jjba23/modusregel?ref=refs/tags/v0.9.0"; flake = false; };
+    tekengrootte-el = { url = "git+https://github.com/jjba23/tekengrootte.el?ref=refs/tags/v0.4.0"; flake = false; };
     welkomscherm-el = { url = "git+https://github.com/jjba23/welkomscherm.el"; flake = false; };
   };
 

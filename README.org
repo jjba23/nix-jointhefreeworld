@@ -57,26 +57,26 @@ Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
 
 | name                   | kind    | what it is                                               | license      |
 |------------------------+---------+----------------------------------------------------------+--------------|
-| [[https://codeberg.org/jjba23/araneola][~araneola~]]             | program | Web crawler and sitemap generator                        | AGPL-3.0+    |
-| [[https://codeberg.org/jjba23/ggg][~ggg~]]                  | program | SVG badges and glyphs generator                          | AGPL-3.0+    |
+| [[https://github.com/jjba23/araneola][~araneola~]]             | program | Web crawler and sitemap generator                        | AGPL-3.0+    |
+| [[https://github.com/jjba23/ggg][~ggg~]]                  | program | SVG badges and glyphs generator                          | AGPL-3.0+    |
 | [[https://codeberg.org/jjba23/heks-toon][~heks-toon~]]            | program | Keyboard reference, wallpapers, palettes, reconfigure    | GPL-3.0+     |
-| [[https://codeberg.org/jjba23/iter-vitae][~iter-vitae~]]           | program | Resume / Curriculum Vitae generator                      | AGPL-3.0+    |
+| [[https://github.com/jjba23/iter-vitae][~iter-vitae~]]           | program | Resume / Curriculum Vitae generator                      | AGPL-3.0+    |
 | [[https://github.com/jjba23/lambdock][~lambdock~]]              | program | Wayland desktop dock, customizable in Scheme             | MIT          |
 | [[https://codeberg.org/jjba23/lenkesamler][~lenkesamler~]]          | program | Bookmark manager, sync tool and digital archive          | AGPL-3.0+    |
 | [[https://codeberg.org/jjba23/maak][~maak~]]                 | program | Command runner à la Make                                 | GPL-3.0+     |
 | [[https://github.com/jjba23/sift][~sift~]]                 | program | Formatter, linter and language server for the dialects   | MIT          |
-| [[https://codeberg.org/jjba23/mutastructura][~mutastructura~]]        | program | Relational database schema migrations                    | AGPL-3.0+    |
-| [[https://codeberg.org/jjba23/bewaking][~guile-bewaking~]]       | lib     | Authentication and authorization                         | LGPL-3.0+    |
-| [[https://codeberg.org/jjba23/hygguile][~guile-hygguile~]]       | lib     | Web UI components                                        | LGPL-3.0+    |
+| [[https://github.com/jjba23/mutastructura][~mutastructura~]]        | program | Relational database schema migrations                    | AGPL-3.0+    |
+| [[https://github.com/jjba23/bewaking][~guile-bewaking~]]       | lib     | Authentication and authorization                         | LGPL-3.0+    |
+| [[https://github.com/jjba23/hygguile][~guile-hygguile~]]       | lib     | Web UI components                                        | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/kracht][~guile-kracht~]]         | lib     | Utility library                                          | LGPL-3.0+    |
-| [[https://codeberg.org/jjba23/olive-css][~guile-olive-css~]]      | lib     | Utility-first CSS framework                              | LGPL-3.0+    |
+| [[https://github.com/jjba23/olive-css][~guile-olive-css~]]      | lib     | Utility-first CSS framework                              | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/orgwebalchemy][~guile-orgwebalchemy~]]  | lib     | Org-mode to HTML and Markdown conversion                 | LGPL-3.0+    |
-| [[https://codeberg.org/jjba23/scriba][~guile-scriba~]]         | lib     | Structured logging                                       | LGPL-3.0+    |
+| [[https://github.com/jjba23/scriba][~guile-scriba~]]         | lib     | Structured logging                                       | LGPL-3.0+    |
 | [[https://github.com/jjba23/veritas][~guile-veritas~]]          | lib     | Testing framework                                        | MIT          |
 | [[https://codeberg.org/jjba23/maak.el][~emacs-maak~]]           | emacs   | Maak integration for Emacs                               | GPL-3.0+     |
-| [[https://codeberg.org/jjba23/veritas.el][~emacs-veritas~]]        | emacs   | Tight Emacs integration for the Veritas test framework   | LGPL-3.0+    |
-| [[https://codeberg.org/jjba23/modusregel][~emacs-modusregel~]]     | emacs   | Mode line customizations                                 | GPL-3.0+     |
-| [[https://codeberg.org/jjba23/tekengrootte.el][~emacs-tekengrootte~]]   | emacs   | Proportionally scaled face sizes                         | GPL-3.0+     |
+| [[https://github.com/jjba23/veritas.el][~emacs-veritas~]]        | emacs   | Tight Emacs integration for the Veritas test framework   | LGPL-3.0+    |
+| [[https://github.com/jjba23/modusregel][~emacs-modusregel~]]     | emacs   | Mode line customizations                                 | GPL-3.0+     |
+| [[https://github.com/jjba23/tekengrootte.el][~emacs-tekengrootte~]]   | emacs   | Proportionally scaled face sizes                         | GPL-3.0+     |
 | [[https://github.com/jjba23/welkomscherm.el][~emacs-welkomscherm~]]    | emacs   | Simple welcome screen / dashboard                        | MIT          |
 | [[https://codeberg.org/jjba23/skeu-icons][~skeu-icons~]]           | icons   | Skeuomorphic icon theme, symbolic layer, accent variants | CC-BY-SA-4.0 |
 | ~guile-uuid~           | dep     | UUID generation and manipulation                         | GPL-3.0+     |
@@ -88,7 +88,10 @@ Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
 The ~emacs-~ prefix is how the elisp packages appear in ~packages~; in the Emacs
 package scope they are plain ~maak~, ~veritas~, ~modusregel~, ~tekengrootte~ and
 ~welkomscherm~.  ~skeu-icons~ installs no program, only themes under
-~share/icons~.
+~share/icons~.  The links point wherever a project is developed: most of them
+moved to GitHub, which is where their releases are cut now, and keep an archived
+copy on Codeberg; ~heks-toon~, ~guile-kracht~, ~lenkesamler~, ~maak~,
+~guile-orgwebalchemy~ and ~emacs-maak~ are still developed on Codeberg alone.
 
 * Use it from your own configuration
 :PROPERTIES:

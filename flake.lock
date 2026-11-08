@@ -416,7 +416,6 @@
         "orgwebalchemy": "orgwebalchemy",
         "scriba": "scriba",
         "sift": "sift",
-        "skeu-icons": "skeu-icons",
         "veritas": "veritas"
       }
     },
@@ -452,23 +451,6 @@
         "ref": "refs/tags/v1.24.0",
         "type": "git",
         "url": "https://github.com/jjba23/sift"
-      }
-    },
-    "skeu-icons": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1792959697,
-        "narHash": "sha256-rNnltHmg9+X+lNlvGl4+qQ0AsKyDYgSkeZz5JuBziss=",
-        "ref": "refs/tags/v1.6.1",
-        "rev": "50f88206a7744ae570c8a74e980f39349de6d7a5",
-        "revCount": 14,
-        "type": "git",
-        "url": "https://codeberg.org/jjba23/skeu-icons"
-      },
-      "original": {
-        "ref": "refs/tags/v1.6.1",
-        "type": "git",
-        "url": "https://codeberg.org/jjba23/skeu-icons"
       }
     },
     "tekengrootte-el": {

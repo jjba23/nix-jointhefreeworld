@@ -1,26 +1,26 @@
 #+title: nix-jointhefreeworld
-#+subtitle: everything Jointhefreeworld, packaged for Nix -- one URL, twenty-seven packages
+#+subtitle: everything Jointhefreeworld, packaged for Nix -- one URL, twenty-six packages
 #+author: Josep Bigorra
 #+email: jjbigorra@gmail.com
 #+language: en
-#+description: A Nix flake carrying the Jointhefreeworld programs, Guile libraries, Emacs packages, icon theme and the few packages nixpkgs is missing.
+#+description: A Nix flake carrying the Jointhefreeworld programs, Guile libraries, Emacs packages and the few packages nixpkgs is missing.
 #+options: toc:1 num:nil html-style:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://jointhefreeworld.org/static/css/jointhefreeworld.css" />
 
 [[https://jointhefreeworld.org/ggg/dist/nix-flake.svg]] [[https://jointhefreeworld.org/ggg/dist/scheme-guile.svg]] [[https://jointhefreeworld.org/ggg/dist/gnu-emacs.svg]]
-[[https://jointhefreeworld.org/ggg/dist/license-mit.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-27-informational.svg]] [[https://github.com/jjba23/nix-jointhefreeworld/actions/workflows/ci.yml/badge.svg?branch=trunk]]
+[[https://jointhefreeworld.org/ggg/dist/license-mit.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] [[https://img.shields.io/badge/packages-26-informational.svg]] [[https://github.com/jjba23/nix-jointhefreeworld/actions/workflows/ci.yml/badge.svg?branch=trunk]]
 
 #+attr_html: :width 160 :alt nix-jointhefreeworld logo
 [[file:logo.svg]]
 
-/Everything I maintain, built by Nix: nine programs, seven Guile libraries, five Emacs packages, the icon theme they run under, and the five packages nixpkgs does not have yet./
+/Everything I maintain, built by Nix: nine programs, seven Guile libraries, five Emacs packages, and the five packages nixpkgs does not have yet./
 
 One flake carrying the whole [[https://jointhefreeworld.org/][Jointhefreeworld]]
-collection: Guile programs, Guile libraries, elisp packages, an icon theme, and the
-five Guile dependencies nixpkgs has no package for (built from branches of a
+collection: Guile programs, Guile libraries, elisp packages, and the five Guile
+dependencies nixpkgs has no package for (built from branches of a
 [[https://github.com/jjba23/nixpkgs][nixpkgs fork]] until the branches are merged).
 One ~flake.lock~ pins every project, so a consumer gets one revision known to
-build together instead of twenty-seven URLs to keep in step.
+build together instead of twenty-six URLs to keep in step.
 
 Each package is built by the expression in its own repository -- the Guile ones'
 ~default.nix~, the elisp ones' ~default.nix~ next to the ~.el~ file -- so this
@@ -78,7 +78,6 @@ Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
 | [[https://github.com/jjba23/modusregel][~emacs-modusregel~]]     | emacs   | Mode line customizations                                 | GPL-3.0+     |
 | [[https://github.com/jjba23/tekengrootte.el][~emacs-tekengrootte~]]   | emacs   | Proportionally scaled face sizes                         | GPL-3.0+     |
 | [[https://github.com/jjba23/welkomscherm.el][~emacs-welkomscherm~]]    | emacs   | Simple welcome screen / dashboard                        | MIT          |
-| [[https://codeberg.org/jjba23/skeu-icons][~skeu-icons~]]           | icons   | Skeuomorphic icon theme, symbolic layer, accent variants | CC-BY-SA-4.0 |
 | ~guile-uuid~           | dep     | UUID generation and manipulation                         | GPL-3.0+     |
 | ~guile-dbi~            | dep     | Generic database access                                  | GPL-2.0+     |
 | ~guile-dbd-sqlite3~    | dep     | SQLite3 driver for Guile's database interface            | GPL-2.0+     |
@@ -87,8 +86,7 @@ Flakes are behind a flag: put ~experimental-features = nix-command flakes~ in
 
 The ~emacs-~ prefix is how the elisp packages appear in ~packages~; in the Emacs
 package scope they are plain ~maak~, ~veritas~, ~modusregel~, ~tekengrootte~ and
-~welkomscherm~.  ~skeu-icons~ installs no program, only themes under
-~share/icons~.  The links point wherever a project is developed: most of them
+~welkomscherm~.  The links point wherever a project is developed: most of them
 moved to GitHub, which is where their releases are cut now, and keep an archived
 copy on Codeberg; ~heks-toon~, ~guile-kracht~, ~lenkesamler~, ~maak~,
 ~guile-orgwebalchemy~ and ~emacs-maak~ are still developed on Codeberg alone.

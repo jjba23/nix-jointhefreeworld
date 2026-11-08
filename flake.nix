@@ -13,7 +13,7 @@
 # holders be liable for any claim, damages or other liability arising from it.
 
 {
-  description = "Jointhefreeworld's Nix package set: programs, Guile libraries, Emacs packages, an icon theme, and the packages nixpkgs is missing";
+  description = "Jointhefreeworld's Nix package set: programs, Guile libraries, Emacs packages, and the packages nixpkgs is missing";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -48,10 +48,6 @@
     orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.4"; flake = false; };
     scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v0.5.1"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.24.0"; flake = false; };
-    # The one pin that does not resolve: the Codeberg repository behind
-    # skeu-icons is gone (a fresh fetch gets a 404) and the icon theme has not
-    # turned up on GitHub, so this entry waits for wherever it lands next.
-    skeu-icons = { url = "git+https://codeberg.org/jjba23/skeu-icons?ref=refs/tags/v1.6.1"; flake = false; };
     veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.4.0"; flake = false; };
   };
 
@@ -90,7 +86,6 @@
         maak = { repo = "maak"; expr = "default.nix"; };
         mutastructura = { repo = "mutastructura"; expr = "default.nix"; };
         sift = { repo = "sift"; expr = "default.nix"; };
-        skeu-icons = { repo = "skeu-icons"; expr = "default.nix"; };
       };
 
       # The names the other two flakes own, so that this one can list their
@@ -162,7 +157,7 @@
         in { jointhefreeworld = packageSet pkgs; };
 
       # One overlay per package, so that `nixpkgs.overlays = [ ...overlays.maak ]'
-      # puts exactly one name into `pkgs' rather than all eighteen.  The
+      # puts exactly one name into `pkgs' rather than all twenty-one.  The
       # dependencies are the guile-deps flake's own per-package overlays,
       # re-exported so that there is one way to ask for one of them.
       perPackageOverlays =
@@ -174,7 +169,7 @@
         // (builtins.removeAttrs guile-deps.overlays [ "default" ]);
 
       # Values here are lazy on purpose: asking for one package must not
-      # evaluate the other twenty-two, so a project that breaks its own
+      # evaluate the other twenty-one, so a project that breaks its own
       # expression takes down itself and nothing else.  `checks' below is where
       # the set is forced, because that is a check's job.
       packagesFor = system:

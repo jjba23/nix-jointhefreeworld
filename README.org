@@ -169,6 +169,43 @@ nix flake check               # build it all, run every test
 ~flake.lock~ is the release: a consumer pins a revision of it and gets exactly the
 project revisions listed there.
 
+** Which pins are behind
+:PROPERTIES:
+:CUSTOM_ID: which-pins-are-behind
+:END:
+
+Moving a pin is a decision, and the question before it is which of them still
+name current work.  [[./maak.scm][maak.scm]] carries a task that answers it, and one that acts on
+the answer:
+
+#+begin_src shell
+nix run .#maak -- check-updates   # this flake's own maak, from a checkout
+maak check-updates                # or whichever maak is on your PATH
+maak update                       # move every pin that check finds behind
+#+end_src
+
+Both read ~flake.lock~ -- the tags and the branches both -- and ask each
+repository what it has now: the newest tag for a project pinned to a tag, the
+commit a branch points at for one pinned to a branch.  ~check-updates~ prints a
+line per pin, names the ones that are behind at the end, and exits non-zero, so a
+release can open with it instead of ending with a report nobody remembers to
+read.  ~update~ runs the same scan and moves what it finds: a tag is rewritten in
+the flake that declares it, a branch moves with ~nix flake update~, and the locks
+are relocked from the halves up to the set.  ~maak -n update~ says what it would
+move and changes nothing.
+
+~nixpkgs~ is checked too, on a line of its own and out of the count, and neither
+task moves it: it follows ~nixos-unstable~, which moves every day and changes the
+dependencies under every package, so ~nix flake update nixpkgs~ stays a decision
+of its own.  A pin that cannot be moved yet is listed in ~held-pins~ near the top
+of [[./maak.scm][maak.scm]], reported with its reason and skipped rather than moved: ~emacs-veritas~
+because ~v0.2.0~ and ~v0.2.1~ write a ~Version:~ header their own ~default.nix~ does
+not read, and ~emacs-maak~ because its suite still expects the tasks its
+~maak.scm~ had before ~agents~ was added.
+
+It runs one ~git ls-remote~ per input, so it needs the network, and ~nix flake
+check~ is what builds the result.
+
 * Adding a project
 :PROPERTIES:
 :CUSTOM_ID: adding-a-project

@@ -232,11 +232,11 @@
     "kracht": {
       "flake": false,
       "locked": {
-        "lastModified": 1792931240,
-        "narHash": "sha256-mnl5OxCDyU5mnVgIKHuerngtd5j61p+2gdVxCxmXs40=",
+        "lastModified": 1793874693,
+        "narHash": "sha256-NvCnmeiDUMqHuaK9SCTfeGqpKcVibYON5nDFTVrZ0GY=",
         "ref": "refs/heads/trunk",
-        "rev": "e25456fe9fd0e173e030665c35ae571e82e36e58",
-        "revCount": 129,
+        "rev": "d473cde642b0e03078c66c828e6578ae28073d1c",
+        "revCount": 132,
         "type": "git",
         "url": "https://codeberg.org/jjba23/kracht"
       },
@@ -439,16 +439,16 @@
     "sift": {
       "flake": false,
       "locked": {
-        "lastModified": 1793889289,
-        "narHash": "sha256-9Ig1hc0xi72MyuvSxTQxdxt2pjVCsXJmbNGgTTeEQe4=",
-        "ref": "refs/tags/v1.24.0",
-        "rev": "5c569ceaa6729e9fd8d740d93025bfbb8a30f861",
-        "revCount": 120,
+        "lastModified": 1794134050,
+        "narHash": "sha256-Fs4/Ywgi03F2sExSHfGQ1m1yinl+VgsIXrBY2XXBxrM=",
+        "ref": "refs/tags/v1.24.3",
+        "rev": "993342a08328e64830ea362871f991f06676d909",
+        "revCount": 126,
         "type": "git",
         "url": "https://github.com/jjba23/sift"
       },
       "original": {
-        "ref": "refs/tags/v1.24.0",
+        "ref": "refs/tags/v1.24.3",
         "type": "git",
         "url": "https://github.com/jjba23/sift"
       }

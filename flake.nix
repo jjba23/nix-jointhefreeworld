@@ -35,7 +35,7 @@
     # orgwebalchemy are still developed on Codeberg alone.
     araneola = { url = "git+https://github.com/jjba23/araneola?ref=refs/tags/v0.2.4"; flake = false; };
     bewaking = { url = "git+https://github.com/jjba23/bewaking?ref=refs/tags/v0.5.5"; flake = false; };
-    ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v0.22.2"; flake = false; };
+    ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v2.0.2"; flake = false; };
     heks-toon = { url = "git+https://codeberg.org/jjba23/heks-toon?ref=refs/tags/v0.3.6"; flake = false; };
     hygguile = { url = "git+https://github.com/jjba23/hygguile?ref=refs/tags/v2.8.4"; flake = false; };
     iter-vitae = { url = "git+https://github.com/jjba23/iter-vitae?ref=refs/tags/v1.5.0"; flake = false; };
@@ -49,6 +49,7 @@
     scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v0.5.1"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.27.2"; flake = false; };
     veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.4.3"; flake = false; };
+    whelk = { url = "git+https://github.com/jjba23/whelk?ref=refs/tags/v0.3.1"; flake = false; };
   };
 
   outputs = { self, nixpkgs, guile-deps, emacs, ... }@inputs:
@@ -86,6 +87,7 @@
         maak = { repo = "maak"; expr = "default.nix"; };
         mutastructura = { repo = "mutastructura"; expr = "default.nix"; };
         sift = { repo = "sift"; expr = "default.nix"; };
+        whelk = { repo = "whelk"; expr = "default.nix"; };
       };
 
       # The names the other two flakes own, so that this one can list their
@@ -119,6 +121,7 @@
         "maak"
         "mutastructura"
         "sift"
+        "whelk"
       ];
 
       # A project's own expression, called against whatever nixpkgs is asking

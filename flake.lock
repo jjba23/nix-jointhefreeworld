@@ -507,11 +507,11 @@
     "welkomscherm-el": {
       "flake": false,
       "locked": {
-        "lastModified": 1793887329,
-        "narHash": "sha256-6Kskw2pS4SIhjCh8AyvoyMAMcWdZSxbTHWw4X+H6v54=",
+        "lastModified": 1794496437,
+        "narHash": "sha256-IwjfmjShUmtAZdNX3+muzaE1tJBOTBd4iW91fY1F828=",
         "ref": "refs/heads/trunk",
-        "rev": "987afaa297b3dcc0f6a31cfdbfbc931cd59de2a9",
-        "revCount": 80,
+        "rev": "8db16710195858e6926c8cabcead35ba50ca943d",
+        "revCount": 109,
         "type": "git",
         "url": "https://github.com/jjba23/welkomscherm.el"
       },

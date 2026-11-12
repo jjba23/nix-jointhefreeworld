@@ -60,6 +60,8 @@
 (define held-pins
   '(("maak-el"
      . "its `maak-test-project-maak-file-is-wired' test still expects the tasks of the commit before `agents' was added, so the suite fails on trunk")
+    ("welkomscherm-el"
+     . "its `icons-draw-before-*' tests fail in a build sandbox: the package draws a glyph only when `char-displayable-p' says so, and a headless Emacs answers no")
     ("veritas-el"
      . "v0.2.0 and v0.2.1 write a `;;; Version:' header its default.nix does not read")))
 

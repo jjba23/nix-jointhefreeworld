@@ -19,16 +19,16 @@
     "modusregel": {
       "flake": false,
       "locked": {
-        "lastModified": 1794083600,
-        "narHash": "sha256-qXnQFn+pfp5zAMcSNxab/JCefVREx1/LlrgnqXLJdIQ=",
-        "ref": "refs/tags/v0.9.0",
-        "rev": "ffdb8cb6e79b3d1a062c2f4d49a152af32a83141",
-        "revCount": 99,
+        "lastModified": 1794340784,
+        "narHash": "sha256-6I58/dzBfSBW7Onb05MidZVy0T2nwqOoJGSqGUaazkg=",
+        "ref": "refs/tags/v0.9.3",
+        "rev": "a7c3bae1e501aad53dd63e2388fda2dcc4d92647",
+        "revCount": 104,
         "type": "git",
         "url": "https://github.com/jjba23/modusregel"
       },
       "original": {
-        "ref": "refs/tags/v0.9.0",
+        "ref": "refs/tags/v0.9.3",
         "type": "git",
         "url": "https://github.com/jjba23/modusregel"
       }
@@ -62,16 +62,16 @@
     "tekengrootte-el": {
       "flake": false,
       "locked": {
-        "lastModified": 1794045580,
-        "narHash": "sha256-kRaWNIM6ruQEUsDZdM31AJSZeBEKYWZUQTGiYBdWKOI=",
-        "ref": "refs/tags/v0.4.0",
-        "rev": "3781e0fbce5b8f62e5c6ca3ea7a57ee94e164d5b",
-        "revCount": 32,
+        "lastModified": 1794340942,
+        "narHash": "sha256-Ki0fDqNXVERipoKwj1U2IsqfMeHsoBKzItAWnBWY5W4=",
+        "ref": "refs/tags/v0.4.4",
+        "rev": "817fde8167b994b9d38c83a79d1b1953f072542a",
+        "revCount": 37,
         "type": "git",
         "url": "https://github.com/jjba23/tekengrootte.el"
       },
       "original": {
-        "ref": "refs/tags/v0.4.0",
+        "ref": "refs/tags/v0.4.4",
         "type": "git",
         "url": "https://github.com/jjba23/tekengrootte.el"
       }

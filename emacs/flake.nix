@@ -31,8 +31,8 @@
     # be packaged, and it is the revision this flake already carried, so the pin
     # waits here until the project reads either spelling.
     veritas-el = { url = "git+https://github.com/jjba23/veritas.el?ref=refs/tags/v0.1.4"; flake = false; };
-    modusregel = { url = "git+https://github.com/jjba23/modusregel?ref=refs/tags/v0.9.0"; flake = false; };
-    tekengrootte-el = { url = "git+https://github.com/jjba23/tekengrootte.el?ref=refs/tags/v0.4.0"; flake = false; };
+    modusregel = { url = "git+https://github.com/jjba23/modusregel?ref=refs/tags/v0.9.3"; flake = false; };
+    tekengrootte-el = { url = "git+https://github.com/jjba23/tekengrootte.el?ref=refs/tags/v0.4.4"; flake = false; };
     welkomscherm-el = { url = "git+https://github.com/jjba23/welkomscherm.el"; flake = false; };
   };
 

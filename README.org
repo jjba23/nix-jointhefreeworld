@@ -62,7 +62,7 @@ linux).
 | [[https://github.com/jjba23/ggg][~ggg~]]                  | program | SVG badges and glyphs generator                          | AGPL-3.0+    |
 | [[https://codeberg.org/jjba23/heks-toon][~heks-toon~]]            | program | Keyboard reference, wallpapers, palettes, reconfigure    | GPL-3.0+     |
 | [[https://github.com/jjba23/iter-vitae][~iter-vitae~]]           | program | Resume / Curriculum Vitae generator                      | AGPL-3.0+    |
-| [[https://github.com/jjba23/lambdock][~lambdock~]]              | program | Wayland desktop dock, customizable in Scheme             | MIT          |
+| [[https://github.com/jjba23/lambdock][~lambdock~]]              | program | Desktop dock for Wayland and X11, customizable in Scheme | MIT          |
 | [[https://codeberg.org/jjba23/lenkesamler][~lenkesamler~]]          | program | Bookmark manager, sync tool and digital archive          | AGPL-3.0+    |
 | [[https://codeberg.org/jjba23/maak][~maak~]]                 | program | Command runner à la Make                                 | GPL-3.0+     |
 | [[https://github.com/jjba23/sift][~sift~]]                 | program | Formatter, linter and language server for the dialects   | MIT          |

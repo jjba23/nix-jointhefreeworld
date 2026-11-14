@@ -47,7 +47,7 @@
     olive-css = { url = "git+https://github.com/jjba23/olive-css?ref=refs/tags/v1.1.3"; flake = false; };
     orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.8"; flake = false; };
     scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v0.5.1"; flake = false; };
-    sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.27.2"; flake = false; };
+    sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.32.0"; flake = false; };
     veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.4.3"; flake = false; };
     whelk = { url = "git+https://github.com/jjba23/whelk?ref=refs/tags/v0.25.0"; flake = false; };
   };

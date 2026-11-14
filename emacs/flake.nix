@@ -25,12 +25,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     maak-el = { url = "git+https://codeberg.org/jjba23/maak.el"; flake = false; };
-    # veritas.el's v0.2.0 and v0.2.1 tags wrote the `Version:' line with three
-    # semicolons while its default.nix still greps for `;; Version:', so both of
-    # those releases throw before they build.  v0.1.4 is the last tag that can
-    # be packaged, and it is the revision this flake already carried, so the pin
-    # waits here until the project reads either spelling.
-    veritas-el = { url = "git+https://github.com/jjba23/veritas.el?ref=refs/tags/v0.1.4"; flake = false; };
+    # veritas.el 0.2.5 is pinned to the commit that reads the `;; Version:'
+    # header default.nix expects and fixes the stderr and preflight failures.
+    # The v0.2.0-v0.2.4 tags still write `;;; Version:', so this pin stays on
+    # the fix commit until the next release tag.
+    veritas-el = { url = "git+https://github.com/jjba23/veritas.el?rev=1e181340706a54b3d4c5a898bed92e42bf11a29c"; flake = false; };
     modusregel = { url = "git+https://github.com/jjba23/modusregel?ref=refs/tags/v0.9.3"; flake = false; };
     tekengrootte-el = { url = "git+https://github.com/jjba23/tekengrootte.el?ref=refs/tags/v0.4.4"; flake = false; };
     welkomscherm-el = { url = "git+https://github.com/jjba23/welkomscherm.el"; flake = false; };

@@ -29,10 +29,10 @@
     # One input per project, pinned by flake.lock.  `flake = false' because only
     # the source tree is wanted: each package is built with that project's own
     # expression, so this file never restates how something is built and the
-    # two cannot drift apart.  The URL follows wherever a project lives: most of
-    # them moved to GitHub, where the releases are now cut, and left an
-    # archived copy behind on Codeberg; heks-toon, kracht, lenkesamler, maak and
-    # orgwebalchemy are still developed on Codeberg alone.
+    # two cannot drift apart.  The URL follows wherever a project is developed
+    # and released: most of them moved to GitHub, and left an archived copy
+    # behind on Codeberg; heks-toon, kracht, lenkesamler and orgwebalchemy are
+    # still developed on Codeberg alone.
     araneola = { url = "git+https://github.com/jjba23/araneola?ref=refs/tags/v0.2.4"; flake = false; };
     bewaking = { url = "git+https://github.com/jjba23/bewaking?ref=refs/tags/v0.5.5"; flake = false; };
     ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v2.0.2"; flake = false; };
@@ -42,7 +42,7 @@
     kracht = { url = "git+https://codeberg.org/jjba23/kracht"; flake = false; };
     lambdock = { url = "git+https://github.com/jjba23/lambdock?ref=refs/tags/v1.3.0"; flake = false; };
     lenkesamler = { url = "git+https://codeberg.org/jjba23/lenkesamler?ref=refs/tags/v0.0.9"; flake = false; };
-    maak = { url = "git+https://codeberg.org/jjba23/maak?ref=refs/tags/v0.14.0"; flake = false; };
+    maak = { url = "git+https://github.com/jjba23/maak?ref=refs/tags/v0.19.0"; flake = false; };
     mutastructura = { url = "git+https://github.com/jjba23/mutastructura?ref=refs/tags/v0.9.9"; flake = false; };
     olive-css = { url = "git+https://github.com/jjba23/olive-css?ref=refs/tags/v1.1.3"; flake = false; };
     orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.8"; flake = false; };

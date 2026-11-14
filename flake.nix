@@ -44,7 +44,7 @@
     lenkesamler = { url = "git+https://codeberg.org/jjba23/lenkesamler?ref=refs/tags/v0.0.9"; flake = false; };
     maak = { url = "git+https://github.com/jjba23/maak?ref=refs/tags/v0.19.0"; flake = false; };
     mutastructura = { url = "git+https://github.com/jjba23/mutastructura?ref=refs/tags/v0.9.9"; flake = false; };
-    olive-css = { url = "git+https://github.com/jjba23/olive-css?ref=refs/tags/v1.1.3"; flake = false; };
+    olive-css = { url = "git+https://github.com/jjba23/olive-css?ref=refs/tags/v2.0.0"; flake = false; };
     orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.8"; flake = false; };
     scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v0.5.1"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.32.0"; flake = false; };

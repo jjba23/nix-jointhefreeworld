@@ -19,16 +19,16 @@
     "modusregel": {
       "flake": false,
       "locked": {
-        "lastModified": 1794340784,
-        "narHash": "sha256-6I58/dzBfSBW7Onb05MidZVy0T2nwqOoJGSqGUaazkg=",
-        "ref": "refs/tags/v0.9.3",
-        "rev": "a7c3bae1e501aad53dd63e2388fda2dcc4d92647",
-        "revCount": 104,
+        "lastModified": 1794609745,
+        "narHash": "sha256-trTcCJRUFCneLtJ6sSiAm5PFdDqZ3Rgrbau2P1uQW0w=",
+        "ref": "refs/tags/v0.9.4",
+        "rev": "940919727d15863ecf2ff0b97b6d2f712c6d0f1f",
+        "revCount": 105,
         "type": "git",
         "url": "https://github.com/jjba23/modusregel"
       },
       "original": {
-        "ref": "refs/tags/v0.9.3",
+        "ref": "refs/tags/v0.9.4",
         "type": "git",
         "url": "https://github.com/jjba23/modusregel"
       }
@@ -62,16 +62,16 @@
     "tekengrootte-el": {
       "flake": false,
       "locked": {
-        "lastModified": 1794340942,
-        "narHash": "sha256-Ki0fDqNXVERipoKwj1U2IsqfMeHsoBKzItAWnBWY5W4=",
-        "ref": "refs/tags/v0.4.4",
-        "rev": "817fde8167b994b9d38c83a79d1b1953f072542a",
-        "revCount": 37,
+        "lastModified": 1794611164,
+        "narHash": "sha256-KxkOmDyX0wv8XlrkUbt7kYr7h1jWCgFics3sK68n7rI=",
+        "ref": "refs/tags/v0.4.5",
+        "rev": "4fd314dac9a8f62d2210bd2ac3f4f0cddc676f2f",
+        "revCount": 38,
         "type": "git",
         "url": "https://github.com/jjba23/tekengrootte.el"
       },
       "original": {
-        "ref": "refs/tags/v0.4.4",
+        "ref": "refs/tags/v0.4.5",
         "type": "git",
         "url": "https://github.com/jjba23/tekengrootte.el"
       }
@@ -96,11 +96,11 @@
     "welkomscherm-el": {
       "flake": false,
       "locked": {
-        "lastModified": 1794496437,
-        "narHash": "sha256-IwjfmjShUmtAZdNX3+muzaE1tJBOTBd4iW91fY1F828=",
+        "lastModified": 1794611275,
+        "narHash": "sha256-fkt/hvNN2u6uIAZXmQlh7qmmhw6Yc3RMzL9qabmYggE=",
         "ref": "refs/heads/trunk",
-        "rev": "8db16710195858e6926c8cabcead35ba50ca943d",
-        "revCount": 109,
+        "rev": "335380b849baf9c4b528bcbc8ce544eab79382e9",
+        "revCount": 110,
         "type": "git",
         "url": "https://github.com/jjba23/welkomscherm.el"
       },

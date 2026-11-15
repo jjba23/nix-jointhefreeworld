@@ -59,9 +59,7 @@
 ;; a hold that is no longer behind is reported as stale rather than kept quiet.
 (define held-pins
   '(("maak-el"
-     . "its `maak-test-project-maak-file-is-wired' test still expects the tasks of the commit before `agents' was added, so the suite fails on trunk")
-    ("veritas-el"
-     . "v0.2.0 and v0.2.1 write a `;;; Version:' header its default.nix does not read")))
+     . "its `maak-test-project-maak-file-is-wired' test still expects the tasks of the commit before `agents' was added, so the suite fails on trunk")))
 
 ;; Nix spells enabled features longer than a task should have to explain them;
 ;; passing them on every call means the tasks work on a machine where flakes are

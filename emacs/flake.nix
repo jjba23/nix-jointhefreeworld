@@ -30,8 +30,8 @@
     # The v0.2.0-v0.2.4 tags still write `;;; Version:', so this pin stays on
     # the fix commit until the next release tag.
     veritas-el = { url = "git+https://github.com/jjba23/veritas.el?rev=1e181340706a54b3d4c5a898bed92e42bf11a29c"; flake = false; };
-    modusregel = { url = "git+https://github.com/jjba23/modusregel?ref=refs/tags/v0.9.3"; flake = false; };
-    tekengrootte-el = { url = "git+https://github.com/jjba23/tekengrootte.el?ref=refs/tags/v0.4.4"; flake = false; };
+    modusregel = { url = "git+https://github.com/jjba23/modusregel?ref=refs/tags/v0.9.4"; flake = false; };
+    tekengrootte-el = { url = "git+https://github.com/jjba23/tekengrootte.el?ref=refs/tags/v0.4.5"; flake = false; };
     welkomscherm-el = { url = "git+https://github.com/jjba23/welkomscherm.el"; flake = false; };
   };
 

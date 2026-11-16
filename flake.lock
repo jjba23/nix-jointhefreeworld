@@ -248,16 +248,16 @@
     "lambdock": {
       "flake": false,
       "locked": {
-        "lastModified": 1794846993,
-        "narHash": "sha256-bcqnG8JZ582sEJpH/sAM2S2PCWNvvg6nmfX7Uqxa/FY=",
-        "ref": "refs/tags/v2.0.1",
-        "rev": "cc606915199184be24240b39c0ba0d81b09b1fe1",
-        "revCount": 604,
+        "lastModified": 1794847266,
+        "narHash": "sha256-+UKp8vFqcg3SCs6SMYz6VyvgK7dzuXSzfKZn1KSM3zw=",
+        "ref": "refs/tags/v2.0.2",
+        "rev": "d728e3cd98e8e5a4b1f427cdff15be143de926f2",
+        "revCount": 605,
         "type": "git",
         "url": "https://github.com/jjba23/lambdock"
       },
       "original": {
-        "ref": "refs/tags/v2.0.1",
+        "ref": "refs/tags/v2.0.2",
         "type": "git",
         "url": "https://github.com/jjba23/lambdock"
       }

@@ -249,8 +249,8 @@
       "flake": false,
       "locked": {
         "lastModified": 1794847358,
-        "ref": "refs/tags/v2.0.5",
-        "rev": "254fcd04b61988212a9ae506be01216aaaafde90",
+        "ref": "refs/tags/v2.0.6",
+        "rev": "e904de907c1289afaa77fa1a7f9c45ba1090b3dd",
         "revCount": 606,
         "type": "git",
         "url": "https://github.com/jjba23/lambdock"

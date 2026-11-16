@@ -42,7 +42,7 @@
     kracht = { url = "git+https://codeberg.org/jjba23/kracht"; flake = false; };
     lambdock = { url = "git+https://github.com/jjba23/lambdock?ref=refs/tags/v1.4.0"; flake = false; };
     lenkesamler = { url = "git+https://codeberg.org/jjba23/lenkesamler?ref=refs/tags/v0.0.10"; flake = false; };
-    maak = { url = "git+https://github.com/jjba23/maak?ref=refs/tags/v0.23.0"; flake = false; };
+    maak = { url = "git+https://github.com/jjba23/maak?ref=refs/tags/v0.24.0"; flake = false; };
     mutastructura = { url = "git+https://github.com/jjba23/mutastructura?ref=refs/tags/v0.9.11"; flake = false; };
     olive-css = { url = "git+https://github.com/jjba23/olive-css?ref=refs/tags/v2.0.0"; flake = false; };
     orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.9"; flake = false; };

@@ -248,15 +248,16 @@
     "lambdock": {
       "flake": false,
       "locked": {
-        "lastModified": 1794847358,
+        "lastModified": 1794849904,
+        "narHash": "sha256-lG4ocYvMkRs02bg0LeNIitGquBN5AG8Dw51cHYHABmg=",
         "ref": "refs/tags/v2.0.7",
         "rev": "0d5d9fb1b4d6662ca081dfc075d14a63e316226d",
-        "revCount": 606,
+        "revCount": 612,
         "type": "git",
         "url": "https://github.com/jjba23/lambdock"
       },
       "original": {
-        "ref": "refs/tags/v2.0.3",
+        "ref": "refs/tags/v2.0.7",
         "type": "git",
         "url": "https://github.com/jjba23/lambdock"
       }
@@ -523,16 +524,16 @@
     "whelk": {
       "flake": false,
       "locked": {
-        "lastModified": 1794782379,
-        "narHash": "sha256-9w+4iqg3Jw5qfMOaCp5SZsd5f/Tn4Ayx0n1MorLrc58=",
-        "ref": "refs/tags/v0.34.0",
-        "rev": "5bede69cb53c094f274a4eb01991e727c3ed938d",
-        "revCount": 81,
+        "lastModified": 1794850605,
+        "narHash": "sha256-skVU1ESFLHb0rjrQNH/zQ60rcRekDWkGDv3ujfUsnCU=",
+        "ref": "refs/tags/v0.35.0",
+        "rev": "7b60f01cf2a635a70b843c1cb9e86a9f4a75f6fa",
+        "revCount": 115,
         "type": "git",
         "url": "https://github.com/jjba23/whelk"
       },
       "original": {
-        "ref": "refs/tags/v0.34.0",
+        "ref": "refs/tags/v0.35.0",
         "type": "git",
         "url": "https://github.com/jjba23/whelk"
       }

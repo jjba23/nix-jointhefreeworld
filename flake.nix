@@ -35,7 +35,7 @@
     # still developed on Codeberg alone.
     araneola = { url = "git+https://github.com/jjba23/araneola?ref=refs/tags/v0.2.6"; flake = false; };
     bewaking = { url = "git+https://github.com/jjba23/bewaking?ref=refs/tags/v0.5.7"; flake = false; };
-    ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v2.0.7"; flake = false; };
+    ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v2.0.3"; flake = false; };
     heks-toon = { url = "git+https://codeberg.org/jjba23/heks-toon?ref=refs/tags/v0.3.9"; flake = false; };
     hygguile = { url = "git+https://github.com/jjba23/hygguile?ref=refs/tags/v2.8.6"; flake = false; };
     iter-vitae = { url = "git+https://github.com/jjba23/iter-vitae?ref=refs/tags/v1.5.2"; flake = false; };
@@ -49,7 +49,7 @@
     scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v1.0.1"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.37.0"; flake = false; };
     veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.4.5"; flake = false; };
-    whelk = { url = "git+https://github.com/jjba23/whelk?ref=refs/tags/v0.34.0"; flake = false; };
+    whelk = { url = "git+https://github.com/jjba23/whelk?ref=refs/tags/v0.35.0"; flake = false; };
   };
 
   outputs = { self, nixpkgs, guile-deps, emacs, ... }@inputs:

@@ -35,7 +35,7 @@
     # still developed on Codeberg alone.
     araneola = { url = "git+https://github.com/jjba23/araneola?ref=refs/tags/v0.2.6"; flake = false; };
     bewaking = { url = "git+https://github.com/jjba23/bewaking?ref=refs/tags/v0.5.7"; flake = false; };
-    ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v2.0.3"; flake = false; };
+    ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v2.1.0"; flake = false; };
     heks-toon = { url = "git+https://codeberg.org/jjba23/heks-toon?ref=refs/tags/v0.3.9"; flake = false; };
     hygguile = { url = "git+https://github.com/jjba23/hygguile?ref=refs/tags/v2.8.6"; flake = false; };
     iter-vitae = { url = "git+https://github.com/jjba23/iter-vitae?ref=refs/tags/v1.5.2"; flake = false; };

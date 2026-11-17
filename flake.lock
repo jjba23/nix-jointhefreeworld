@@ -524,16 +524,16 @@
     "whelk": {
       "flake": false,
       "locked": {
-        "lastModified": 1794945432,
-        "narHash": "sha256-2wlCW13mXV44Wj+bT33ifdOwqWxE4WXsCyBB5rY6wms=",
-        "ref": "refs/tags/v0.41.2",
-        "rev": "f55a74ac3bdf937f214c5eb02ffec2d6eb95cebc",
-        "revCount": 155,
+        "lastModified": 1794949981,
+        "narHash": "sha256-KrCKI2Q6+PSnpxZ8rZ1N63GqlPfJ85F6ucNaOc0Y4Lw=",
+        "ref": "refs/tags/v0.41.3",
+        "rev": "0b1483382340ca9ff08e5ce8b9b45643703f24ed",
+        "revCount": 157,
         "type": "git",
         "url": "https://github.com/jjba23/whelk"
       },
       "original": {
-        "ref": "refs/tags/v0.41.2",
+        "ref": "refs/tags/v0.41.3",
         "type": "git",
         "url": "https://github.com/jjba23/whelk"
       }

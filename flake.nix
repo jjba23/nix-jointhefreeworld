@@ -49,7 +49,7 @@
     scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v1.0.1"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.37.0"; flake = false; };
     veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.4.5"; flake = false; };
-    whelk = { url = "git+https://github.com/jjba23/whelk?ref=refs/tags/v0.42.0"; flake = false; };
+    whelk = { url = "git+https://github.com/jjba23/whelk?ref=refs/tags/v0.43.0"; flake = false; };
   };
 
   outputs = { self, nixpkgs, guile-deps, emacs, ... }@inputs:

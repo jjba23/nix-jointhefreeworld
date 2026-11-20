@@ -72,7 +72,7 @@ linux).
 | [[https://github.com/jjba23/hygguile][~guile-hygguile~]]       | lib     | Web UI components                                        | LGPL-3.0+    |
 | [[https://codeberg.org/jjba23/kracht][~guile-kracht~]]         | lib     | Utility library                                          | LGPL-3.0+    |
 | [[https://github.com/jjba23/olive-css][~guile-olive-css~]]      | lib     | Utility-first CSS framework                              | LGPL-3.0+    |
-| [[https://codeberg.org/jjba23/orgwebalchemy][~guile-orgwebalchemy~]]  | lib     | Org-mode to HTML and Markdown conversion                 | LGPL-3.0+    |
+| [[https://github.com/jjba23/orgwebalchemy][~guile-orgwebalchemy~]]  | lib     | Org-mode to HTML, Markdown and JSON conversion           | MIT          |
 | [[https://github.com/jjba23/scriba][~guile-scriba~]]         | lib     | Structured logging                                       | LGPL-3.0+    |
 | [[https://github.com/jjba23/veritas][~guile-veritas~]]          | lib     | Testing framework                                        | MIT          |
 | [[https://codeberg.org/jjba23/maak.el][~emacs-maak~]]           | emacs   | Maak integration for Emacs                               | GPL-3.0+     |
@@ -90,8 +90,8 @@ The ~emacs-~ prefix is how the elisp packages appear in ~packages~; in the Emacs
 package scope they are plain ~maak~, ~veritas~, ~modusregel~, ~tekengrootte~ and
 ~welkomscherm~.  The links point wherever a project is developed: most of them
 moved to GitHub, which is where their releases are cut now, and keep an archived
-copy on Codeberg; ~heks-toon~, ~guile-kracht~, ~lenkesamler~,
-~guile-orgwebalchemy~ and ~emacs-maak~ are still developed on Codeberg alone.
+copy on Codeberg; ~heks-toon~, ~guile-kracht~, ~lenkesamler~ and ~emacs-maak~
+are still developed on Codeberg alone.
 
 * Use it from your own configuration
 :PROPERTIES:

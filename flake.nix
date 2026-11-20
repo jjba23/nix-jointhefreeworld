@@ -31,8 +31,8 @@
     # expression, so this file never restates how something is built and the
     # two cannot drift apart.  The URL follows wherever a project is developed
     # and released: most of them moved to GitHub, and left an archived copy
-    # behind on Codeberg; heks-toon, kracht, lenkesamler and orgwebalchemy are
-    # still developed on Codeberg alone.
+    # behind on Codeberg; heks-toon, kracht and lenkesamler are still developed
+    # on Codeberg alone.
     araneola = { url = "git+https://github.com/jjba23/araneola?ref=refs/tags/v0.2.6"; flake = false; };
     bewaking = { url = "git+https://github.com/jjba23/bewaking?ref=refs/tags/v0.5.7"; flake = false; };
     ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v2.1.0"; flake = false; };
@@ -45,7 +45,7 @@
     maak = { url = "git+https://github.com/jjba23/maak?ref=refs/tags/v1.0.0"; flake = false; };
     mutastructura = { url = "git+https://github.com/jjba23/mutastructura?ref=refs/tags/v0.9.11"; flake = false; };
     olive-css = { url = "git+https://github.com/jjba23/olive-css?ref=refs/tags/v2.0.0"; flake = false; };
-    orgwebalchemy = { url = "git+https://codeberg.org/jjba23/orgwebalchemy?ref=refs/tags/v1.2.9"; flake = false; };
+    orgwebalchemy = { url = "git+https://github.com/jjba23/orgwebalchemy?ref=refs/tags/v1.3.0"; flake = false; };
     scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v1.0.1"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.37.0"; flake = false; };
     veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.4.5"; flake = false; };

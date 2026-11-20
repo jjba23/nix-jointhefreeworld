@@ -382,18 +382,18 @@
     "orgwebalchemy": {
       "flake": false,
       "locked": {
-        "lastModified": 1794497622,
-        "narHash": "sha256-OGHIUN4YxutVGNsGlLwTuXZFsihPauqiS+ZCVylEsQI=",
-        "ref": "refs/tags/v1.2.9",
-        "rev": "d087afdd5a6a5bb4bfd667720d6444ac0781521c",
-        "revCount": 139,
+        "lastModified": 1795212916,
+        "narHash": "sha256-DFOjr/0Z3j01U/XW+TXDNApeesBwPutfDJaRFJTA7sA=",
+        "ref": "refs/tags/v1.3.0",
+        "rev": "cd60a6668221ab37c383c7f40dc76675ffa6db8a",
+        "revCount": 147,
         "type": "git",
-        "url": "https://codeberg.org/jjba23/orgwebalchemy"
+        "url": "https://github.com/jjba23/orgwebalchemy"
       },
       "original": {
-        "ref": "refs/tags/v1.2.9",
+        "ref": "refs/tags/v1.3.0",
         "type": "git",
-        "url": "https://codeberg.org/jjba23/orgwebalchemy"
+        "url": "https://github.com/jjba23/orgwebalchemy"
       }
     },
     "root": {

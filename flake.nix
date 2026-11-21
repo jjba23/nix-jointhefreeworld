@@ -35,6 +35,7 @@
     # on Codeberg alone.
     araneola = { url = "git+https://github.com/jjba23/araneola?ref=refs/tags/v0.2.6"; flake = false; };
     bewaking = { url = "git+https://github.com/jjba23/bewaking?ref=refs/tags/v0.5.7"; flake = false; };
+    dokgen = { url = "git+https://github.com/jjba23/guile-dokgen?ref=refs/tags/v0.7.0"; flake = false; };
     ggg = { url = "git+https://github.com/jjba23/ggg?ref=refs/tags/v2.1.0"; flake = false; };
     heks-toon = { url = "git+https://codeberg.org/jjba23/heks-toon?ref=refs/tags/v0.3.9"; flake = false; };
     hygguile = { url = "git+https://github.com/jjba23/hygguile?ref=refs/tags/v2.8.6"; flake = false; };
@@ -74,6 +75,7 @@
         araneola = { repo = "araneola"; expr = "default.nix"; };
         ggg = { repo = "ggg"; expr = "default.nix"; };
         guile-bewaking = { repo = "bewaking"; expr = "default.nix"; };
+        guile-dokgen = { repo = "dokgen"; expr = "default.nix"; };
         guile-hygguile = { repo = "hygguile"; expr = "default.nix"; };
         guile-kracht = { repo = "kracht"; expr = "default.nix"; };
         guile-olive-css = { repo = "olive-css"; expr = "default.nix"; };
@@ -113,6 +115,7 @@
       # set to find out which ones have a `meta.mainProgram'.
       programNames = [
         "araneola"
+        "guile-dokgen"
         "ggg"
         "heks-toon"
         "iter-vitae"

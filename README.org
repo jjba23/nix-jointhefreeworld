@@ -60,6 +60,7 @@ linux).
 |------------------------+---------+----------------------------------------------------------+--------------|
 | [[https://github.com/jjba23/araneola][~araneola~]]             | program | Web crawler and sitemap generator                        | AGPL-3.0+    |
 | [[https://github.com/jjba23/ggg][~ggg~]]                  | program | SVG badges and glyphs generator                          | AGPL-3.0+    |
+| [[https://github.com/jjba23/guile-dokgen][~guile-dokgen~]]         | program | API documentation for Guile libraries, as Texinfo        | MIT          |
 | [[https://codeberg.org/jjba23/heks-toon][~heks-toon~]]            | program | Keyboard reference, wallpapers, palettes, reconfigure    | GPL-3.0+     |
 | [[https://github.com/jjba23/iter-vitae][~iter-vitae~]]           | program | Resume / Curriculum Vitae generator                      | AGPL-3.0+    |
 | [[https://github.com/jjba23/lambdock][~lambdock~]]              | program | Desktop dock for Wayland and X11, customizable in Scheme | MIT          |

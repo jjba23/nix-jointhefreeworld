@@ -37,16 +37,16 @@
     "dokgen": {
       "flake": false,
       "locked": {
-        "lastModified": 1795338759,
-        "narHash": "sha256-mF1/5wu9bIUqYBrxlRrWaCitOQZCE+t8JbiI6h6rcD4=",
-        "ref": "refs/tags/v0.10.2",
-        "rev": "39b157fb753fd8c56002c80b94f9d7dca87a82a6",
-        "revCount": 116,
+        "lastModified": 1795344901,
+        "narHash": "sha256-29Zw3rlW1f5vFCuAlCL98kRyUr/4k8UIQPy+d/Fr5YU=",
+        "ref": "refs/tags/v0.11.0",
+        "rev": "c44d5dc19b1a7111eacd1fea134854d006d47d58",
+        "revCount": 118,
         "type": "git",
         "url": "https://github.com/jjba23/guile-dokgen"
       },
       "original": {
-        "ref": "refs/tags/v0.10.2",
+        "ref": "refs/tags/v0.11.0",
         "type": "git",
         "url": "https://github.com/jjba23/guile-dokgen"
       }

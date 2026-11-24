@@ -249,17 +249,18 @@
     "kracht": {
       "flake": false,
       "locked": {
-        "lastModified": 1794497622,
-        "narHash": "sha256-YP3uv5UbK0wd5CbN+3/29qsS0IXJF3co0zBSjiEoVuw=",
-        "ref": "refs/heads/trunk",
-        "rev": "97df79e8a46155ce2bfc1b0fb1f26bfeb4241d23",
-        "revCount": 137,
+        "lastModified": 1795519938,
+        "narHash": "sha256-xXwrp8rrq/8ikiSoSmTCg0wWVdFHRWL2D1SpD8tzOjY=",
+        "ref": "refs/tags/v0.4.0",
+        "rev": "ab96495f454e32a068e42d8511d6ad3028287254",
+        "revCount": 148,
         "type": "git",
-        "url": "https://codeberg.org/jjba23/kracht"
+        "url": "https://github.com/jjba23/kracht"
       },
       "original": {
+        "ref": "refs/tags/v0.4.0",
         "type": "git",
-        "url": "https://codeberg.org/jjba23/kracht"
+        "url": "https://github.com/jjba23/kracht"
       }
     },
     "lambdock": {

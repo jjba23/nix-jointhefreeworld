@@ -299,16 +299,16 @@
     "maak": {
       "flake": false,
       "locked": {
-        "lastModified": 1795444085,
-        "narHash": "sha256-za2RvJcYLIUkwAmIvzsfpGnnEHIq94fqIOfYUjFonzg=",
-        "ref": "refs/tags/v1.3.0",
-        "rev": "116f75121bebcbe519e13c99bc41f8ab31aece3e",
-        "revCount": 338,
+        "lastModified": 1795503999,
+        "narHash": "sha256-Mtt18AJt/Y5zxUJDLsv2XdcExbSlxA94WLD8Dbw4a88=",
+        "ref": "refs/tags/v1.4.0",
+        "rev": "6db559779b0192368f38c763c202ff3731f72f53",
+        "revCount": 342,
         "type": "git",
         "url": "https://github.com/jjba23/maak"
       },
       "original": {
-        "ref": "refs/tags/v1.3.0",
+        "ref": "refs/tags/v1.4.0",
         "type": "git",
         "url": "https://github.com/jjba23/maak"
       }

@@ -67,6 +67,7 @@ linux).
 | [[https://github.com/jjba23/lenkesamler][~lenkesamler~]]          | program | Bookmark manager, sync tool and digital archive          | MIT          |
 | [[https://github.com/jjba23/maak][~maak~]]                   | program | Command runner à la Make                                 | MIT          |
 | [[https://github.com/jjba23/sift][~sift~]]                 | program | Formatter, linter and language server for the dialects   | MIT          |
+| [[https://github.com/jjba23/skapa][~skapa~]]               | program | Interactive project scaffolder                           | MIT          |
 | [[https://github.com/jjba23/mutastructura][~mutastructura~]]        | program | Relational database schema migrations                    | MIT          |
 | [[https://github.com/jjba23/whelk][~whelk~]]                | program | Desktop shell for Wayland and X11, in Scheme             | MIT          |
 | [[https://github.com/jjba23/bewaking][~guile-bewaking~]]       | lib     | Authentication and authorization                         | MIT          |

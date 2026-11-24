@@ -435,6 +435,7 @@
         "orgwebalchemy": "orgwebalchemy",
         "scriba": "scriba",
         "sift": "sift",
+        "skapa": "skapa",
         "veritas": "veritas",
         "whelk": "whelk"
       }
@@ -471,6 +472,23 @@
         "ref": "refs/tags/v1.39.2",
         "type": "git",
         "url": "https://github.com/jjba23/sift"
+      }
+    },
+    "skapa": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1795530971,
+        "narHash": "sha256-XPNCQbY52IbT/9UXe376I99iSR1zW/BSdXQq6dCIXro=",
+        "ref": "refs/tags/v0.0.21",
+        "rev": "a1b32ff580148b2c8732329e5a3bb8e3c859592d",
+        "revCount": 116,
+        "type": "git",
+        "url": "https://github.com/jjba23/skapa"
+      },
+      "original": {
+        "ref": "refs/tags/v0.0.21",
+        "type": "git",
+        "url": "https://github.com/jjba23/skapa"
       }
     },
     "tekengrootte-el": {

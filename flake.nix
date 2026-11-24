@@ -48,6 +48,7 @@
     orgwebalchemy = { url = "git+https://github.com/jjba23/orgwebalchemy?ref=refs/tags/v1.3.0"; flake = false; };
     scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v1.0.1"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.39.2"; flake = false; };
+    skapa = { url = "git+https://github.com/jjba23/skapa?ref=refs/tags/v0.0.21"; flake = false; };
     veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.4.5"; flake = false; };
     whelk = { url = "git+https://github.com/jjba23/whelk?ref=refs/tags/v0.51.1"; flake = false; };
   };
@@ -88,6 +89,7 @@
         maak = { repo = "maak"; expr = "default.nix"; };
         mutastructura = { repo = "mutastructura"; expr = "default.nix"; };
         sift = { repo = "sift"; expr = "default.nix"; };
+        skapa = { repo = "skapa"; expr = "default.nix"; };
         whelk = { repo = "whelk"; expr = "default.nix"; };
       };
 
@@ -123,6 +125,7 @@
         "maak"
         "mutastructura"
         "sift"
+        "skapa"
         "whelk"
       ];
 

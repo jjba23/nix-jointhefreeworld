@@ -40,7 +40,7 @@
     hygguile = { url = "git+https://github.com/jjba23/hygguile?ref=refs/tags/v2.8.11"; flake = false; };
     iter-vitae = { url = "git+https://github.com/jjba23/iter-vitae?ref=refs/tags/v1.5.7"; flake = false; };
     kracht = { url = "git+https://github.com/jjba23/kracht?ref=refs/tags/v0.4.0"; flake = false; };
-    lambdock = { url = "git+https://github.com/jjba23/lambdock?ref=refs/tags/v2.2.9"; flake = false; };
+    lambdock = { url = "git+https://github.com/jjba23/lambdock?ref=refs/tags/v2.3.0"; flake = false; };
     lenkesamler = { url = "git+https://github.com/jjba23/lenkesamler?ref=refs/tags/v0.1.0"; flake = false; };
     maak = { url = "git+https://github.com/jjba23/maak?ref=refs/tags/v1.4.1"; flake = false; };
     mutastructura = { url = "git+https://github.com/jjba23/mutastructura?ref=refs/tags/v0.9.16"; flake = false; };

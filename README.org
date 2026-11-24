@@ -58,28 +58,28 @@ linux).
 
 | name                   | kind    | what it is                                               | license      |
 |------------------------+---------+----------------------------------------------------------+--------------|
-| [[https://github.com/jjba23/araneola][~araneola~]]             | program | Web crawler and sitemap generator                        | AGPL-3.0+    |
-| [[https://github.com/jjba23/ggg][~ggg~]]                  | program | SVG badges and glyphs generator                          | AGPL-3.0+    |
+| [[https://github.com/jjba23/araneola][~araneola~]]             | program | Web crawler and sitemap generator                        | MIT          |
+| [[https://github.com/jjba23/ggg][~ggg~]]                  | program | SVG badges and glyphs generator                          | MIT          |
 | [[https://github.com/jjba23/guile-dokgen][~guile-dokgen~]]         | program | API documentation for Guile libraries, as Texinfo        | MIT          |
 | [[https://codeberg.org/jjba23/heks-toon][~heks-toon~]]            | program | Keyboard reference, wallpapers, palettes, reconfigure    | GPL-3.0+     |
-| [[https://github.com/jjba23/iter-vitae][~iter-vitae~]]           | program | Resume / Curriculum Vitae generator                      | AGPL-3.0+    |
+| [[https://github.com/jjba23/iter-vitae][~iter-vitae~]]           | program | Resume / Curriculum Vitae generator                      | MIT          |
 | [[https://github.com/jjba23/lambdock][~lambdock~]]              | program | Desktop dock for Wayland and X11, customizable in Scheme | MIT          |
 | [[https://codeberg.org/jjba23/lenkesamler][~lenkesamler~]]          | program | Bookmark manager, sync tool and digital archive          | AGPL-3.0+    |
 | [[https://github.com/jjba23/maak][~maak~]]                   | program | Command runner à la Make                                 | MIT          |
 | [[https://github.com/jjba23/sift][~sift~]]                 | program | Formatter, linter and language server for the dialects   | MIT          |
-| [[https://github.com/jjba23/mutastructura][~mutastructura~]]        | program | Relational database schema migrations                    | AGPL-3.0+    |
+| [[https://github.com/jjba23/mutastructura][~mutastructura~]]        | program | Relational database schema migrations                    | MIT          |
 | [[https://github.com/jjba23/whelk][~whelk~]]                | program | Desktop shell for Wayland and X11, in Scheme             | MIT          |
-| [[https://github.com/jjba23/bewaking][~guile-bewaking~]]       | lib     | Authentication and authorization                         | LGPL-3.0+    |
-| [[https://github.com/jjba23/hygguile][~guile-hygguile~]]       | lib     | Web UI components                                        | LGPL-3.0+    |
+| [[https://github.com/jjba23/bewaking][~guile-bewaking~]]       | lib     | Authentication and authorization                         | MIT          |
+| [[https://github.com/jjba23/hygguile][~guile-hygguile~]]       | lib     | Web UI components                                        | MIT          |
 | [[https://github.com/jjba23/kracht][~guile-kracht~]]          | lib     | Utility library                                          | MIT          |
-| [[https://github.com/jjba23/olive-css][~guile-olive-css~]]      | lib     | Utility-first CSS framework                              | LGPL-3.0+    |
+| [[https://github.com/jjba23/olive-css][~guile-olive-css~]]      | lib     | Utility-first CSS framework                              | MIT          |
 | [[https://github.com/jjba23/orgwebalchemy][~guile-orgwebalchemy~]]  | lib     | Org-mode to HTML, Markdown and JSON conversion           | MIT          |
-| [[https://github.com/jjba23/scriba][~guile-scriba~]]         | lib     | Structured logging                                       | LGPL-3.0+    |
+| [[https://github.com/jjba23/scriba][~guile-scriba~]]         | lib     | Structured logging                                       | MIT          |
 | [[https://github.com/jjba23/veritas][~guile-veritas~]]          | lib     | Testing framework                                        | MIT          |
 | [[https://codeberg.org/jjba23/maak.el][~emacs-maak~]]           | emacs   | Maak integration for Emacs                               | GPL-3.0+     |
 | [[https://github.com/jjba23/veritas.el][~emacs-veritas~]]        | emacs   | Tight Emacs integration for the Veritas test framework   | LGPL-3.0+    |
-| [[https://github.com/jjba23/modusregel][~emacs-modusregel~]]     | emacs   | Mode line customizations                                 | GPL-3.0+     |
-| [[https://github.com/jjba23/tekengrootte.el][~emacs-tekengrootte~]]   | emacs   | Proportionally scaled face sizes                         | GPL-3.0+     |
+| [[https://github.com/jjba23/modusregel][~emacs-modusregel~]]     | emacs   | Mode line customizations                                 | MIT          |
+| [[https://github.com/jjba23/tekengrootte.el][~emacs-tekengrootte~]]   | emacs   | Proportionally scaled face sizes                         | MIT          |
 | [[https://github.com/jjba23/welkomscherm.el][~emacs-welkomscherm~]]    | emacs   | Simple welcome screen / dashboard                        | MIT          |
 | ~guile-uuid~           | dep     | UUID generation and manipulation                         | GPL-3.0+     |
 | ~guile-dbi~            | dep     | Generic database access                                  | GPL-2.0+     |

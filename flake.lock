@@ -283,18 +283,18 @@
     "lenkesamler": {
       "flake": false,
       "locked": {
-        "lastModified": 1794497622,
-        "narHash": "sha256-ZDI0/8AkUk95XZwjiSfNcrL6M/WbVPRSTJ84ScxdN90=",
-        "ref": "refs/tags/v0.0.10",
-        "rev": "6d2a3c232354bf3e186bcb3b3bbed010cde7dfae",
-        "revCount": 96,
+        "lastModified": 1795529842,
+        "narHash": "sha256-9IPkFVUJVcIn9UYG3m40gDU7JCTb6IMRVcmcGxraym8=",
+        "ref": "refs/tags/v0.1.0",
+        "rev": "df7235830180b8578aab77fad28639d292336d94",
+        "revCount": 106,
         "type": "git",
-        "url": "https://codeberg.org/jjba23/lenkesamler"
+        "url": "https://github.com/jjba23/lenkesamler"
       },
       "original": {
-        "ref": "refs/tags/v0.0.10",
+        "ref": "refs/tags/v0.1.0",
         "type": "git",
-        "url": "https://codeberg.org/jjba23/lenkesamler"
+        "url": "https://github.com/jjba23/lenkesamler"
       }
     },
     "maak": {

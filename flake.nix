@@ -31,8 +31,7 @@
     # expression, so this file never restates how something is built and the
     # two cannot drift apart.  The URL follows wherever a project is developed
     # and released: most of them moved to GitHub, and left an archived copy
-    # behind on Codeberg; heks-toon and lenkesamler are still developed on
-    # Codeberg alone.
+    # behind on Codeberg; heks-toon is still developed on Codeberg alone.
     araneola = { url = "git+https://github.com/jjba23/araneola?ref=refs/tags/v0.2.6"; flake = false; };
     bewaking = { url = "git+https://github.com/jjba23/bewaking?ref=refs/tags/v0.5.7"; flake = false; };
     dokgen = { url = "git+https://github.com/jjba23/guile-dokgen?ref=refs/tags/v0.11.0"; flake = false; };
@@ -42,7 +41,7 @@
     iter-vitae = { url = "git+https://github.com/jjba23/iter-vitae?ref=refs/tags/v1.5.2"; flake = false; };
     kracht = { url = "git+https://github.com/jjba23/kracht?ref=refs/tags/v0.4.0"; flake = false; };
     lambdock = { url = "git+https://github.com/jjba23/lambdock?ref=refs/tags/v2.2.9"; flake = false; };
-    lenkesamler = { url = "git+https://codeberg.org/jjba23/lenkesamler?ref=refs/tags/v0.0.10"; flake = false; };
+    lenkesamler = { url = "git+https://github.com/jjba23/lenkesamler?ref=refs/tags/v0.1.0"; flake = false; };
     maak = { url = "git+https://github.com/jjba23/maak?ref=refs/tags/v1.4.1"; flake = false; };
     mutastructura = { url = "git+https://github.com/jjba23/mutastructura?ref=refs/tags/v0.9.11"; flake = false; };
     olive-css = { url = "git+https://github.com/jjba23/olive-css?ref=refs/tags/v2.0.0"; flake = false; };

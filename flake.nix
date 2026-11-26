@@ -46,7 +46,7 @@
     mutastructura = { url = "git+https://github.com/jjba23/mutastructura?ref=refs/tags/v0.9.16"; flake = false; };
     olive-css = { url = "git+https://github.com/jjba23/olive-css?ref=refs/tags/v2.0.5"; flake = false; };
     orgwebalchemy = { url = "git+https://github.com/jjba23/orgwebalchemy?ref=refs/tags/v1.3.5"; flake = false; };
-    scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v1.1.1"; flake = false; };
+    scriba = { url = "git+https://github.com/jjba23/scriba?ref=refs/tags/v1.1.2"; flake = false; };
     sift = { url = "git+https://github.com/jjba23/sift?ref=refs/tags/v1.39.6"; flake = false; };
     skapa = { url = "git+https://github.com/jjba23/skapa?ref=refs/tags/v0.0.21"; flake = false; };
     veritas = { url = "git+https://github.com/jjba23/veritas?ref=refs/tags/v1.6.0"; flake = false; };

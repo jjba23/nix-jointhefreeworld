@@ -443,16 +443,16 @@
     "scriba": {
       "flake": false,
       "locked": {
-        "lastModified": 1795372652,
-        "narHash": "sha256-9J4D/h8fAZ5iC5ypKb6TkD6sZlj2sw/CehNFFkwBgBQ=",
-        "ref": "refs/tags/v1.0.5",
-        "rev": "250ffb06f330d899749dee7d5f12b0ad86d407bf",
-        "revCount": 126,
+        "lastModified": 1795710334,
+        "narHash": "sha256-ObQ/vUzJiI9lQXImjqFSudLJRJD+L+iut6T2JjvsCq0=",
+        "ref": "refs/tags/v1.1.0",
+        "rev": "bf7cf4357345f7d4ee7de126e32c41d3a95a0a5c",
+        "revCount": 131,
         "type": "git",
         "url": "https://github.com/jjba23/scriba"
       },
       "original": {
-        "ref": "refs/tags/v1.0.5",
+        "ref": "refs/tags/v1.1.0",
         "type": "git",
         "url": "https://github.com/jjba23/scriba"
       }
